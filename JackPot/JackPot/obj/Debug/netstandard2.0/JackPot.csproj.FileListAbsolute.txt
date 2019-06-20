@@ -1,0 +1,14 @@
+F:\Project\JackPot\JackPot\JackPot\bin\Debug\netstandard2.0\JackPot.deps.json
+F:\Project\JackPot\JackPot\JackPot\bin\Debug\netstandard2.0\JackPot.dll
+F:\Project\JackPot\JackPot\JackPot\bin\Debug\netstandard2.0\JackPot.pdb
+F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\JackPot.csprojAssemblyReference.cache
+F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\App.xaml.g.cs
+F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\Views\MainPageDetail.xaml.g.cs
+F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\Views\MainPageMaster.xaml.g.cs
+F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\JackPot.csproj.CoreCompileInputs.cache
+F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\JackPot.AssemblyInfoInputs.cache
+F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\JackPot.AssemblyInfo.cs
+F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\XamlC.stamp
+F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\JackPot.dll
+F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\JackPot.pdb
