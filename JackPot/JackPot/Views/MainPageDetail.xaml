@@ -5,5 +5,6 @@
              Title="Detail">
   <StackLayout Padding="10">
     <Label Text="This is a detail page. To get the 'triple' line icon on each platform add a icon to each platform and update the 'Master' page with an Icon that references it."/>
+        <Button Text=" next" Clicked="Button_Clicked"></Button>
   </StackLayout>
 </ContentPage>
