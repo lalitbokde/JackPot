@@ -1,0 +1,5 @@
+E:\GitHub Projects\JackPot\JackPot\JackPot.Android\obj\Debug\70\MonoAndroid,Version=v7.0.AssemblyAttributes.cs
+E:\GitHub Projects\JackPot\JackPot\JackPot.Android\obj\Debug\70\JackPot.Android.nuget.stamp
+E:\GitHub Projects\JackPot\JackPot\JackPot.Android\obj\Debug\70\JackPot.Android.csprojAssemblyReference.cache
+E:\GitHub Projects\JackPot\JackPot\JackPot.Android\obj\Debug\70\libraryimports.cache.stamp
+E:\GitHub Projects\JackPot\JackPot\JackPot.Android\obj\Debug\70\res.flag

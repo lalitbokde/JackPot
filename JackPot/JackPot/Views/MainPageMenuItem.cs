@@ -11,7 +11,7 @@ namespace JackPot.Views
     {
         public MainPageMenuItem()
         {
-            TargetType = typeof(MainPageDetail);
+            TargetType = typeof(Order);
         }
         public int Id { get; set; }
         public string Title { get; set; }

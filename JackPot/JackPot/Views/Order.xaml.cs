@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using WareHouseManagement.PCL.Common;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,6 +17,9 @@ namespace JackPot.Views
 		{
 			InitializeComponent ();
             BindingContext = new OrderViewModel(Navigation);
-		}
+            txt_Agent.Text = GlobalConstant.CustomerName;
+            txt_Balace.Text ="$"+" "+ GlobalConstant.BalanceAmt.ToString();
+
+        }
 	}
 }

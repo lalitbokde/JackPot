@@ -19,9 +19,12 @@ namespace WareHouseManagement.PCL.Common
        
         public static long UserName { get; set; }
         public static int UserId { get; set; }
+        public static string CustomerName { get; set; }
+        public static decimal BalanceAmt { get; set; }
         public static string UserPassword { get; set; }
         public static string Usertype { get; set; }
         public static string GetUserLoginDetail = "Login/getLogin";
+        public static string GetHouseDetail = "BetEntry/getHousesDetailsMode";
         public static string GoogleMapApiKey = "AIzaSyC50XshkjneoleOy4CTQxRmWAv-qYGhd8Q";
 
 

@@ -4,13 +4,14 @@
              x:Class="JackPot.Views.Order"
              xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Grid>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="10">
+            <Grid RowSpacing="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="0.3*" />
                     <RowDefinition Height="0.5*" />
-                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="0.2*" />
+                    <RowDefinition Height="1.2*" />
+                    <RowDefinition Height="0.3*" />
                 </Grid.RowDefinitions>
 
                 <StackLayout Grid.Row="0"  HorizontalOptions="FillAndExpand" BackgroundColor="#f27711">
@@ -27,9 +28,9 @@
                         </Grid.ColumnDefinitions>
 
                         <Label x:Name="lbl_Agent" Text="Agent :" Grid.Row="0" HorizontalOptions="End" Grid.Column="0"></Label>
-                        <Label x:Name="txt_Agent" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" Text="Rohan Daware."></Label>
+                        <Label x:Name="txt_Agent" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" ></Label>
                         <Label x:Name="lbl_Balace" Text="Balace :" Grid.Row="1" HorizontalOptions="End" Grid.Column="0"></Label>
-                        <Label x:Name="txt_Balace" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" Text="$ 5.00"></Label>
+                        <Label x:Name="txt_Balace" Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" ></Label>
                         <Label x:Name="lbl_Customer" Text="Customer :" Grid.Row="2" HorizontalOptions="End" Grid.Column="0"></Label>
                         <Label x:Name="txt_Customer" Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" Text="Subodh"></Label>
 
@@ -38,7 +39,7 @@
                     </Grid>
                 </StackLayout>
                
-                <StackLayout Grid.Row="1"  HorizontalOptions="FillAndExpand" >
+                <StackLayout Grid.Row="1"  HorizontalOptions="Center" VerticalOptions="EndAndExpand" Padding="0" >
 
 
 
@@ -70,8 +71,8 @@
                                                             <ColumnDefinition Width="1.5*"/>
                                                         </Grid.ColumnDefinitions>
                                                         <StackLayout Orientation="Horizontal" Grid.Column="0">
-                                                            <input:CheckBox  x:Name="checkboxENY"    IsChecked="True"    VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
-                                                            <Label  Text="{Binding ENY}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                            <input:CheckBox  x:Name="checkboxENY" IsChecked="{Binding chkENY}"     VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
+                                                        <Label  Text="{Binding ENY}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                                                             </Label>
 
@@ -79,7 +80,7 @@
 
                                                         <StackLayout Orientation="Horizontal" Grid.Column="1">
 
-                                                            <input:CheckBox  x:Name="checkboxEMI"    IsChecked="True"    VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
+                                                        <input:CheckBox  x:Name="checkboxEMI" IsChecked="{Binding chkEMI}"     VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
                                                             <Label  Text="{Binding EMI}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                                                             </Label>
@@ -89,7 +90,7 @@
                                                         <StackLayout Orientation="Horizontal" Grid.Column="2">
 
 
-                                                            <input:CheckBox  x:Name="checkboxEGA"    IsChecked="True"    VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
+                                                        <input:CheckBox  x:Name="checkboxEGA" IsChecked="{Binding chkEGA}"     VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
                                                             <Label  Text="{Binding EGA}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                                                             </Label>
@@ -98,7 +99,7 @@
                                                         <StackLayout Orientation="Horizontal" Grid.Column="3">
 
 
-                                                            <input:CheckBox  x:Name="checkboxECA"    IsChecked="True"    VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
+                                                        <input:CheckBox  x:Name="checkboxECA"   IsChecked="{Binding chkECA}"    VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
                                                             <Label  Text="{Binding ECA}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                                                             </Label>
@@ -106,7 +107,7 @@
 
                                                         <StackLayout Orientation="Horizontal" Grid.Column="4">
 
-                                                            <input:CheckBox  x:Name="checkboxENJ"    IsChecked="True"    VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
+                                                        <input:CheckBox  x:Name="checkboxENJ"    IsChecked="{Binding chkENJ}"   VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
                                                             <Label  Text="{Binding ENJ}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                                                             </Label>
@@ -114,7 +115,7 @@
                                                         </StackLayout>
 
                                                         <StackLayout Orientation="Horizontal" Grid.Column="5">
-                                                            <input:CheckBox  x:Name="checkboxEMIA"    IsChecked="True"    VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
+                                                        <input:CheckBox  x:Name="checkboxEMIA"    IsChecked="{Binding chkEMIA}"    VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
                                                             <Label Text="{Binding EMIA}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                                                             </Label>
@@ -146,11 +147,11 @@
 
                 </StackLayout>
              
-                <StackLayout Grid.Row="2"  HorizontalOptions="FillAndExpand">
+                <StackLayout Grid.Row="2"  HorizontalOptions="FillAndExpand" Padding="0">
                     <StackLayout>
                         <Grid  HorizontalOptions="CenterAndExpand">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="0.5*" />
                                 
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
@@ -158,143 +159,159 @@
                                 <ColumnDefinition Width="1*" />
                                 <ColumnDefinition Width="1*" />
                                 <ColumnDefinition Width="1*" />
-                                <ColumnDefinition Width="0.5*" />
                             </Grid.ColumnDefinitions>
-                            <Entry x:Name="Number" Placeholder="Number" Keyboard="Numeric" Grid.Row="0" HorizontalOptions="EndAndExpand" Grid.Column="0"></Entry>
-                            <Entry x:Name="SB" Grid.Row="0" Grid.Column="1" HorizontalOptions="StartAndExpand"  Placeholder="SB"></Entry>
-                            <Entry x:Name="Amt" Keyboard="Numeric"  Placeholder="$Amt" Grid.Row="0" HorizontalOptions="EndAndExpand" Grid.Column="2"></Entry>
-                            <Button  HeightRequest="1" CornerRadius="10" Command="{Binding btnAdd}" Grid.Row="0" Grid.Column="3"  HorizontalOptions="Start" Text="Add"></Button>
-                            
+                            <Entry x:Name="Numbers" Text="{Binding Numbers}" Placeholder="Number" Keyboard="Numeric" Grid.Row="0" HorizontalOptions="EndAndExpand" Grid.Column="0"></Entry>
+                            <Entry x:Name="SB" Text="{Binding SB}" Grid.Row="0" Grid.Column="1" HorizontalOptions="StartAndExpand"  Placeholder="SB Value"></Entry>
+                            <Entry x:Name="Amt" Text="{Binding Amt}" Keyboard="Numeric"  Placeholder="$Amount" Grid.Row="0" HorizontalOptions="EndAndExpand" Grid.Column="2"></Entry>
+                          
+                            <Button  HeightRequest="1" CornerRadius="10" Command="{Binding btnAdd}" Grid.Row="0" Grid.Column="3" BackgroundColor="White"  HorizontalOptions="EndAndExpand" Image="Addbtn.png"></Button>
+                           
                         </Grid>
                     </StackLayout>
 
                 </StackLayout>
 
-                
+                <StackLayout  Grid.Row="3" >
+                    <Grid RowSpacing="0"  Padding="0">
+                        <Grid.RowDefinitions>
+
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="1*"/>
 
 
-                  
-                        <Grid RowSpacing="0" Grid.Row="3" VerticalOptions="StartAndExpand">
-                            <Grid.RowDefinitions>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
 
-                                <RowDefinition Height="40"/>
-                                <RowDefinition Height="1*"/>
+                        <Label Grid.Row="0" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Text="No"></Label>
+                        <Label Grid.Row="0" Grid.Column="1" Text="House" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" ></Label>
+                        <Label Grid.Row="0" Grid.Column="2" Text="SB" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"></Label>
+                        <Label Grid.Row="0" Grid.Column="3" Text="$" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"></Label>
+                        <Label Grid.Row="0" Grid.Column="4" Text="del" VerticalOptions="CenterAndExpand" HorizontalOptions="Center"></Label>
 
 
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="1*"/>
-                            </Grid.ColumnDefinitions>
-                           
-                                <Label Grid.Row="0" Grid.Column="0" Text="No"></Label>
-                                <Label Grid.Row="0" Grid.Column="1" Text="House"></Label>
-                                <Label Grid.Row="0" Grid.Column="2" Text="SB"></Label>
-                                <Label Grid.Row="0" Grid.Column="3" Text="$"></Label>
-                                <Label Grid.Row="0" Grid.Column="4" Text="del"></Label>
-                          
-                   
-                                <ListView x:Name="jackpotGid" Grid.Row="1" Grid.ColumnSpan="5" ItemsSource="{Binding OrderGridListObservCollection}" HasUnevenRows="True"  SeparatorVisibility="None"     HorizontalOptions="CenterAndExpand"   >
+                        <ListView x:Name="jackpotGid" Grid.Row="1" Grid.ColumnSpan="5" ItemsSource="{Binding OrderGridListObservCollection}" HasUnevenRows="True"  SeparatorVisibility="None"     HorizontalOptions="CenterAndExpand"   >
 
-                                <ListView.ItemTemplate >
-                                    <DataTemplate>
-                                        <ViewCell>
-                                            <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="White">
+                            <ListView.ItemTemplate >
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="White">
 
-                                                <StackLayout  >
+                                            <StackLayout  >
 
-                                                    <Grid RowSpacing="0">
-                                                        <Grid.RowDefinitions>
+                                                <Grid RowSpacing="0">
+                                                    <Grid.RowDefinitions>
 
-                                                            <RowDefinition Height="1*"/>
+                                                        <RowDefinition Height="1*"/>
 
 
 
-                                                        </Grid.RowDefinitions>
-                                                        <Grid.ColumnDefinitions>
-                                                            <ColumnDefinition Width="1*"/>
-                                                            <ColumnDefinition Width="1*"/>
-                                                            <ColumnDefinition Width="1*"/>
-                                                            <ColumnDefinition Width="1*"/>
-                                                            <ColumnDefinition Width="1*"/>
-                                                        </Grid.ColumnDefinitions>
-                                                        <StackLayout Orientation="Horizontal" Grid.Column="0">
-                                                           
-                                                            <Label  Text="{Binding Number}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="1*"/>
+                                                        <ColumnDefinition Width="1*"/>
+                                                        <ColumnDefinition Width="1*"/>
+                                                        <ColumnDefinition Width="1*"/>
+                                                        <ColumnDefinition Width="1*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackLayout Orientation="Horizontal" Grid.Column="0">
 
-                                                            </Label>
+                                                        <Label  Text="{Binding Numbers}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
-                                                        </StackLayout>
+                                                        </Label>
 
-                                                        <StackLayout Orientation="Horizontal" Grid.Column="1">
+                                                    </StackLayout>
 
-                                                          
-                                                                <Label  Text="{Binding House}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-
-                                                            </Label>
-
-                                                        </StackLayout>
-
-                                                        <StackLayout Orientation="Horizontal" Grid.Column="2">
+                                                    <StackLayout Orientation="Horizontal" Grid.Column="1">
 
 
-                                                            
-                                                            <Label  Text="{Binding SB}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                        <Label  Text="{Binding House}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
-                                                            </Label>
-                                                        </StackLayout>
+                                                        </Label>
 
-                                                        <StackLayout Orientation="Horizontal" Grid.Column="3">
+                                                    </StackLayout>
 
-
-                                                          
-                                                            <Label  Text="{Binding Amt}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-
-                                                            </Label>
-                                                        </StackLayout>
-
-                                                        <StackLayout Orientation="Horizontal" Grid.Column="4">
-
-
-                                                                <Button Text="Del"></Button>
-                                                           
-
-                                                        </StackLayout>
-
-                                                       
+                                                    <StackLayout Orientation="Horizontal" Grid.Column="2">
 
 
 
-                                                    </Grid>
+                                                        <Label  Text="{Binding SB}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
-                                                </StackLayout>
+                                                        </Label>
+                                                    </StackLayout>
+
+                                                    <StackLayout Orientation="Horizontal" Grid.Column="3">
 
 
+
+                                                        <Label  Text="{Binding Amt}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                                                        </Label>
+                                                    </StackLayout>
+                                                    <StackLayout Grid.Column="4">
+                                                    <StackLayout Orientation="Horizontal"  HeightRequest="40" WidthRequest="40" >
+
+
+                                                        <ImageButton Source="Delbtn.png"  Command="{Binding Path=BindingContext.OrderGridCommand, Source={x:Reference jackpotGid}}"  CommandParameter="{Binding .}" BackgroundColor="White" ></ImageButton>
+
+
+                                                    </StackLayout>
+                                                    </StackLayout>
+
+
+
+
+
+                                                </Grid>
 
                                             </StackLayout>
 
 
 
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-
-                            </ListView>
-                           
-                        </Grid>
-                   
-                
+                                        </StackLayout>
 
 
 
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
 
-           
+                        </ListView>
+
+                    </Grid>
+
+
+                </StackLayout>
+
+
+
+
+
+
+
+
+
+
+                <StackLayout Grid.Row="4">
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="Cancel" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0"></Button>
+                <Button Text="Purchase Ticket" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1"></Button>
             </Grid>
-
-
+                </StackLayout>
+            </Grid>
         </StackLayout>
 
 

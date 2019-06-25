@@ -45,6 +45,8 @@ namespace JackPot.ViewModel
                   var  wrShiipinglist = JsonConvert.DeserializeObject<LogInModel>(UserDetail.Response.ToString());
                     GlobalConstant.UserName = wrShiipinglist.iPanelUserID;
                     GlobalConstant.UserPassword = wrShiipinglist.sPassword;
+                    GlobalConstant.CustomerName = wrShiipinglist.sFirstName + " " + wrShiipinglist.sLastName;
+                    GlobalConstant.BalanceAmt = wrShiipinglist.decBalance;
                     await Navigation.PushModalAsync(new MainPage());
                 }
                 else
@@ -58,6 +60,7 @@ namespace JackPot.ViewModel
 
         public LogInViewModel(INavigation navigation)
         {
+            
             Navigation = navigation;
         }
 

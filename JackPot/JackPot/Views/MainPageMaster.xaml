@@ -24,7 +24,9 @@
           <Label
               Grid.Column="1"
               Grid.Row="2"
-              Text="AppName"
+              FontSize="40"
+              TextColor="DarkOrange"
+              Text="JackPot"
               Style="{DynamicResource SubtitleStyle}"/>
         </Grid>
       </ListView.Header>

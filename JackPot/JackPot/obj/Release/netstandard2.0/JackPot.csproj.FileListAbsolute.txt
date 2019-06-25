@@ -1,0 +1,15 @@
+E:\GitHub Projects\JackPot\JackPot\JackPot\bin\Release\netstandard2.0\JackPot.deps.json
+E:\GitHub Projects\JackPot\JackPot\JackPot\bin\Release\netstandard2.0\JackPot.dll
+E:\GitHub Projects\JackPot\JackPot\JackPot\bin\Release\netstandard2.0\JackPot.pdb
+E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Release\netstandard2.0\App.xaml.g.cs
+E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Release\netstandard2.0\Views\LogIn.xaml.g.cs
+E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Release\netstandard2.0\Views\MainPage.xaml.g.cs
+E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Release\netstandard2.0\Views\MainPageDetail.xaml.g.cs
+E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Release\netstandard2.0\Views\MainPageMaster.xaml.g.cs
+E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Release\netstandard2.0\Views\Order.xaml.g.cs
+E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Release\netstandard2.0\JackPot.csproj.CoreCompileInputs.cache
+E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Release\netstandard2.0\JackPot.AssemblyInfoInputs.cache
+E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Release\netstandard2.0\JackPot.AssemblyInfo.cs
+E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Release\netstandard2.0\XamlC.stamp
+E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Release\netstandard2.0\JackPot.dll
+E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Release\netstandard2.0\JackPot.pdb

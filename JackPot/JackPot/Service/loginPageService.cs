@@ -38,6 +38,23 @@ namespace JackPot.Service
             }
         }
 
+        public async Task<ResultModel> GetDetailByUrl( string Url)
+        {
+            ResultModel _User = new ResultModel();
+            try
+            {
+
+                _User = await _helper.Get<ResultModel>( Url);
+
+                return _User;
+            }
+            catch (Exception ex)
+            {
+                // Crashes.TrackError(ex);
+                return _User;
+            }
+        }
+
 
     }
 }
