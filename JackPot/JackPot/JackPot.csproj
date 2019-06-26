@@ -18,9 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\MainPageMenuItem.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Update="Views\MainPageMenuItem.cs" />
   </ItemGroup>
 
   <ItemGroup>

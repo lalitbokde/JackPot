@@ -12,7 +12,7 @@ namespace JackPot
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LogIn());
+            MainPage =new LogIn();
         }
 
         protected override void OnStart()

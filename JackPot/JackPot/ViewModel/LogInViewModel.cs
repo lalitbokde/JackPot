@@ -60,7 +60,8 @@ namespace JackPot.ViewModel
 
         public LogInViewModel(INavigation navigation)
         {
-            
+            UserName = "400";
+            PassWord = "1234";
             Navigation = navigation;
         }
 

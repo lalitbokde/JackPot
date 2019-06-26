@@ -31,6 +31,7 @@ namespace JackPot.ViewModel
 
         private async Task ExecutOrderGridCommandAsync(OrderGridModel s)
         {
+            TotalAmt = TotalAmt - s.Amt;
             OrderGridListObservCollection.Remove(s);
         }
 
@@ -47,12 +48,14 @@ namespace JackPot.ViewModel
                 Numbers = 0;
                 SB = "";
                 Amt = 0;
+                TotalAmt = TotalAmt + Val.Amt;
             }
             else
             {
                 Application.Current.MainPage.DisplayAlert("Message", "Enter Number.", "Ok");
             }
-
+          
+         
         }
 
         string house;
@@ -79,6 +82,21 @@ namespace JackPot.ViewModel
                 {
                     numbers = value;
                     OnPropertyChanged(nameof(Numbers));
+
+                }
+            }
+        }
+
+        decimal totalAmt;
+        public decimal TotalAmt
+        {
+            get { return totalAmt; }
+            set
+            {
+                if (totalAmt != value)
+                {
+                    totalAmt = value;
+                    OnPropertyChanged(nameof(TotalAmt));
 
                 }
             }
