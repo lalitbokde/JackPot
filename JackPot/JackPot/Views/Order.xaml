@@ -30,9 +30,10 @@
                         </Grid.ColumnDefinitions>
                         <Label x:Name="txt_Agent"  TextColor="Black" FontSize="15"  Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" ></Label>
                         <Label x:Name="txt_Balance" TextColor="Black" FontSize="15" Grid.Row="0" Grid.Column="1"  HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" ></Label>
-                        <Label x:Name="txt_LastTransaction" Text="Last Trx : #000000000" TextColor="Black" FontSize="15" Grid.Row="1" Grid.Column="0"  HorizontalOptions="StartAndExpand"  ></Label>
+                        <Label Text="Last Trx # :" TextColor="Black" FontSize="15" Grid.Row="1" Grid.Column="0"  HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" ></Label>
+                        <Label x:Name="txt_LastTransaction" Text="{Binding LastTransactionNo}" TextColor="Black" FontSize="15" Grid.Row="1" Grid.Column="1"  HorizontalOptions="StartAndExpand"  ></Label>
 
-
+                       
 
 
                     </Grid>

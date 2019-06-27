@@ -110,6 +110,21 @@ namespace JackPot.ViewModel
                 }
             }
         }
+        string lastTransactionNo;
+        public string LastTransactionNo
+        {
+            get { return lastTransactionNo; }
+            set
+            {
+                if (lastTransactionNo != value)
+                {
+                    lastTransactionNo = value;
+                    OnPropertyChanged(nameof(LastTransactionNo));
+
+                }
+            }
+        }
+
         string numbers;
         public string Numbers
         {
@@ -177,7 +192,13 @@ namespace JackPot.ViewModel
         }
         public async void GetLateHouse()
         {
-            SB = "S";
+            var TransactionNumberVal = await new loginPageService().GetDetailByUrl(GlobalConstant.GetTrancationNumber+GlobalConstant.UserName);
+            if (TransactionNumberVal.Status == 1)
+            {
+                var wrShiipinglist = JsonConvert.DeserializeObject<string>(TransactionNumberVal.Response.ToString());
+                LastTransactionNo = wrShiipinglist;
+            }
+                SB = "S";
             var UserDetail = await new loginPageService().GetDetailByUrl(GlobalConstant.GetHouseDetail);
             if (UserDetail.Status == 1)
             {
