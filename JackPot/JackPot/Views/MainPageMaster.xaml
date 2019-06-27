@@ -9,26 +9,17 @@
               HasUnevenRows="true"
               ItemsSource="{Binding MenuItems}">
       <ListView.Header>
-                <Grid BackgroundColor="#A40000">
-          <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="10"/>
-          </Grid.ColumnDefinitions>
-          <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="10"/>
-          </Grid.RowDefinitions>
-          <Label
-              Grid.Column="1"
-              Grid.Row="2"
-              FontSize="40"
+             
+                    <StackLayout BackgroundColor="#bb2b23"  >
+                    <Image     Source="Jackpot.png" Margin="10" />
+                 <Label
+            Margin="15,10" 
+              FontSize="15"
               TextColor="White"
-              Text="JackPot"
+              Text="Agent Name"
               Style="{DynamicResource SubtitleStyle}"/>
-        </Grid>
+                    </StackLayout>
+              
       </ListView.Header>
       <ListView.ItemTemplate>
         <DataTemplate>
@@ -37,7 +28,7 @@
               <Label VerticalOptions="FillAndExpand" 
                     VerticalTextAlignment="Center" 
                     Text="{Binding Title}" 
-                    FontSize="24"/>
+                    FontSize="15"/>
             </StackLayout>
           </ViewCell>
         </DataTemplate>
