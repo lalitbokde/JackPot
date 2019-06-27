@@ -33,8 +33,19 @@ namespace JackPot.Views
             {
                 MenuItems = new ObservableCollection<MainPageMenuItem>(new[]
                 {
-                    new MainPageMenuItem { Id = 0, Title = "Bet Entry" }
-                   
+                    new MainPageMenuItem { Id = 0, Title = "Bet Entry" },
+                      new MainPageMenuItem { Id = 1, Title = "Previous TRX" },
+                        new MainPageMenuItem { Id = 2, Title = "Void Ticket" },
+                          new MainPageMenuItem { Id = 3, Title = "Winner Number" },
+                            new MainPageMenuItem { Id = 4, Title = "Pay Winner" },
+                              new MainPageMenuItem { Id = 5, Title = "Sales Info" },
+                                new MainPageMenuItem { Id = 6, Title = "Set Customer" },
+
+                                  new MainPageMenuItem { Id = 7, Title = "Customer Deposit" },
+                                  new MainPageMenuItem { Id = 8, Title = "Customer WithDraw" },
+                                   new MainPageMenuItem { Id = 9, Title = "Log Out" },
+
+
                 });
             }
             
