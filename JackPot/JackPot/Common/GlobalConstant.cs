@@ -25,26 +25,13 @@ namespace WareHouseManagement.PCL.Common
         public static string Usertype { get; set; }
         public static string GetUserLoginDetail = "Login/getLogin";
         public static string GetHouseDetail = "BetEntry/getHousesDetailsMode";
+        public static string GetTrancationNumber = "BetEntry/gettblLottoTicketData?PanlUserId=";
+
         public static string GoogleMapApiKey = "AIzaSyC50XshkjneoleOy4CTQxRmWAv-qYGhd8Q";
 
 
     }
-    public struct PalletMaintainanceServiceUrl
-    {
-        public static string GetPalletMaintainanceDetai = "PalletBarcode/PostDetail";
-        public static string GetUserLoginDetail = "Users/Authenticate";
-        public static string GetPalletreceivinglog = "WarehouseReceiveLog";
-        public static string PostPalletreceivinglog = "Pallet";
-        public static string GetlotNoreceive = "PalletBarcode/GetLotNoList?ValueType=";
-        public static string DeletePalletItem = "Pallet/DeletePalletItem";
-        public static string DeletePallet = "Pallet/DeletePalletId?=";
-
-        public static string GetPalletItemByPalletId = "Pallet/GetPalletItemByPalletId";
-        public static string updatePalletItemByPalletId = "Pallet/UpdatePalletItemByPalletId?palletId=";
-        public static string checkquantityUpdatePalletItemByPalletId = "Pallet/CheckQuantityUpdatePalletItemByPalletId";
-        public static string GetReportRecord = "WarehouseReceiveLog/GetPalletMaintainanceReportDetail?Count=";
-        public static string GetBarcode = "PalletBarcode/GetBarcodeList?wrreceivinglogid=";
-    }
+  
 
 
     public struct StockInServiceUrl
