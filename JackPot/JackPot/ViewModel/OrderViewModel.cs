@@ -37,22 +37,60 @@ namespace JackPot.ViewModel
 
         private async Task AddInGridAsync()
         {
-            if (Numbers != 0 && Numbers!=null)
+            if (Numbers.ToString().Length==2 || Numbers.ToString().Length==4 || Numbers.ToString().Length == 5)
             {
-                OrderGridModel Val = new OrderGridModel();
-                Val.Amt = Amt;
-                Val.Numbers = Numbers;
-                Val.SB = SB;
-                Val.House = "EMI";
-                OrderGridListObservCollection.Add(Val);
+                foreach(var item in ListItemVal)
+                {
+                    if (item.chkEarly1 == true)
+                    {
+                        OrderGridModel Val1 = new OrderGridModel();
+                        Val1.Amt = Amt;
+                        Val1.Numbers = Numbers;
+                        Val1.SB = "S";
+                        Val1.House = item.Early1;
+                        OrderGridListObservCollection.Add(Val1);
+                        TotalAmt = TotalAmt + Val1.Amt;
+                    }
+                    if (item.chkEarly2 == true)
+                    {
+                        OrderGridModel Val2 = new OrderGridModel();
+                        Val2.Amt = Amt;
+                        Val2.Numbers = Numbers;
+                        Val2.SB = "S";
+                        Val2.House = item.Early2;
+                        OrderGridListObservCollection.Add(Val2);
+                        TotalAmt = TotalAmt + Val2.Amt;
+                    }
+                    if (item.chkEarly3 == true)
+                    {
+                        OrderGridModel Val3 = new OrderGridModel();
+                        Val3.Amt = Amt;
+                        Val3.Numbers = Numbers;
+                        Val3.SB = "S";
+                        Val3.House = item.Early3;
+                        OrderGridListObservCollection.Add(Val3);
+                        TotalAmt = TotalAmt + Val3.Amt;
+                    }
+                    if (item.chkEarly4 == true)
+                    {
+                        OrderGridModel Val4 = new OrderGridModel();
+                        Val4.Amt = Amt;
+                        Val4.Numbers = Numbers;
+                        Val4.SB ="S";
+                        Val4.House = item.Early4;
+                        OrderGridListObservCollection.Add(Val4);
+                        TotalAmt = TotalAmt + Val4.Amt;
+                    }
+                }
+               
                 Numbers = 0;
-                SB = "";
+                SB = "S"; 
                 Amt = 0;
-                TotalAmt = TotalAmt + Val.Amt;
+               
             }
             else
             {
-                Application.Current.MainPage.DisplayAlert("Message", "Enter Number.", "Ok");
+                Application.Current.MainPage.DisplayAlert("Message", "Enter Correct  Number.", "Ok");
             }
           
          
@@ -139,30 +177,66 @@ namespace JackPot.ViewModel
         }
         public async void GetLateHouse()
         {
+            SB = "S";
             var UserDetail = await new loginPageService().GetDetailByUrl(GlobalConstant.GetHouseDetail);
             if (UserDetail.Status == 1)
             {
                 var wrShiipinglist = JsonConvert.DeserializeObject<List<vw_HousesDetails>>(UserDetail.Response.ToString());
-               foreach(var Item in wrShiipinglist)
+                for(int i=0;i< wrShiipinglist.Count; i++)
                 {
                     var Model = new ListOrder();
-                   
-                    Model.ECA = "ECA";
-                    Model.chkECA = (Model.ECA == Item.HouseName? Item.Has4Ball:false);
-                    Model.EMI = "EMI";
-                    Model.chkEMI = (Model.EMI == Item.HouseName ? Item.Has4Ball : false);
-                    Model.EGA = "EGA";
-                    Model.chkEGA = (Model.EGA == Item.HouseName ? Item.Has4Ball : false);
-                    Model.ENY = "ENY";
-                    Model.chkENY = (Model.ENY == Item.HouseName ? Item.Has4Ball : false);
-                    Model.ENJ = "ENJ";
-                    Model.chkENJ = (Model.ENJ == Item.HouseName ? Item.Has4Ball : false);
-                    Model.EMIA = "EMIA";
-                    Model.chkEMIA = (Model.EMIA == Item.HouseName ? Item.Has4Ball : false);
-                    
+                    try
+                    {
+                        Model.Early1 = wrShiipinglist[i].HouseName;
+                        Model.chkEarly1 =false/* wrShiipinglist[i].Has4Ball*/;
+                        i++;
+                    }
+                    catch { }
+                    try
+                    {
+                        Model.Early2 = wrShiipinglist[i].HouseName;
+                        Model.chkEarly2 = false /*wrShiipinglist[i].Has4Ball*/;
+                        i++;
+                    }
+                    catch { }
+                    try
+                    {
+                        Model.Early3 = wrShiipinglist[i].HouseName;
+                        Model.chkEarly3 = false /*wrShiipinglist[i].Has4Ball*/;
+                        i++;
+                    }
+                    catch { }
+                    try
+                    {
+                        Model.Early4 = wrShiipinglist[i].HouseName;
+                        Model.chkEarly4 = false /*wrShiipinglist[i].Has4Ball*/;
+                    }
+                    catch { }
                     ListItemVal.Add(Model);
-                   
                 }
+
+               //foreach(var Item in wrShiipinglist)
+               // {
+               //     var Model = new ListOrder();
+                   
+               //     Model.ECA = "ECA";
+               //     Model.chkECA = (Model.ECA == Item.HouseName? Item.Has4Ball:false);
+               //     Model.EMI = "EMI";
+               //     Model.chkEMI = (Model.EMI == Item.HouseName ? Item.Has4Ball : false);
+               //     Model.EGA = "EGA";
+               //     Model.chkEGA = (Model.EGA == Item.HouseName ? Item.Has4Ball : false);
+               //     Model.ENY = "ENY";
+               //     Model.chkENY = (Model.ENY == Item.HouseName ? Item.Has4Ball : false);
+               //     Model.ENJ = "ENJ";
+               //     Model.chkENJ = (Model.ENJ == Item.HouseName ? Item.Has4Ball : false);
+               //     Model.EMIA = "EMIA";
+               //     Model.chkEMIA = (Model.EMIA == Item.HouseName ? Item.Has4Ball : false);
+               //     Model.LCH = "LCH";
+               //     Model.chkLCH = (Model.LCH == Item.HouseName ? Item.Has4Ball : false);
+
+               //     ListItemVal.Add(Model);
+                   
+               // }
 
             }
             else

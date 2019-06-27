@@ -41,15 +41,14 @@
                     </Grid>
                 </StackLayout>
                
-                <StackLayout Grid.Row="1"  HorizontalOptions="Center" VerticalOptions="EndAndExpand" Padding="0" >
+                <StackLayout Grid.Row="1"  HorizontalOptions="Center"  VerticalOptions="EndAndExpand" Padding="0" >
 
-
-
+                    
                     <StackLayout >
-                        
-                        <ListView x:Name="jackpotList" ItemsSource="{Binding ListItemVal}" HasUnevenRows="True"  SeparatorVisibility="None"     HorizontalOptions="CenterAndExpand"   >
+                       
+                            <ListView x:Name="jackpotList" ItemsSource="{Binding ListItemVal}" HasUnevenRows="True"  SeparatorVisibility="None" HorizontalOptions="CenterAndExpand"   >
                             
-                                <ListView.ItemTemplate >
+                                <ListView.ItemTemplate  >
                                     <DataTemplate>
                                         <ViewCell>
                                         <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="White">
@@ -59,21 +58,17 @@
                                                     <Grid RowSpacing="0">
                                                         <Grid.RowDefinitions>
 
-                                                            <RowDefinition Height="1*"/>
-                                                       
-
-                                                    </Grid.RowDefinitions>
+                                                            <RowDefinition Height="1.5*"/>
+                                                        </Grid.RowDefinitions>
                                                         <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="1.3*"/>
-                                                        <ColumnDefinition Width="1.3*"/>
-                                                        <ColumnDefinition Width="1.3*"/>
-                                                        <ColumnDefinition Width="1.3*"/>
-                                                        <ColumnDefinition Width="1.3*"/>
-                                                            <ColumnDefinition Width="1.6*"/>
+                                                        <ColumnDefinition Width="1*"/>
+                                                        <ColumnDefinition Width="1*"/>
+                                                        <ColumnDefinition Width="1*"/>
+                                                        <ColumnDefinition Width="1*"/>
                                                         </Grid.ColumnDefinitions>
                                                         <StackLayout Orientation="Horizontal" Grid.Column="0">
-                                                        <input:CheckBox  x:Name="checkboxENY" IsChecked="{Binding chkENY}" HeightRequest="25" WidthRequest="7"    VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
-                                                        <Label  Text="{Binding ENY}" FontSize="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                            <input:CheckBox  x:Name="checkboxEarly1" IsChecked="{Binding chkEarly1}" HeightRequest="50" WidthRequest="20"    VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
+                                                            <Label  x:Name="Early1" Text="{Binding Early1}" FontSize="15" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                                                             </Label>
 
@@ -81,8 +76,8 @@
 
                                                         <StackLayout Orientation="Horizontal" Grid.Column="1">
 
-                                                        <input:CheckBox  x:Name="checkboxEMI" IsChecked="{Binding chkEMI}"  HeightRequest="25" WidthRequest="7"   VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
-                                                        <Label  Text="{Binding EMI}" FontSize="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                            <input:CheckBox  x:Name="checkboxEarly2" IsChecked="{Binding chkEarly2}"  HeightRequest="50" WidthRequest="20"   VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
+                                                            <Label  x:Name="Early2" Text="{Binding Early2}" FontSize="15" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                                                             </Label>
 
@@ -91,8 +86,8 @@
                                                         <StackLayout Orientation="Horizontal"  Grid.Column="2">
 
 
-                                                        <input:CheckBox  x:Name="checkboxEGA" IsChecked="{Binding chkEGA}" HeightRequest="25" WidthRequest="7"  VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
-                                                        <Label  Text="{Binding EGA}" FontSize="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                            <input:CheckBox  x:Name="checkboxEarly3" IsChecked="{Binding chkEarly3}" HeightRequest="50" WidthRequest="20"  VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
+                                                            <Label x:Name="Early3" Text="{Binding Early3}" FontSize="15" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                                                             </Label>
                                                         </StackLayout>
@@ -100,32 +95,15 @@
                                                         <StackLayout Orientation="Horizontal" Grid.Column="3">
 
 
-                                                        <input:CheckBox  x:Name="checkboxECA"   IsChecked="{Binding chkECA}" HeightRequest="25" WidthRequest="7"   VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
-                                                        <Label  Text="{Binding ECA}" FontSize="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                            <input:CheckBox  x:Name="checkboxEarly4"   IsChecked="{Binding chkEarly4}" HeightRequest="50" WidthRequest="20"   VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
+                                                            <Label x:Name="Early4" Text="{Binding Early4}" FontSize="15" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                                                             </Label>
                                                         </StackLayout>
 
-                                                        <StackLayout Orientation="Horizontal" Grid.Column="4">
+                                                      
 
-                                                        <input:CheckBox  x:Name="checkboxENJ"    IsChecked="{Binding chkENJ}"  HeightRequest="25" WidthRequest="7" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
-                                                        <Label  Text="{Binding ENJ}" FontSize="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-
-                                                            </Label>
-
-                                                        </StackLayout>
-
-                                                        <StackLayout Orientation="Horizontal" Grid.Column="5">
-                                                        <input:CheckBox  x:Name="checkboxEMIA"    IsChecked="{Binding chkEMIA}"  HeightRequest="25" WidthRequest="7"  VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"  Type="Check" />
-                                                        <Label Text="{Binding EMIA}" FontSize="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-
-                                                            </Label>
-
-                                                        </StackLayout>
-
-
-
-                                                    </Grid>
+                                                </Grid>
 
                                                 </StackLayout>
 
@@ -142,7 +120,7 @@
                         </ListView>
                        
                     </StackLayout>
-
+                    
 
 
 
@@ -161,8 +139,9 @@
                                 <ColumnDefinition Width="1*" />
                                 <ColumnDefinition Width="1*" />
                             </Grid.ColumnDefinitions>
+                            
                             <Entry x:Name="Numbers" Text="{Binding Numbers}" Placeholder="Number" Keyboard="Numeric" Grid.Row="0" HorizontalOptions="EndAndExpand" Grid.Column="0"></Entry>
-                            <Entry x:Name="SB" Text="{Binding SB}" Grid.Row="0" Grid.Column="1" HorizontalOptions="StartAndExpand"  Placeholder="SB Value"></Entry>
+                            <Entry x:Name="SB" Text="{Binding SB}" Grid.Row="0" Grid.Column="1" HorizontalOptions="StartAndExpand" VerticalOptions="Center"  Placeholder="S/B " IsEnabled="False"></Entry>
                             <Entry x:Name="Amt" Text="{Binding Amt}" Keyboard="Numeric"  Placeholder="$Amount" Grid.Row="0" HorizontalOptions="EndAndExpand" Grid.Column="2"></Entry>
                           
                             <Button  HeightRequest="1" CornerRadius="10" Command="{Binding btnAdd}" Grid.Row="0" Grid.Column="3" BackgroundColor="White"  HorizontalOptions="EndAndExpand" Image="Addbtn.png"></Button>
