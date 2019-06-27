@@ -44,8 +44,8 @@ namespace JackPot.ViewModel
                     if (item.chkEarly1 == true)
                     {
                         OrderGridModel Val1 = new OrderGridModel();
-                        Val1.Amt = Amt;
-                        Val1.Numbers = Numbers;
+                        Val1.Amt = Convert.ToDecimal(Amt);
+                        Val1.Numbers = Convert.ToInt32(Numbers);
                         Val1.SB = "S";
                         Val1.House = item.Early1;
                         OrderGridListObservCollection.Add(Val1);
@@ -54,8 +54,8 @@ namespace JackPot.ViewModel
                     if (item.chkEarly2 == true)
                     {
                         OrderGridModel Val2 = new OrderGridModel();
-                        Val2.Amt = Amt;
-                        Val2.Numbers = Numbers;
+                        Val2.Amt = Convert.ToDecimal(Amt);
+                        Val2.Numbers = Convert.ToInt32(Numbers);
                         Val2.SB = "S";
                         Val2.House = item.Early2;
                         OrderGridListObservCollection.Add(Val2);
@@ -64,8 +64,8 @@ namespace JackPot.ViewModel
                     if (item.chkEarly3 == true)
                     {
                         OrderGridModel Val3 = new OrderGridModel();
-                        Val3.Amt = Amt;
-                        Val3.Numbers = Numbers;
+                        Val3.Amt =Convert.ToDecimal( Amt);
+                        Val3.Numbers = Convert.ToInt32(Numbers);
                         Val3.SB = "S";
                         Val3.House = item.Early3;
                         OrderGridListObservCollection.Add(Val3);
@@ -74,8 +74,8 @@ namespace JackPot.ViewModel
                     if (item.chkEarly4 == true)
                     {
                         OrderGridModel Val4 = new OrderGridModel();
-                        Val4.Amt = Amt;
-                        Val4.Numbers = Numbers;
+                        Val4.Amt = Convert.ToDecimal(Amt);
+                        Val4.Numbers =Convert.ToInt32( Numbers);
                         Val4.SB ="S";
                         Val4.House = item.Early4;
                         OrderGridListObservCollection.Add(Val4);
@@ -83,9 +83,9 @@ namespace JackPot.ViewModel
                     }
                 }
                
-                Numbers = 0;
+                Numbers = "";
                 SB = "S"; 
-                Amt = 0;
+                Amt = "";
                
             }
             else
@@ -110,8 +110,8 @@ namespace JackPot.ViewModel
                 }
             }
         }
-        int numbers;
-        public int Numbers
+        string numbers;
+        public string Numbers
         {
             get { return numbers; }
             set
@@ -154,11 +154,11 @@ namespace JackPot.ViewModel
             }
         }
 
-        decimal amt;
+        string amt;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public decimal Amt
+        public string Amt
         {
             get { return amt; }
             set
