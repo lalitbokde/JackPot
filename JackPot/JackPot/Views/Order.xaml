@@ -309,7 +309,7 @@
                         </Grid.ColumnDefinitions>
 
 
-                        <Button Text="Clear" CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Column="0"   BackgroundColor="#bb2b23"></Button>
+                            <Button Text="PreviousTRX " CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Column="0"   BackgroundColor="#bb2b23" Command="{Binding btnPreviousTRX}"></Button>
                             <Button Text="Purchase Ticket" CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Column="1"   BackgroundColor="#bb2b23" Command="{Binding btnPurchaseTicket }"></Button>
                     </Grid>
                 </StackLayout>

@@ -25,6 +25,27 @@ namespace JackPot.Views
             ListView = MenuItemsListView;
         }
 
+        
+
+
+      MainPageMenuItem SelectType;
+        public MainPageMenuItem MenuItemsListSelect
+        {
+            get { return SelectType; }
+            set
+            {
+                if (SelectType != value)
+                {
+                    SelectType = value;
+                    OnPropertyChanged(nameof(MenuItemsListSelect));
+
+                }
+            }
+        }
+
+
+
+
         class MainPageMasterViewModel : INotifyPropertyChanged
         {
             public ObservableCollection<MainPageMenuItem> MenuItems { get; set; }
@@ -50,17 +71,18 @@ namespace JackPot.Views
             {
                 MenuItems = new ObservableCollection<MainPageMenuItem>(new[]
                 {
-                    new MainPageMenuItem { Id = 0, Title = "Bet Entry" },
-                      new MainPageMenuItem { Id = 1, Title = "Previous TRX" },
-                        new MainPageMenuItem { Id = 2, Title = "Void Ticket" },
-                          new MainPageMenuItem { Id = 3, Title = "Winner Number" },
-                            new MainPageMenuItem { Id = 4, Title = "Pay Winner" },
-                              new MainPageMenuItem { Id = 5, Title = "Sales Info" },
-                                new MainPageMenuItem { Id = 6, Title = "Set Customer" },
+                    new MainPageMenuItem { Id = 0, Title = "Bet Entry",TargetType=typeof(Order)},
+                      new MainPageMenuItem { Id = 1, Title = "Previous TRX" ,TargetType=typeof(PreviousTRX)},
+                        new MainPageMenuItem { Id = 2, Title = "Void Ticket" ,TargetType=typeof(SearchReceipt) },
+                          new MainPageMenuItem { Id = 7, Title = "Customer Deposit" ,TargetType=typeof(CustomerDetail)},
+                          new MainPageMenuItem { Id = 3, Title = "Winner Number" ,TargetType=typeof(CommingSoon) },
+                            new MainPageMenuItem { Id = 4, Title = "Pay Winner" ,TargetType=typeof(CommingSoon) },
+                              new MainPageMenuItem { Id = 5, Title = "Sales Info" ,TargetType=typeof(CommingSoon) },
+                                new MainPageMenuItem { Id = 6, Title = "Set Customer" ,TargetType=typeof(CommingSoon) },
 
-                                  new MainPageMenuItem { Id = 7, Title = "Customer Deposit" },
-                                  new MainPageMenuItem { Id = 8, Title = "Customer WithDraw" },
-                                   new MainPageMenuItem { Id = 9, Title = "Log Out" },
+                                
+                                  new MainPageMenuItem { Id = 8, Title = "Customer WithDraw" ,TargetType=typeof(CommingSoon)},
+                                   new MainPageMenuItem { Id = 9, Title = "Log Out" ,TargetType=typeof(CommingSoon) },
 
 
                 });
