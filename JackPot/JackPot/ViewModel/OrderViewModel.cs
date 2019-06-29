@@ -16,14 +16,14 @@ namespace JackPot.ViewModel
 {
     public class OrderViewModel : INotifyPropertyChanged
     {
-        
-             ICommand btn_PrintReceipt; 
-            ICommand btn_CloseAddProductView; 
-             ICommand btn_PopupCancel;
-        ICommand btn_Exact; 
-        ICommand btn_Add; 
-      
-             ICommand btnpurchaseTicket;
+
+        ICommand btn_PrintReceipt;
+        ICommand btn_CloseAddProductView;
+        ICommand btn_PopupCancel;
+        ICommand btn_Exact;
+        ICommand btn_Add;
+
+        ICommand btnpurchaseTicket;
         INavigation Navigation;
         ListOrder Model = new ListOrder();
 
@@ -49,14 +49,14 @@ namespace JackPot.ViewModel
      btn_Add ?? (btn_Add = new Command(async () => await AddInGridAsync()));
 
         public List<ListOrder> ListItemVal { get; set; } = new List<ListOrder>();
-        public ObservableRangeCollection<OrderGridModel> OrderGridListObservCollection { get; set; } = new ObservableRangeCollection<OrderGridModel>();
+        public ObservableRangeCollection<BetCollection> OrderGridListObservCollection { get; set; } = new ObservableRangeCollection<BetCollection>();
         //public List<OrderGridModel> OrderGridList { get; set; } = new List<OrderGridModel>();
 
         ICommand orderGridCommand;
         public ICommand OrderGridCommand =>
-           orderGridCommand ?? (orderGridCommand = new Command<OrderGridModel>(async (s) => await ExecutOrderGridCommandAsync(s)));
+           orderGridCommand ?? (orderGridCommand = new Command<BetCollection>(async (s) => await ExecutOrderGridCommandAsync(s)));
 
-        private async Task ExecutOrderGridCommandAsync(OrderGridModel s)
+        private async Task ExecutOrderGridCommandAsync(BetCollection s)
         {
             TotalAmt = TotalAmt - s.Amt;
             OrderGridListObservCollection.Remove(s);
@@ -66,15 +66,46 @@ namespace JackPot.ViewModel
         {
 
             Tender = Amt.ToString();
-           
+
         }
 
         private async Task ShowSuccessMsg()
         {
-            PopUpVisibility = false;
-            Application.Current.MainPage.DisplayAlert("Message", "Success", "Ok");
+            //var BetEntryModel = new RequestTenderModel();
+            //int Count = 0;
+            //BetEntryModel.TenderAmount = tender;
+            //BetEntryModel.PanelUserID = GlobalConstant.UserName;
+            //BetEntryModel.Totals =TotalAmt;
+            //BetEntryModel.Change = Change;
+            //BetEntryModel.CommissionRate = 0;
+            //BetEntryModel.UsesFreeBet = false;
+            //BetEntryModel.FreeBetAmount =Convert.ToDecimal( tender);
+            //BetEntryModel.MintShiftID = 8;
+            //BetEntryModel.mdecFreeBetTotal =Convert.ToInt32( TotalAmt);
+            
+            //foreach (var Item in OrderGridListObservCollection)
+            //{
+            //    Count = Count + 1;
+            //    BetEntryModel.BetCollection.Add(Item);
+            //}
+            //BetEntryModel.NoOfBets = Count;
+             PopUpVisibility = false;
+            //var TransactionNumberVal = await new BetEntrySevice().PostBetEntry(BetEntryModel, BetEntry.TrancatioSaveBetEntry);
+            //if (TransactionNumberVal.Status == 1)
+            //{
+                Application.Current.MainPage.DisplayAlert("Message", "Success", "Ok");
+            //}
+            //else
+            //{
+            //    Application.Current.MainPage.DisplayAlert("Message", "Error", "Ok");
+            //}
+            OrderGridListObservCollection.Clear();
+            ListItemVal.Clear();
+            Amt ="0";
+            Numbers = "0";
+            TotalAmt = 0;
 
-           
+
         }
 
         public async Task ShowPopUpTenderAsync()
@@ -94,62 +125,109 @@ namespace JackPot.ViewModel
             PopUpVisibility = false;
         }
 
-
-
+        public bool Validate()
+        {
+            if (Amt != "" && Convert.ToInt32(Amt)>0)
+            {
+                //if (Model.chkEarly1 != false || Model.chkEarly2 != false || Model.chkEarly3 != false || Model.chkEarly4 != false)
+                //{
+                    if (((Numbers==null)?"" : Numbers).Length  > 2 && ((Numbers ==null)?"" : Numbers).Length < 6)
+                    {
+                       
+                        return true;
+                    }
+                    else
+                    {
+                        Application.Current.MainPage.DisplayAlert("Message", "Enter Correct  Number.", "Ok");
+                      
+                        return false;
+                    }
+                //}
+                //else
+                //{
+                //    Application.Current.MainPage.DisplayAlert("Message", "Please Select CheckBox.", "Ok");
+                //    return false;
+                //}
+            }
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Message", "Please Select Amount.", "Ok");
+                return false;
+            }
+        }
+        public bool ChecboxCheck = false;
         private async Task AddInGridAsync()
         {
-      if (Amt != null)
-        {
-
-         if (Numbers != null)
-         {
-             if (Model.chkEarly1 != false || Model.chkEarly2 != false || Model.chkEarly3 !=false || Model.chkEarly4 != false)
-                {
-
-                 if (Numbers.ToString().Length == 2 || Numbers.ToString().Length == 4 || Numbers.ToString().Length == 5)
-                  {
+            
+            if (Validate())
+            {
                 foreach (var item in ListItemVal)
                 {
                     if (item.chkEarly1 == true)
                     {
-                        OrderGridModel Val1 = new OrderGridModel();
-                        Val1.Amt = Convert.ToDecimal(Amt);
-                        Val1.Numbers = Convert.ToInt32(Numbers);
-                        Val1.SB = "S";
-                        Val1.House = item.Early1;
-                        OrderGridListObservCollection.Add(Val1);
-                        TotalAmt = TotalAmt + Val1.Amt;
+                        var TransactionNumberVal = await new loginPageService().GetDetailByUrl(BetEntry.GetLottoGameDetailByHouseIdandBalls + item.Early1Id + "&NoOfBalls=" + Numbers.Trim().Length);
+                        if (TransactionNumberVal.Status == 1)
+                        {
+                            var Val1 = JsonConvert.DeserializeObject<BetCollection>(TransactionNumberVal.Response.ToString());
+
+                            Val1.Amt = Convert.ToDecimal(Amt);
+                            Val1.Numbers = Convert.ToInt32(Numbers);
+                            Val1.SB = "S";
+                            Val1.House = item.Early1;
+                            OrderGridListObservCollection.Add(Val1);
+                            TotalAmt = TotalAmt + Val1.Amt;
+                        }
+                        ChecboxCheck = true;
                     }
                     if (item.chkEarly2 == true)
                     {
-                        OrderGridModel Val2 = new OrderGridModel();
-                        Val2.Amt = Convert.ToDecimal(Amt);
-                        Val2.Numbers = Convert.ToInt32(Numbers);
-                        Val2.SB = "S";
-                        Val2.House = item.Early2;
-                        OrderGridListObservCollection.Add(Val2);
-                        TotalAmt = TotalAmt + Val2.Amt;
+                        var TransactionNumberVal = await new loginPageService().GetDetailByUrl(BetEntry.GetLottoGameDetailByHouseIdandBalls + item.Early2Id + "&NoOfBalls=" + Numbers.Trim().Length);
+                        if (TransactionNumberVal.Status == 1)
+                        {
+                            var Val2 = JsonConvert.DeserializeObject<BetCollection>(TransactionNumberVal.Response.ToString());
+                            Val2.Amt = Convert.ToDecimal(Amt);
+                            Val2.Numbers = Convert.ToInt32(Numbers);
+                            Val2.SB = "S";
+                            Val2.House = item.Early2;
+                            OrderGridListObservCollection.Add(Val2);
+                            TotalAmt = TotalAmt + Val2.Amt;
+                        }
+                        ChecboxCheck = true;
                     }
                     if (item.chkEarly3 == true)
                     {
-                        OrderGridModel Val3 = new OrderGridModel();
-                        Val3.Amt = Convert.ToDecimal(Amt);
-                        Val3.Numbers = Convert.ToInt32(Numbers);
-                        Val3.SB = "S";
-                        Val3.House = item.Early3;
-                        OrderGridListObservCollection.Add(Val3);
-                        TotalAmt = TotalAmt + Val3.Amt;
+                        var TransactionNumberVal = await new loginPageService().GetDetailByUrl(BetEntry.GetLottoGameDetailByHouseIdandBalls + item.Early3Id + "&NoOfBalls=" + Numbers.Trim().Length);
+                        if (TransactionNumberVal.Status == 1)
+                        {
+                            var Val3 = JsonConvert.DeserializeObject<BetCollection>(TransactionNumberVal.Response.ToString());
+                            Val3.Amt = Convert.ToDecimal(Amt);
+                            Val3.Numbers = Convert.ToInt32(Numbers);
+                            Val3.SB = "S";
+                            Val3.House = item.Early3;
+                            OrderGridListObservCollection.Add(Val3);
+                            TotalAmt = TotalAmt + Val3.Amt;
+                        }
+                        ChecboxCheck = true;
                     }
                     if (item.chkEarly4 == true)
                     {
-                        OrderGridModel Val4 = new OrderGridModel();
-                        Val4.Amt = Convert.ToDecimal(Amt);
-                        Val4.Numbers = Convert.ToInt32(Numbers);
-                        Val4.SB = "S";
-                        Val4.House = item.Early4;
-                        OrderGridListObservCollection.Add(Val4);
-                        TotalAmt = TotalAmt + Val4.Amt;
+                        var TransactionNumberVal = await new loginPageService().GetDetailByUrl(BetEntry.GetLottoGameDetailByHouseIdandBalls + item.Early4Id + "&NoOfBalls=" + Numbers.Trim().Length);
+                        if (TransactionNumberVal.Status == 1)
+                        {
+                            var Val4 = JsonConvert.DeserializeObject<BetCollection>(TransactionNumberVal.Response.ToString());
+                            Val4.Amt = Convert.ToDecimal(Amt);
+                            Val4.Numbers = Convert.ToInt32(Numbers);
+                            Val4.SB = "S";
+                            Val4.House = item.Early4;
+                            OrderGridListObservCollection.Add(Val4);
+                            TotalAmt = TotalAmt + Val4.Amt;
+                        }
+                        ChecboxCheck = true;
                     }
+                }
+                if (ChecboxCheck == false)
+                {
+                    Application.Current.MainPage.DisplayAlert("Message", "Please Select CheckBox.", "Ok");
                 }
 
                 //Numbers = "";
@@ -157,35 +235,13 @@ namespace JackPot.ViewModel
                 //Amt = "";
 
             }
-            else
-            {
-                Application.Current.MainPage.DisplayAlert("Message", "Enter Correct  Number.", "Ok");
-            }
-        }
-
-              else
-            {
-              
-                        Application.Current.MainPage.DisplayAlert("Message", "Must Select Game", "Ok");
-                    }
-            }
-
-            else
-            {
-                Application.Current.MainPage.DisplayAlert("Message", "Enter Number.", "Ok");
-            }
-            }
-
-            else
-            {
-                Application.Current.MainPage.DisplayAlert("Message", "Enter Amount.", "Ok");
-            }
+           
 
         }
-        
 
 
-             bool popUpVisibility;
+
+        bool popUpVisibility;
         public bool PopUpVisibility
         {
             get { return popUpVisibility; }
@@ -355,21 +411,25 @@ namespace JackPot.ViewModel
 
         public void calculate()
         {
-            if (tender != "")
+            try
             {
-                BetsTotal = Amt.ToString();
-                TotalDue = Amt.ToString();
-                var ChangeAmount = Convert.ToInt32(tender) - Convert.ToInt32(Amt);
-                Change = ChangeAmount.ToString();
+                if (tender != "")
+                {
+                    BetsTotal = Amt.ToString();
+                    TotalDue = Amt.ToString();
+                    var ChangeAmount = Convert.ToInt32(Amt) - Convert.ToInt32(tender);
+                    Change = ChangeAmount.ToString();
 
+                }
+
+                else
+                {
+                    Change = "0";
+
+                }
             }
+            catch { }
 
-            else
-            {
-                Change = "0";
-
-            }
-            
         }
 
         void OnPropertyChanged([CallerMemberName]string name = "")
@@ -378,72 +438,54 @@ namespace JackPot.ViewModel
         }
         public async void GetLateHouse()
         {
-            var TransactionNumberVal = await new loginPageService().GetDetailByUrl(GlobalConstant.GetTrancationNumber+GlobalConstant.UserName);
+            var TransactionNumberVal = await new loginPageService().GetDetailByUrl(BetEntry.GetTrancationNumber + GlobalConstant.UserName);
             if (TransactionNumberVal.Status == 1)
             {
                 var wrShiipinglist = JsonConvert.DeserializeObject<string>(TransactionNumberVal.Response.ToString());
                 LastTransactionNo = wrShiipinglist;
             }
-                SB = "S";
-            var UserDetail = await new loginPageService().GetDetailByUrl(GlobalConstant.GetHouseDetail);
+            SB = "S";
+            var UserDetail = await new loginPageService().GetDetailByUrl(BetEntry.GetHouseDetail);
             if (UserDetail.Status == 1)
             {
-                var wrShiipinglist = JsonConvert.DeserializeObject<List<vw_HousesDetails>>(UserDetail.Response.ToString());
-                for(int i=0;i< wrShiipinglist.Count; i++)
+                var wrShiipinglistVal = JsonConvert.DeserializeObject<List<vw_HousesDetails>>(UserDetail.Response.ToString());
+                for (int i = 0; i < wrShiipinglistVal.Count; i++)
                 {
-                  
+                    Model = new ListOrder();
                     try
                     {
-                        Model.Early1 = wrShiipinglist[i].HouseName;
-                        Model.chkEarly1 =false/* wrShiipinglist[i].Has4Ball*/;
+                        Model.Early1 = wrShiipinglistVal[i].HouseName;
+                        Model.chkEarly1 = false;
+                        Model.Early1Id = wrShiipinglistVal[i].HouseID;
                         i++;
                     }
                     catch { }
                     try
                     {
-                        Model.Early2 = wrShiipinglist[i].HouseName;
-                        Model.chkEarly2 = false /*wrShiipinglist[i].Has4Ball*/;
+                        Model.Early2 = wrShiipinglistVal[i].HouseName;
+                        Model.chkEarly2 = false;
+                        Model.Early2Id = wrShiipinglistVal[i].HouseID;
                         i++;
                     }
                     catch { }
                     try
                     {
-                        Model.Early3 = wrShiipinglist[i].HouseName;
-                        Model.chkEarly3 = false /*wrShiipinglist[i].Has4Ball*/;
+                        Model.Early3 = wrShiipinglistVal[i].HouseName;
+                        Model.chkEarly3 = false;
+                        Model.Early3Id = wrShiipinglistVal[i].HouseID;
                         i++;
                     }
                     catch { }
                     try
                     {
-                        Model.Early4 = wrShiipinglist[i].HouseName;
-                        Model.chkEarly4 = false /*wrShiipinglist[i].Has4Ball*/;
+                        Model.Early4 = wrShiipinglistVal[i].HouseName;
+                        Model.chkEarly4 = false;
+                        Model.Early4Id = wrShiipinglistVal[i].HouseID;
                     }
                     catch { }
                     ListItemVal.Add(Model);
                 }
 
-               //foreach(var Item in wrShiipinglist)
-               // {
-               //     var Model = new ListOrder();
-                   
-               //     Model.ECA = "ECA";
-               //     Model.chkECA = (Model.ECA == Item.HouseName? Item.Has4Ball:false);
-               //     Model.EMI = "EMI";
-               //     Model.chkEMI = (Model.EMI == Item.HouseName ? Item.Has4Ball : false);
-               //     Model.EGA = "EGA";
-               //     Model.chkEGA = (Model.EGA == Item.HouseName ? Item.Has4Ball : false);
-               //     Model.ENY = "ENY";
-               //     Model.chkENY = (Model.ENY == Item.HouseName ? Item.Has4Ball : false);
-               //     Model.ENJ = "ENJ";
-               //     Model.chkENJ = (Model.ENJ == Item.HouseName ? Item.Has4Ball : false);
-               //     Model.EMIA = "EMIA";
-               //     Model.chkEMIA = (Model.EMIA == Item.HouseName ? Item.Has4Ball : false);
-               //     Model.LCH = "LCH";
-               //     Model.chkLCH = (Model.LCH == Item.HouseName ? Item.Has4Ball : false);
-
-               //     ListItemVal.Add(Model);
-                   
-               // }
 
             }
             else
@@ -460,7 +502,7 @@ namespace JackPot.ViewModel
             Navigation = navigation;
         }
 
-     
-      
+
+
     }
 }
