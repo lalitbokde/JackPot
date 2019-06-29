@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JackPot.Views.PreviousTRX">
+    <ContentPage.Content>
+
+        <AbsoluteLayout  Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <!--<StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+                <StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="5">
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Padding="10,10,10,10" >
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+
+                                    <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Margin="7" Padding="1">
+                                        <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+                                            <Label  Text="Customer # :" FontSize="9" Font="Bold" />
+                                            <Entry HorizontalOptions="FillAndExpand" />
+                                        </StackLayout>
+
+                                        <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+                                            <Label  Text="Customer :" FontSize="16" Font="Bold"/>
+
+                                        </StackLayout>
+
+                                        <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+                                            <Label  Text="Customer Name :" FontSize="9" Font="Bold" />
+                                            <Entry HorizontalOptions="FillAndExpand" />
+                                        </StackLayout>
+
+                                        <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
+                                            <Label  Text="Deposite $ :" FontSize="9" Font="Bold" />
+                                            <Entry HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="0.00"/>
+                                        </StackLayout>
+
+                                        <StackLayout HorizontalOptions="CenterAndExpand" Spacing="20" Orientation="Horizontal">
+
+                                            <Button x:Name="btn_Close"  Text="Close"  TextColor="#ffffff"  BackgroundColor="#bb2b23"  BorderRadius="7" HeightRequest="40" HorizontalOptions="Center" Command="{Binding btnPopupClose}" />
+                                            <Button x:Name="btn_Deposite" Command="{Binding btnDeposite}" Text="Deposite" TextColor="#ffffff"  BackgroundColor="#bb2b23"     BorderRadius="7" HeightRequest="40" HorizontalOptions="End"  />
+
+                                        </StackLayout>
+
+
+
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>-->
+
+            <ContentView x:Name="popupView" BackgroundColor="#C0808080" Padding="10, 0"  IsVisible="True" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" HeightRequest="250" WidthRequest="350" BackgroundColor="White"  >
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" BackgroundColor="#bb2b23" HorizontalOptions="FillAndExpand" >
+                            <Label Text="Receipt info" FontSize="14" TextColor="White" HeightRequest="30" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand"/>
+                            <ImageButton   Source="Close_Grid_Popup.png"  Command="{Binding btnCloseAddProductView}" BackgroundColor="Transparent" HeightRequest="30" WidthRequest="30"  HorizontalOptions="End" VerticalOptions="Start"/>
+
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="5">
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" >
+
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+
+                                        <Grid RowSpacing="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50"/>
+                                                <RowDefinition Height="50"/>
+
+
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*"/>
+
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackLayout  HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0">
+                                                <Label  Text="Last Receipt #"    HorizontalOptions="CenterAndExpand"  FontSize="20"/>
+                                                <Label  Text="1234567890"     HorizontalOptions="CenterAndExpand" FontSize="16"/>
+                                                <Label  Text="$ 1250"    HorizontalOptions="CenterAndExpand"  FontSize="16"/>
+
+                                            </StackLayout>
+
+
+                                        </Grid>
+
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" >
+                                <Button x:Name="btn_CopyReceipt"  Text="Copy Receipt"  TextColor="#ffffff"  BackgroundColor="#bb2b23"  BorderRadius="7" HeightRequest="40" HorizontalOptions="Center" Command="{Binding btnPopupCancel}" />
+                            </StackLayout>
+
+
+
+                        </StackLayout>
+
+
+                    </StackLayout>
+                </StackLayout>
+            </ContentView>
+
+
+
+
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,5 +1,6 @@
 ﻿using JackPot.Model;
 using JackPot.Service;
+using JackPot.Views;
 using MvvmHelpers;
 using Newtonsoft.Json;
 using System;
@@ -16,16 +17,20 @@ namespace JackPot.ViewModel
 {
     public class OrderViewModel : INotifyPropertyChanged
     {
-
-        ICommand btn_PrintReceipt;
-        ICommand btn_CloseAddProductView;
-        ICommand btn_PopupCancel;
-        ICommand btn_Exact;
-        ICommand btn_Add;
-
-        ICommand btnpurchaseTicket;
+        ICommand btn_PreviousTRX;
+             ICommand btn_PrintReceipt; 
+            ICommand btn_CloseAddProductView; 
+             ICommand btn_PopupCancel;
+        ICommand btn_Exact; 
+        ICommand btn_Add; 
+      
+             ICommand btnpurchaseTicket;
         INavigation Navigation;
         ListOrder Model = new ListOrder();
+
+             public ICommand btnPreviousTRX =>
+           btn_PreviousTRX ?? (btn_PreviousTRX = new Command(async () => await GoToPreviousTRX()));
+
 
         public ICommand btnCloseAddProductView =>
            btn_CloseAddProductView ?? (btn_CloseAddProductView = new Command(async () => await CancelPopUpTenderAsync()));
@@ -55,7 +60,11 @@ namespace JackPot.ViewModel
         ICommand orderGridCommand;
         public ICommand OrderGridCommand =>
            orderGridCommand ?? (orderGridCommand = new Command<BetCollection>(async (s) => await ExecutOrderGridCommandAsync(s)));
+ public async Task GoToPreviousTRX()
+        {
 
+            await Navigation.PushModalAsync(new PreviousTRX());
+        }
         private async Task ExecutOrderGridCommandAsync(BetCollection s)
         {
             TotalAmt = TotalAmt - s.Amt;
