@@ -6,7 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
+using WareHouseManagement.PCL.Common;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -28,7 +28,24 @@ namespace JackPot.Views
         class MainPageMasterViewModel : INotifyPropertyChanged
         {
             public ObservableCollection<MainPageMenuItem> MenuItems { get; set; }
+
             
+
+          string agentName;
+            public string AgentName
+            {
+                get { return agentName; }
+                set
+                {
+                    if (agentName != value)
+                    {
+                        agentName = value;
+                        OnPropertyChanged(nameof(AgentName));
+
+                    }
+                }
+            }
+
             public MainPageMasterViewModel()
             {
                 MenuItems = new ObservableCollection<MainPageMenuItem>(new[]
@@ -47,7 +64,11 @@ namespace JackPot.Views
 
 
                 });
+
+                AgentName = GlobalConstant.CustomerName;
             }
+
+
             
             #region INotifyPropertyChanged Implementation
             public event PropertyChangedEventHandler PropertyChanged;

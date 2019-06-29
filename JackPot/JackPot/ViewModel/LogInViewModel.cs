@@ -1,4 +1,5 @@
 ﻿using JackPot.Model;
+using JackPot.PCL;
 using JackPot.Service;
 using JackPot.Views;
 using Newtonsoft.Json;
@@ -16,6 +17,7 @@ namespace JackPot.ViewModel
 {
     public class LogInViewModel: INotifyPropertyChanged
     {
+        SharedPreference _objShared = new SharedPreference();
         ICommand btn_LogIn;
         INavigation Navigation;
         public ICommand btnLogIn =>
@@ -23,7 +25,9 @@ namespace JackPot.ViewModel
 
         private async Task LogInAsync()
         {
-            LogintModel _User = new LogintModel
+           
+            
+           LogintModel _User = new LogintModel
             {
                 UserName =Convert.ToInt64( UserName),
                 Password = PassWord
@@ -47,6 +51,12 @@ namespace JackPot.ViewModel
                     GlobalConstant.UserPassword = wrShiipinglist.sPassword;
                     GlobalConstant.CustomerName = wrShiipinglist.sFirstName + " " + wrShiipinglist.sLastName;
                     GlobalConstant.BalanceAmt = wrShiipinglist.decBalance;
+
+                    _objShared.SaveApplicationProperty("AccessToken", GlobalConstant.AccessToken);
+                    _objShared.SaveApplicationProperty("UserName", GlobalConstant.UserName);
+                    _objShared.SaveApplicationProperty("CustomerName", GlobalConstant.CustomerName);
+                    _objShared.SaveApplicationProperty("UserPassword", GlobalConstant.UserPassword);
+
                     await Navigation.PushModalAsync(new MainPage());
                 }
                 else
@@ -58,11 +68,57 @@ namespace JackPot.ViewModel
             }
         }
 
-        public LogInViewModel(INavigation navigation)
+        private async Task AutoLogin()
+        {
+
+            try
+            {
+
+
+                LogintModel _User = new LogintModel
+                {
+                    UserName = Convert.ToInt64(GlobalConstant.UserName),
+                    Password = GlobalConstant.UserPassword
+                };
+
+              
+
+                var UserDetail = await new loginPageService().GetLogin(_User, GlobalConstant.GetUserLoginDetail);
+                if (UserDetail.Status == 1)
+                {
+                    var wrShiipinglist = JsonConvert.DeserializeObject<LogInModel>(UserDetail.Response.ToString());
+                    GlobalConstant.UserName = wrShiipinglist.iPanelUserID;
+                    GlobalConstant.UserPassword = wrShiipinglist.sPassword;
+                    GlobalConstant.CustomerName = wrShiipinglist.sFirstName + " " + wrShiipinglist.sLastName;
+                    GlobalConstant.BalanceAmt = wrShiipinglist.decBalance;
+                    await Navigation.PushModalAsync(new MainPage());
+                }
+                else
+                {
+
+                    Application.Current.MainPage.DisplayAlert("Message", "UserName Or Password Is Incorrect.", "Ok");
+
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+           
+
+        }
+
+
+            public LogInViewModel(INavigation navigation)
         {
             UserName = "400";
             PassWord = "1234";
             Navigation = navigation;
+            if(GlobalConstant.UserName!=0 && GlobalConstant.UserPassword !=null)
+            {
+                AutoLogin();
+            }
+           
         }
 
         private string _UserName;

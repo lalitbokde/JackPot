@@ -16,7 +16,7 @@
             Margin="15,10" 
               FontSize="15"
               TextColor="White"
-              Text="Agent Name"
+             Text="{Binding AgentName}"
               Style="{DynamicResource SubtitleStyle}"/>
                     </StackLayout>
               

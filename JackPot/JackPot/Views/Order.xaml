@@ -5,8 +5,10 @@
              xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
              BackgroundColor="#f5f6f7">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Grid RowSpacing="0">
+        <AbsoluteLayout  Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <Grid RowSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="2.5*" />
@@ -136,10 +138,10 @@
                             </Grid.ColumnDefinitions>
                             
                             <Entry x:Name="Numbers" Text="{Binding Numbers}" Placeholder="Number" Keyboard="Numeric" Grid.Row="0" HorizontalOptions="EndAndExpand" Grid.Column="0"></Entry>
-                            <Entry x:Name="SB" Text="{Binding SB}" Grid.Row="0" Grid.Column="1" HorizontalOptions="StartAndExpand" VerticalOptions="Center"  Placeholder="S/B " IsEnabled="False"></Entry>
+                            <Entry x:Name="SB" Text="{Binding SB}" Grid.Row="0" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"  Placeholder="S/B" IsEnabled="False"></Entry>
                             <Entry x:Name="Amt" Text="{Binding Amt}" Keyboard="Numeric"  Placeholder="$Amount" Grid.Row="0" HorizontalOptions="EndAndExpand" Grid.Column="2"></Entry>
-                          
-                            <Button  HeightRequest="1" CornerRadius="10" Command="{Binding btnAdd}" Grid.Row="0" Grid.Column="3" BackgroundColor="White"  HorizontalOptions="EndAndExpand" Image="Addbtn.png"></Button>
+
+                            <Button  HeightRequest="1" CornerRadius="10" Command="{Binding btnAdd}" Grid.Row="0" Grid.Column="3" BackgroundColor="#f5f6f7"   HorizontalOptions="EndAndExpand" Image="plusIcon.png"></Button>
                            
                         </Grid>
                     </StackLayout>
@@ -277,7 +279,7 @@
 
 
 
-                <StackLayout Grid.Row="4">
+                <StackLayout Grid.Row="4" VerticalOptions="Center">
                     <Grid RowSpacing="0">
                         <Grid.RowDefinitions>
 
@@ -285,13 +287,15 @@
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
                             <ColumnDefinition Width="1*"/>
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
-                        <Label  Text="Total :" Grid.Row="0" Grid.Column="2" FontFamily="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label>
-                        <Label x:Name="Total" Text="{Binding TotalAmt}" Grid.Row="0" Grid.Column="3" FontFamily="Bold" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"></Label>
+
+                        <Label  Text="Total :" Grid.Row="0"  Grid.Column="2" FontSize="16" Font="Bold"  VerticalOptions="Fill" HorizontalOptions="Fill" ></Label>
+                        <Label x:Name="Total" Text="{Binding TotalAmt}" Grid.Row="0" Grid.Column="3" FontSize="16" Font="Bold" VerticalOptions="Fill" HorizontalOptions="Fill"></Label>
+                      
                     </Grid>
                 </StackLayout>
 
@@ -305,13 +309,113 @@
                         </Grid.ColumnDefinitions>
 
 
-                        <Button Text="Cancel" CornerRadius="10" Margin="15,0,0,15"  TextColor="#FFBA3b" Grid.Column="0"   BackgroundColor="#bb2b23"></Button>
-                        <Button Text="Purchase Ticket" CornerRadius="10" Margin="15,0,0,15" TextColor="#FFBA3b" Grid.Column="1"   BackgroundColor="#bb2b23"></Button>
+                        <Button Text="Clear" CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Column="0"   BackgroundColor="#bb2b23"></Button>
+                            <Button Text="Purchase Ticket" CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Column="1"   BackgroundColor="#bb2b23" Command="{Binding btnPurchaseTicket }"></Button>
                     </Grid>
                 </StackLayout>
             </Grid>
         </StackLayout>
 
+
+        <ContentView x:Name="popupEditProductView" BackgroundColor="#C0808080" Padding="10, 0"  IsVisible="{Binding PopUpVisibility}" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                <StackLayout Orientation="Vertical" HeightRequest="400" WidthRequest="350" BackgroundColor="White"  >
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center" BackgroundColor="#bb2b23" HorizontalOptions="FillAndExpand" >
+                        <Label Text="Tender" FontSize="14" TextColor="White" HeightRequest="30" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand"/>
+                        <ImageButton   Source="Close_Grid_Popup.png"  Command="{Binding btnCloseAddProductView}" BackgroundColor="Transparent" HeightRequest="30" WidthRequest="30"  HorizontalOptions="End" VerticalOptions="Start"/>
+
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="5">
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                            <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" >
+
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+
+                                        <Grid RowSpacing="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50"/>
+                                                <RowDefinition Height="50"/>
+                                                <RowDefinition Height="50"/>
+
+
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*"/>
+                                                <ColumnDefinition Width="1*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label  Text="Bets Total:"  Grid.Column="0" Grid.Row="0"   HorizontalOptions="FillAndExpand"  FontSize="16"/>
+                                            <Label  Text="{Binding BetsTotal}"  Grid.Column="1" Grid.Row="0"   HorizontalOptions="FillAndExpand" FontSize="16"/>
+
+                                            <!--<ImageButton x:Name="search_Billto" Command="{Binding CustomerListCommand}"  BackgroundColor="Transparent"  Source="magnifier.png"  HorizontalOptions="End"  />-->
+                                            <Label  Text="Total Due:"  Grid.Column="0" Grid.Row="1"   HorizontalOptions="FillAndExpand"  FontSize="16"/>
+                                            <Label  Text="{Binding TotalDue}"  Grid.Column="1" Grid.Row="1"   HorizontalOptions="FillAndExpand" FontSize="16"/>
+
+                                            <!--<Label Text="Total Due:" Grid.Column="0" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Start" FontSize="14"   FontAttributes="Bold" />
+
+                                            <Label Text="{Binding TotalDue}"  Grid.Column="1" Grid.Row="1"   HorizontalOptions="FillAndExpand"  FontSize="16" />-->
+
+                                            <Label  Text="Tender:"  Grid.Column="0" Grid.Row="2"   HorizontalOptions="FillAndExpand"  FontSize="16"/>
+                                            <Entry  Text="{Binding Tender}" Placeholder="0.00" Keyboard="Numeric"  Grid.Column="1" Grid.Row="2"   HorizontalOptions="FillAndExpand" FontSize="16"/>
+                                            <Button  Text="Exact"  Grid.Column="2" Grid.Row="2"   HorizontalOptions="FillAndExpand" FontSize="16" Command="{Binding btnExact}" />
+
+                                            <!--<Label Text="Tender" Grid.Column="0" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Start" FontSize="14"  FontAttributes="Bold"  />
+                                            <Entry  Text="{Binding Tender}"  Grid.Column="1" Grid.Row="2"   HorizontalOptions="FillAndExpand" FontSize="16"/>
+                                            <Button   Text="Exact" Grid.Column="2" Grid.Row="2" VerticalOptions="Center" HorizontalOptions="Start" FontSize="14"  FontAttributes="Bold" Command="{Binding btnExact}"  />-->
+
+                                            <!--<Label Text="Change" Grid.Column="0" Grid.Row="3" VerticalOptions="Center" HorizontalOptions="Start" FontSize="14"  FontAttributes="Bold"  />
+                                            <Label  Text="{Binding Change}"  Grid.Column="1" Grid.Row="3"   HorizontalOptions="FillAndExpand" FontSize="16"/>-->
+
+                                            <Label  Text="Change:"  Grid.Column="0" Grid.Row="4"   HorizontalOptions="FillAndExpand"  FontSize="16"/>
+                                            <Label  Text="{Binding Change}"  Grid.Column="1" Grid.Row="4"   HorizontalOptions="FillAndExpand" FontSize="16"/>
+                                        </Grid>
+
+
+                                        <!--<Label Text="Bets Total:" FontSize="20" TextColor="Black"  FontAttributes="Bold" VerticalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding BetsTotal}" FontSize="20" TextColor="Black"  FontAttributes="Bold" VerticalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+                                    <Label Text="Total Due:" FontSize="20" TextColor="Black"  FontAttributes="Bold" VerticalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding TotalDue}" FontSize="20" TextColor="Black"  FontAttributes="Bold" VerticalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+                                    <Label Text="Tender:" FontSize="20" TextColor="Black"  FontAttributes="Bold" VerticalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                                    <Entry  Text="{Binding Tender}" Placeholder="0.00" Keyboard="Numeric"  HorizontalOptions="CenterAndExpand" ></Entry>
+                                    <Button   Text="Exact" HeightRequest="35" TextColor="#ffffff"  BackgroundColor="#bb2b23"   HorizontalOptions="EndAndExpand" Command="{Binding btnExact}" />
+
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+                                    <Label Text="Change:" FontSize="20" TextColor="Black"  FontAttributes="Bold" VerticalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding Change}" FontSize="20" TextColor="Black"  FontAttributes="Bold" VerticalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>-->
+                                </StackLayout>
+                            </StackLayout>
+
+                        </StackLayout>
+                        
+                        
+                        
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" >
+
+
+                                <Button x:Name="btn_ClearProduct"  Text="Cancel"  TextColor="#ffffff"  BackgroundColor="#bb2b23"  BorderRadius="7" HeightRequest="40" HorizontalOptions="Center" Command="{Binding btnPopupCancel}" />
+
+                                <Button x:Name="btn_Viewaddproduct" Command="{Binding btnPrintReceipt}" Text="Print Receipt" TextColor="#ffffff"  BackgroundColor="#bb2b23"     BorderRadius="7" HeightRequest="40" HorizontalOptions="End"  />
+
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+
+                </StackLayout>
+            </StackLayout>
+        </ContentView>
+
+
+
+
+        </AbsoluteLayout>
 
     </ContentPage.Content>
 </ContentPage>

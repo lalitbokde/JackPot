@@ -16,11 +16,38 @@ namespace JackPot.ViewModel
 {
     public class OrderViewModel : INotifyPropertyChanged
     {
-        ICommand btn_Add;
+        
+             ICommand btn_PrintReceipt; 
+            ICommand btn_CloseAddProductView; 
+             ICommand btn_PopupCancel;
+        ICommand btn_Exact; 
+        ICommand btn_Add; 
+      
+             ICommand btnpurchaseTicket;
         INavigation Navigation;
+        ListOrder Model = new ListOrder();
+
+        public ICommand btnCloseAddProductView =>
+           btn_CloseAddProductView ?? (btn_CloseAddProductView = new Command(async () => await CancelPopUpTenderAsync()));
+
+
+        public ICommand btnPrintReceipt =>
+            btn_PrintReceipt ?? (btn_PrintReceipt = new Command(async () => await ShowSuccessMsg()));
+
+        public ICommand btnPopupCancel =>
+   btn_PopupCancel ?? (btn_PopupCancel = new Command(async () => await CancelPopUpTenderAsync()));
+
+
+        public ICommand btnPurchaseTicket =>
+   btnpurchaseTicket ?? (btnpurchaseTicket = new Command(async () => await ShowPopUpTenderAsync()));
+
+        public ICommand btnExact =>
+     btn_Exact ?? (btn_Exact = new Command(async () => await CalculateTenderAsync()));
+
 
         public ICommand btnAdd =>
-       btn_Add ?? (btn_Add = new Command(async () => await AddInGridAsync()));
+     btn_Add ?? (btn_Add = new Command(async () => await AddInGridAsync()));
+
         public List<ListOrder> ListItemVal { get; set; } = new List<ListOrder>();
         public ObservableRangeCollection<OrderGridModel> OrderGridListObservCollection { get; set; } = new ObservableRangeCollection<OrderGridModel>();
         //public List<OrderGridModel> OrderGridList { get; set; } = new List<OrderGridModel>();
@@ -35,11 +62,53 @@ namespace JackPot.ViewModel
             OrderGridListObservCollection.Remove(s);
         }
 
+        private async Task CalculateTenderAsync()
+        {
+
+            Tender = Amt.ToString();
+           
+        }
+
+        private async Task ShowSuccessMsg()
+        {
+            PopUpVisibility = false;
+            Application.Current.MainPage.DisplayAlert("Message", "Success", "Ok");
+
+           
+        }
+
+        public async Task ShowPopUpTenderAsync()
+        {
+
+            PopUpVisibility = true;
+
+            BetsTotal = Amt.ToString();
+            TotalDue = Amt.ToString();
+            var ChangeAmount = Convert.ToInt32(tender) - Convert.ToInt32(Amt);
+            Change = ChangeAmount.ToString();
+        }
+
+        public async Task CancelPopUpTenderAsync()
+        {
+
+            PopUpVisibility = false;
+        }
+
+
+
         private async Task AddInGridAsync()
         {
-            if (Numbers.ToString().Length==2 || Numbers.ToString().Length==4 || Numbers.ToString().Length == 5)
-            {
-                foreach(var item in ListItemVal)
+      if (Amt != null)
+        {
+
+         if (Numbers != null)
+         {
+             if (Model.chkEarly1 != false || Model.chkEarly2 != false || Model.chkEarly3 !=false || Model.chkEarly4 != false)
+                {
+
+                 if (Numbers.ToString().Length == 2 || Numbers.ToString().Length == 4 || Numbers.ToString().Length == 5)
+                  {
+                foreach (var item in ListItemVal)
                 {
                     if (item.chkEarly1 == true)
                     {
@@ -64,7 +133,7 @@ namespace JackPot.ViewModel
                     if (item.chkEarly3 == true)
                     {
                         OrderGridModel Val3 = new OrderGridModel();
-                        Val3.Amt =Convert.ToDecimal( Amt);
+                        Val3.Amt = Convert.ToDecimal(Amt);
                         Val3.Numbers = Convert.ToInt32(Numbers);
                         Val3.SB = "S";
                         Val3.House = item.Early3;
@@ -75,25 +144,122 @@ namespace JackPot.ViewModel
                     {
                         OrderGridModel Val4 = new OrderGridModel();
                         Val4.Amt = Convert.ToDecimal(Amt);
-                        Val4.Numbers =Convert.ToInt32( Numbers);
-                        Val4.SB ="S";
+                        Val4.Numbers = Convert.ToInt32(Numbers);
+                        Val4.SB = "S";
                         Val4.House = item.Early4;
                         OrderGridListObservCollection.Add(Val4);
                         TotalAmt = TotalAmt + Val4.Amt;
                     }
                 }
-               
-                Numbers = "";
-                SB = "S"; 
-                Amt = "";
-               
+
+                //Numbers = "";
+                //SB = "S";
+                //Amt = "";
+
             }
             else
             {
                 Application.Current.MainPage.DisplayAlert("Message", "Enter Correct  Number.", "Ok");
             }
-          
-         
+        }
+
+              else
+            {
+              
+                        Application.Current.MainPage.DisplayAlert("Message", "Must Select Game", "Ok");
+                    }
+            }
+
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Message", "Enter Number.", "Ok");
+            }
+            }
+
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Message", "Enter Amount.", "Ok");
+            }
+
+        }
+        
+
+
+             bool popUpVisibility;
+        public bool PopUpVisibility
+        {
+            get { return popUpVisibility; }
+            set
+            {
+                if (popUpVisibility != value)
+                {
+                    popUpVisibility = value;
+                    OnPropertyChanged(nameof(PopUpVisibility));
+
+                }
+            }
+        }
+
+        string change;
+        public string Change
+        {
+            get { return change; }
+            set
+            {
+                if (change != value)
+                {
+                    change = value;
+                    OnPropertyChanged(nameof(Change));
+
+                }
+            }
+        }
+
+
+        string tender;
+        public string Tender
+        {
+            get { return tender; }
+            set
+            {
+                if (tender != value)
+                {
+                    tender = value;
+                    OnPropertyChanged(nameof(Tender));
+                    calculate();
+                }
+            }
+        }
+
+
+        string totalDue;
+        public string TotalDue
+        {
+            get { return totalDue; }
+            set
+            {
+                if (totalDue != value)
+                {
+                    totalDue = value;
+                    OnPropertyChanged(nameof(TotalDue));
+
+                }
+            }
+        }
+
+        string betsTotal;
+        public string BetsTotal
+        {
+            get { return betsTotal; }
+            set
+            {
+                if (betsTotal != value)
+                {
+                    betsTotal = value;
+                    OnPropertyChanged(nameof(BetsTotal));
+
+                }
+            }
         }
 
         string house;
@@ -186,6 +352,26 @@ namespace JackPot.ViewModel
                 }
             }
         }
+
+        public void calculate()
+        {
+            if (tender != "")
+            {
+                BetsTotal = Amt.ToString();
+                TotalDue = Amt.ToString();
+                var ChangeAmount = Convert.ToInt32(tender) - Convert.ToInt32(Amt);
+                Change = ChangeAmount.ToString();
+
+            }
+
+            else
+            {
+                Change = "0";
+
+            }
+            
+        }
+
         void OnPropertyChanged([CallerMemberName]string name = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
@@ -205,7 +391,7 @@ namespace JackPot.ViewModel
                 var wrShiipinglist = JsonConvert.DeserializeObject<List<vw_HousesDetails>>(UserDetail.Response.ToString());
                 for(int i=0;i< wrShiipinglist.Count; i++)
                 {
-                    var Model = new ListOrder();
+                  
                     try
                     {
                         Model.Early1 = wrShiipinglist[i].HouseName;
@@ -273,6 +459,8 @@ namespace JackPot.ViewModel
 
             Navigation = navigation;
         }
+
+     
       
     }
 }
