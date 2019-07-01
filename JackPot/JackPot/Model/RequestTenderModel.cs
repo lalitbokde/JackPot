@@ -6,7 +6,10 @@ namespace JackPot.Model
 {
     public class RequestTenderModel
     {
-
+        public RequestTenderModel()
+        {
+            BetCollection = new List<BetCollection>();
+        }
         public long PanelUserID { get; set; }
         public string TenderAmount { get; set; }
         public string Change { get; set; }

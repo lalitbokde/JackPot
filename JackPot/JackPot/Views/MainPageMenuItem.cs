@@ -53,7 +53,7 @@ namespace JackPot.Views
             }
             if (Id == 9)
             {
-                TargetType = typeof(Order);
+                TargetType = typeof(LogIn);
             }
 
         }

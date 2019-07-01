@@ -82,7 +82,7 @@ namespace JackPot.Views
 
                                 
                                   new MainPageMenuItem { Id = 8, Title = "Customer WithDraw" ,TargetType=typeof(CommingSoon)},
-                                   new MainPageMenuItem { Id = 9, Title = "Log Out" ,TargetType=typeof(CommingSoon) },
+                                   new MainPageMenuItem { Id = 9, Title = "Log Out" ,TargetType=typeof(LogIn) },
 
 
                 });

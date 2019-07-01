@@ -18,18 +18,18 @@ namespace JackPot.ViewModel
     public class OrderViewModel : INotifyPropertyChanged
     {
         ICommand btn_PreviousTRX;
-             ICommand btn_PrintReceipt; 
-            ICommand btn_CloseAddProductView; 
-             ICommand btn_PopupCancel;
-        ICommand btn_Exact; 
-        ICommand btn_Add; 
-      
-             ICommand btnpurchaseTicket;
+        ICommand btn_PrintReceipt;
+        ICommand btn_CloseAddProductView;
+        ICommand btn_PopupCancel;
+        ICommand btn_Exact;
+        ICommand btn_Add;
+
+        ICommand btnpurchaseTicket;
         INavigation Navigation;
         ListOrder Model = new ListOrder();
 
-             public ICommand btnPreviousTRX =>
-           btn_PreviousTRX ?? (btn_PreviousTRX = new Command(async () => await GoToPreviousTRX()));
+        public ICommand btnPreviousTRX =>
+      btn_PreviousTRX ?? (btn_PreviousTRX = new Command(async () => await GoToPreviousTRX()));
 
 
         public ICommand btnCloseAddProductView =>
@@ -60,7 +60,7 @@ namespace JackPot.ViewModel
         ICommand orderGridCommand;
         public ICommand OrderGridCommand =>
            orderGridCommand ?? (orderGridCommand = new Command<BetCollection>(async (s) => await ExecutOrderGridCommandAsync(s)));
- public async Task GoToPreviousTRX()
+        public async Task GoToPreviousTRX()
         {
 
             await Navigation.PushModalAsync(new PreviousTRX());
@@ -80,37 +80,94 @@ namespace JackPot.ViewModel
 
         private async Task ShowSuccessMsg()
         {
-            //var BetEntryModel = new RequestTenderModel();
-            //int Count = 0;
-            //BetEntryModel.TenderAmount = tender;
-            //BetEntryModel.PanelUserID = GlobalConstant.UserName;
-            //BetEntryModel.Totals =TotalAmt;
-            //BetEntryModel.Change = Change;
-            //BetEntryModel.CommissionRate = 0;
-            //BetEntryModel.UsesFreeBet = false;
-            //BetEntryModel.FreeBetAmount =Convert.ToDecimal( tender);
-            //BetEntryModel.MintShiftID = 8;
-            //BetEntryModel.mdecFreeBetTotal =Convert.ToInt32( TotalAmt);
-            
-            //foreach (var Item in OrderGridListObservCollection)
-            //{
-            //    Count = Count + 1;
-            //    BetEntryModel.BetCollection.Add(Item);
-            //}
-            //BetEntryModel.NoOfBets = Count;
-             PopUpVisibility = false;
-            //var TransactionNumberVal = await new BetEntrySevice().PostBetEntry(BetEntryModel, BetEntry.TrancatioSaveBetEntry);
-            //if (TransactionNumberVal.Status == 1)
-            //{
+            string lBall = Numbers;
+            string[] Val = new string[4];
+
+            string mstrBall1 = "";
+            string mstrBall2 = "";
+            string mstrBall3 = "";
+            string mstrBall4 = "";
+            int Length = lBall.Length;
+            switch (Length.ToString())
+            {
+                case "2":
+                    lBall = lBall.Insert(1, "-");
+
+                    Val = lBall.Split('-');
+                    Array.Sort(Val);
+
+                    mstrBall1 = Val[0].ToString();
+                    mstrBall2 = Val[1].ToString();
+                        break;
+                case "3":
+                    lBall = lBall.Insert(1, "-");
+                    lBall = lBall.Insert(3, "-");
+
+                    Val = lBall.Split('-');
+                    Array.Sort(Val);
+
+                    mstrBall1 = Val[0];
+                    mstrBall2 = Val[1];
+                    mstrBall3 = Val[2];
+                    break;
+                case "4":
+                    lBall = lBall.Insert(1, "-");
+                    lBall = lBall.Insert(3, "-");
+                    lBall = lBall.Insert(5, "-");
+
+                    Val = lBall.Split('-');
+                    Array.Sort(Val);
+
+                    mstrBall1 = Val[0];
+                    mstrBall2 = Val[1];
+                    mstrBall3 = Val[2];
+                    mstrBall4 = Val[3];
+                    break;
+            }
+            var BetEntryModel = new RequestTenderModel();
+            int Count = 0;
+            BetEntryModel.TenderAmount = tender;
+            BetEntryModel.PanelUserID = GlobalConstant.UserName;
+            BetEntryModel.Totals = TotalAmt;
+            BetEntryModel.Change = Change;
+            BetEntryModel.CommissionRate = 0;
+            BetEntryModel.UsesFreeBet = false;
+            BetEntryModel.FreeBetAmount = Convert.ToDecimal(tender);
+            BetEntryModel.MintShiftID = 8;
+            BetEntryModel.mdecFreeBetTotal = Convert.ToInt32(TotalAmt);
+
+            foreach (var Item in OrderGridListObservCollection)
+            {
+                Count = Count + 1;
+                var ModelData = new BetCollection();
+                ModelData.Numbers = Item.Numbers;
+                ModelData.House = Item.House;
+                ModelData.SB = Item.SB;
+                ModelData.Amt = Item.Amt;
+                ModelData.GameID = Item.GameID;
+                ModelData.Ball1 = mstrBall1;
+                ModelData.Ball2 = mstrBall2;
+                ModelData.Ball3 = mstrBall3;
+                ModelData.Ball4 = mstrBall4;
+                ModelData.StraightBall = Numbers;
+                ModelData.BetAmount = Item.BetAmount;
+                ModelData.PayFactor = Item.PayFactor;
+                BetEntryModel.BetCollection.Add(ModelData);
+            }
+            BetEntryModel.NoOfBets = Count;
+            PopUpVisibility = false;
+            var TransactionNumberVal = await new BetEntrySevice().PostBetEntry(BetEntryModel, BetEntry.TrancatioSaveBetEntry);
+            if (TransactionNumberVal.Status == 1)
+            {
                 Application.Current.MainPage.DisplayAlert("Message", "Success", "Ok");
-            //}
-            //else
-            //{
-            //    Application.Current.MainPage.DisplayAlert("Message", "Error", "Ok");
-            //}
+            }
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Message", "Error", "Ok");
+            }
             OrderGridListObservCollection.Clear();
             ListItemVal.Clear();
-            Amt ="0";
+            Amt = "0";
             Numbers = "0";
             TotalAmt = 0;
 
@@ -136,21 +193,21 @@ namespace JackPot.ViewModel
 
         public bool Validate()
         {
-            if (Amt != "" && Convert.ToInt32(Amt)>0)
+            if (Amt != "" && Convert.ToInt32(Amt) > 0)
             {
                 //if (Model.chkEarly1 != false || Model.chkEarly2 != false || Model.chkEarly3 != false || Model.chkEarly4 != false)
                 //{
-                    if (((Numbers==null)?"" : Numbers).Length  > 2 && ((Numbers ==null)?"" : Numbers).Length < 6)
-                    {
-                       
-                        return true;
-                    }
-                    else
-                    {
-                        Application.Current.MainPage.DisplayAlert("Message", "Enter Correct  Number.", "Ok");
-                      
-                        return false;
-                    }
+                if (((Numbers == null) ? "" : Numbers).Length > 2 && ((Numbers == null) ? "" : Numbers).Length < 6)
+                {
+
+                    return true;
+                }
+                else
+                {
+                    Application.Current.MainPage.DisplayAlert("Message", "Enter Correct  Number.", "Ok");
+
+                    return false;
+                }
                 //}
                 //else
                 //{
@@ -167,7 +224,7 @@ namespace JackPot.ViewModel
         public bool ChecboxCheck = false;
         private async Task AddInGridAsync()
         {
-            
+
             if (Validate())
             {
                 foreach (var item in ListItemVal)
@@ -244,7 +301,7 @@ namespace JackPot.ViewModel
                 //Amt = "";
 
             }
-           
+
 
         }
 
@@ -450,8 +507,8 @@ namespace JackPot.ViewModel
             var TransactionNumberVal = await new loginPageService().GetDetailByUrl(BetEntry.GetTrancationNumber + GlobalConstant.UserName);
             if (TransactionNumberVal.Status == 1)
             {
-                var wrShiipinglist = JsonConvert.DeserializeObject<string>(TransactionNumberVal.Response.ToString());
-                LastTransactionNo = wrShiipinglist;
+
+                LastTransactionNo = TransactionNumberVal.Response.ToString();
             }
             SB = "S";
             var UserDetail = await new loginPageService().GetDetailByUrl(BetEntry.GetHouseDetail);
