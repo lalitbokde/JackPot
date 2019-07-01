@@ -24,8 +24,7 @@ namespace WareHouseManagement.PCL.Common
         public static string UserPassword { get; set; }
         public static string Usertype { get; set; }
         public static string GetUserLoginDetail = "Login/getLogin";
-        public static string GetHouseDetail = "BetEntry/getHousesDetailsMode";
-        public static string GetTrancationNumber = "BetEntry/gettblLottoTicketData?PanlUserId=";
+       
 
         public static string GoogleMapApiKey = "AIzaSyC50XshkjneoleOy4CTQxRmWAv-qYGhd8Q";
 
@@ -34,12 +33,12 @@ namespace WareHouseManagement.PCL.Common
   
 
 
-    public struct StockInServiceUrl
+    public struct BetEntry
     {
-
-        public static string PostStockIn = "StockInPallet";
-        public static string GetQuantity = "Pallet/";
-
+        public static string GetLottoGameDetailByHouseIdandBalls = "BetEntry/GetLottoGameDetailByHouseIdandBalls?HouseId=";
+        public static string GetHouseDetail = "BetEntry/getHousesDetailsMode";
+        public static string TrancatioSaveBetEntry = "BetEntry/InsertTender";
+        public static string GetTrancationNumber = "BetEntry/gettblLottoTicketData?PanlUserId=";
     }
 
    
