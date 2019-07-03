@@ -312,7 +312,7 @@
                         </Grid.ColumnDefinitions>
 
 
-                            <Button Text="PreviousTRX " CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Column="0"   BackgroundColor="#bb2b23" Command="{Binding btnPreviousTRX}"></Button>
+                            <Button Text="Previous TRX " CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Column="0"   BackgroundColor="#bb2b23" Command="{Binding btnPreviousTRX}"></Button>
                             <Button Text="Purchase Ticket" CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Column="1"   BackgroundColor="#bb2b23" Command="{Binding btnPurchaseTicket }"></Button>
                     </Grid>
                 </StackLayout>
@@ -414,6 +414,64 @@
                 </StackLayout>
             </StackLayout>
         </ContentView>
+
+            <ContentView x:Name="popPriviewsTickietView" BackgroundColor="#C0808080" Padding="10, 0"  IsVisible="{Binding popupPriviewsTickietView}" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" HeightRequest="250" WidthRequest="350" BackgroundColor="White"  >
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" BackgroundColor="#bb2b23" HorizontalOptions="FillAndExpand" >
+                            <Label Text="Previews Ticket" FontSize="14" TextColor="White" HeightRequest="30" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand"/>
+                            <ImageButton   Source="Close_Grid_Popup.png"  Command="{Binding btnClosePreviewTicketView}" BackgroundColor="Transparent" HeightRequest="30" WidthRequest="30"  HorizontalOptions="End" VerticalOptions="Start"/>
+
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="5">
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" >
+
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+
+                                        <Grid RowSpacing="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="40"/>
+                                                <RowDefinition Height="40"/>
+                                                <RowDefinition Height="35"/>
+                                                <RowDefinition Height="35"/>
+
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*"/>
+                                                <ColumnDefinition Width="1*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label  Text="Ticket Number:"  Grid.Column="0" Grid.Row="0"   HorizontalOptions="FillAndExpand"  FontSize="16"/>
+                                            <Entry x:Name="popupPreviousTicketNo"  Text="{Binding LastTransactionNo}"  Grid.Column="1" Grid.Row="0"  VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand" FontSize="16"/>
+
+                                            <Label  Text="Tender Amount:"  Grid.Column="0" Grid.Row="1"   HorizontalOptions="FillAndExpand"  FontSize="16"/>
+                                            <Entry x:Name="PreviewTenderAmount"  Text="{Binding PreviousTenderAmt}"  Grid.Column="1" Grid.Row="1"  VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand" FontSize="16"/>
+                                        </Grid>
+
+                                    </StackLayout>
+                                </StackLayout>
+
+                            </StackLayout>
+
+
+
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" >
+                                <Button x:Name="btn_LoadPreviousTransaction" Command="{Binding btnPreviewLastTransaction}" Text="Refresh" TextColor="#ffffff"  BackgroundColor="#bb2b23"     BorderRadius="7" HeightRequest="40" HorizontalOptions="End"  />
+                                <Button x:Name="btn_LoadLate" Command="{Binding btnPreviousLoadLate}" Text="Load Late" TextColor="#ffffff"  BackgroundColor="#bb2b23"     BorderRadius="7" HeightRequest="40" HorizontalOptions="End"  />
+
+                                <Button x:Name="btn_Cancel" Command="{Binding btnHidePreviewPopup}" Text="Cancel" TextColor="#ffffff"  BackgroundColor="#bb2b23"     BorderRadius="7" HeightRequest="40" HorizontalOptions="End"  />
+
+                                
+                            </StackLayout>
+
+                        </StackLayout>
+
+
+                    </StackLayout>
+                </StackLayout>
+            </ContentView>
 
 
 

@@ -23,14 +23,24 @@ namespace JackPot.ViewModel
         ICommand btn_PopupCancel;
         ICommand btn_Exact;
         ICommand btn_Add;
-
+        ICommand btn_PreviewLastTransaction;
+        ICommand btn_ClosePreviewTicketView;
         ICommand btnpurchaseTicket;
         INavigation Navigation;
         ListOrder Model = new ListOrder();
 
         public ICommand btnPreviousTRX =>
-      btn_PreviousTRX ?? (btn_PreviousTRX = new Command(async () => await GoToPreviousTRX()));
+   btn_PreviousTRX ?? (btn_PreviousTRX = new Command(async () => await GoToPreviousTRX()));
 
+        public ICommand btnClosePreviewTicketView =>
+            btn_ClosePreviewTicketView ?? (btn_ClosePreviewTicketView = new Command(async () => popupPriviewsTickietView = false));
+        public ICommand btnPreviewLastTransaction =>
+       btn_PreviewLastTransaction ?? (btn_PreviewLastTransaction = new Command(async () => await GetPreviewTenderAmount()));
+
+        private async Task GetPreviewTenderAmount()
+        {
+           
+        }
 
         public ICommand btnCloseAddProductView =>
            btn_CloseAddProductView ?? (btn_CloseAddProductView = new Command(async () => await CancelPopUpTenderAsync()));
@@ -62,8 +72,20 @@ namespace JackPot.ViewModel
            orderGridCommand ?? (orderGridCommand = new Command<BetCollection>(async (s) => await ExecutOrderGridCommandAsync(s)));
         public async Task GoToPreviousTRX()
         {
+            try
+            {
+                popupPriviewsTickietView = true;
+                var TransactionNumberVal = await new loginPageService().GetDetailByUrl(BetEntry.GetTenderAmountbyTicketNo+LastTransactionNo);
+                if (TransactionNumberVal.Status == 1)
+                {
+                    PreviousTenderAmt = TransactionNumberVal.Response.ToString();
+                }
+            }
+            catch(Exception ex)
+            {
 
-            await Navigation.PushModalAsync(new PreviousTRX());
+            }
+            //await Navigation.PushModalAsync(new PreviousTRX());
         }
         private async Task ExecutOrderGridCommandAsync(BetCollection s)
         {
@@ -150,8 +172,8 @@ namespace JackPot.ViewModel
                 ModelData.Ball3 = mstrBall3;
                 ModelData.Ball4 = mstrBall4;
                 ModelData.StraightBall = Numbers;
-                ModelData.BetAmount = Item.BetAmount;
-                ModelData.PayFactor = Item.PayFactor;
+                ModelData.BetAmount = Item.Amt;
+                ModelData.PayFactor =Convert.ToDouble(Item.Amt);
                 BetEntryModel.BetCollection.Add(ModelData);
             }
             BetEntryModel.NoOfBets = Count;
@@ -159,17 +181,23 @@ namespace JackPot.ViewModel
             var TransactionNumberVal = await new BetEntrySevice().PostBetEntry(BetEntryModel, BetEntry.TrancatioSaveBetEntry);
             if (TransactionNumberVal.Status == 1)
             {
+                var ResponseSave= JsonConvert.DeserializeObject<LogInModel>(TransactionNumberVal.Response.ToString());
+                GlobalConstant.BalanceAmt = ResponseSave.decBalance;
+                OrderGridListObservCollection.Clear();
+                ListItemVal.Clear();
+                Amt = "0";
+                Numbers = "0";
+                TotalAmt = 0;
+                GetLateHouse();
+                GetLateHouse();
+
                 Application.Current.MainPage.DisplayAlert("Message", "Success", "Ok");
             }
             else
             {
                 Application.Current.MainPage.DisplayAlert("Message", "Error", "Ok");
             }
-            OrderGridListObservCollection.Clear();
-            ListItemVal.Clear();
-            Amt = "0";
-            Numbers = "0";
-            TotalAmt = 0;
+            
 
 
         }
@@ -179,10 +207,10 @@ namespace JackPot.ViewModel
 
             PopUpVisibility = true;
 
-            BetsTotal = Amt.ToString();
-            TotalDue = Amt.ToString();
-            var ChangeAmount = Convert.ToInt32(tender) - Convert.ToInt32(Amt);
-            Change = ChangeAmount.ToString();
+            BetsTotal = TotalAmt.ToString();
+            TotalDue = TotalAmt.ToString();
+            //var ChangeAmount = Convert.ToInt32(tender) - Convert.ToInt32(TotalAmt);
+            Change = "0";
         }
 
         public async Task CancelPopUpTenderAsync()
@@ -322,7 +350,23 @@ namespace JackPot.ViewModel
             }
         }
 
-        string change;
+
+        bool PriviewsTickietView;
+        public bool popupPriviewsTickietView
+        {
+            get { return PriviewsTickietView; }
+            set
+            {
+                if (PriviewsTickietView != value)
+                {
+                    PriviewsTickietView = value;
+                    OnPropertyChanged(nameof(popupPriviewsTickietView));
+
+                }
+            }
+        }
+
+        string change; 
         public string Change
         {
             get { return change; }
@@ -442,7 +486,7 @@ namespace JackPot.ViewModel
                 }
             }
         }
-        string sb;
+        string sb; 
         public string SB
         {
             get { return sb; }
@@ -474,17 +518,30 @@ namespace JackPot.ViewModel
                 }
             }
         }
+        string previousTenderAmt;
+        public string PreviousTenderAmt
+        {
+            get { return previousTenderAmt; }
+            set
+            {
+                if (previousTenderAmt != value)
+                {
+                    previousTenderAmt = value;
+                    OnPropertyChanged(nameof(PreviousTenderAmt));
 
+                }
+            }
+        }
         public void calculate()
         {
             try
             {
                 if (tender != "")
                 {
-                    BetsTotal = Amt.ToString();
-                    TotalDue = Amt.ToString();
-                    var ChangeAmount = Convert.ToInt32(Amt) - Convert.ToInt32(tender);
-                    Change = ChangeAmount.ToString();
+                    BetsTotal = TotalAmt.ToString();
+                    TotalDue = TotalAmt.ToString();
+                    var ChangeAmount = Convert.ToInt32(TotalAmt) - Convert.ToInt32(tender);
+                    Change =(System.Math.Abs( ChangeAmount) ).ToString();
 
                 }
 
@@ -504,6 +561,7 @@ namespace JackPot.ViewModel
         }
         public async void GetLateHouse()
         {
+            popupPriviewsTickietView = false;
             var TransactionNumberVal = await new loginPageService().GetDetailByUrl(BetEntry.GetTrancationNumber + GlobalConstant.UserName);
             if (TransactionNumberVal.Status == 1)
             {

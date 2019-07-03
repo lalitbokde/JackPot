@@ -39,6 +39,8 @@ namespace WareHouseManagement.PCL.Common
         public static string GetHouseDetail = "BetEntry/getHousesDetailsMode";
         public static string TrancatioSaveBetEntry = "BetEntry/InsertTender";
         public static string GetTrancationNumber = "BetEntry/gettblLottoTicketData?PanlUserId=";
+        public static string GetBetEntryByTicketNo = "GetBetByPreviousTicket?TicketNo=";
+        public static string GetTenderAmountbyTicketNo = "BetEntry/GetTenderAmountByTicketId?TicketNo=";
     }
 
    
