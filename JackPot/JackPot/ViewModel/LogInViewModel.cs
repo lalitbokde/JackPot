@@ -68,7 +68,7 @@ namespace JackPot.ViewModel
             }
         }
 
-        private async Task AutoLogin()
+        private async Task AutoLogin(string username, string password)
         {
 
             try
@@ -77,8 +77,8 @@ namespace JackPot.ViewModel
 
                 LogintModel _User = new LogintModel
                 {
-                    UserName = Convert.ToInt64(GlobalConstant.UserName),
-                    Password = GlobalConstant.UserPassword
+                    UserName = Convert.ToInt64(username),
+                    Password =password
                 };
 
               
@@ -114,9 +114,14 @@ namespace JackPot.ViewModel
             UserName = "400";
             PassWord = "1234";
             Navigation = navigation;
-            if(GlobalConstant.UserName!=0 && GlobalConstant.UserPassword !=null)
+
+            var UserNameAuto = _objShared.LoadApplicationProperty<string>("UserName");
+
+            var UserPasswordAuto = _objShared.LoadApplicationProperty<string>("UserPassword");
+
+            if (UserNameAuto != null && UserPasswordAuto != null)
             {
-                AutoLogin();
+                AutoLogin(UserNameAuto, UserPasswordAuto);
             }
            
         }
