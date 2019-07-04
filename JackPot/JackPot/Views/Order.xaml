@@ -313,7 +313,7 @@
 
 
                             <Button Text="Previous TRX " CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Column="0"   BackgroundColor="#bb2b23" Command="{Binding btnPreviousTRX}"></Button>
-                            <Button Text="Purchase Ticket" CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Column="1"   BackgroundColor="#bb2b23" Command="{Binding btnPurchaseTicket }"></Button>
+                            <Button  Text="Purchase Ticket" IsEnabled="{Binding PurchaseTicketEnabled}" CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Column="1"   BackgroundColor="#bb2b23" Command="{Binding btnPurchaseTicket }"></Button>
                     </Grid>
                 </StackLayout>
             </Grid>
@@ -444,7 +444,7 @@
                                             </Grid.ColumnDefinitions>
 
                                             <Label  Text="Ticket Number:"  Grid.Column="0" Grid.Row="0"   HorizontalOptions="FillAndExpand"  FontSize="16"/>
-                                            <Entry x:Name="popupPreviousTicketNo"  Text="{Binding LastTransactionNo}"  Grid.Column="1" Grid.Row="0"  VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand" FontSize="16"/>
+                                            <Entry x:Name="popupPreviousTicketNo"  Text="{Binding PreviousTicketNoPopup}"  Grid.Column="1" Grid.Row="0"  VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand" FontSize="16"/>
 
                                             <Label  Text="Tender Amount:"  Grid.Column="0" Grid.Row="1"   HorizontalOptions="FillAndExpand"  FontSize="16"/>
                                             <Entry x:Name="PreviewTenderAmount"  Text="{Binding PreviousTenderAmt}"  Grid.Column="1" Grid.Row="1"  VerticalOptions="FillAndExpand"  HorizontalOptions="FillAndExpand" FontSize="16"/>
