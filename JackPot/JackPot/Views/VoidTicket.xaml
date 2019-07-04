@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="JackPot.Views.VoidTicket">
+    <ContentPage.Content>
+        <AbsoluteLayout  Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <Grid RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="2.5*" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="0.5*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+
+                    <StackLayout Grid.Row="0"  HorizontalOptions="FillAndExpand" Padding="5">
+                        <Grid  HorizontalOptions="StartAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Ticket No." x:Name="txt_Agent"  TextColor="Black" FontSize="12"  Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" ></Label>
+                            <Entry x:Name="txt_Balance" TextColor="Black" Text="{Binding TicketNo}" FontSize="15" Grid.Row="1" Grid.Column="0"  HorizontalOptions="FillAndExpand"  ></Entry>
+                            <Button Text="Show ticket" TextColor="Black" FontSize="15" Grid.Row="1" Grid.Column="1"  HorizontalOptions="EndAndExpand"  ></Button>
+
+                        </Grid>
+                    </StackLayout>
+
+
+                    <StackLayout  Grid.Row="1" >
+                        <Grid RowSpacing="0" ColumnSpacing="0"  Padding="0">
+                            <Grid.RowDefinitions>
+
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="1*"/>
+
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions >
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Row="0" BackgroundColor="#f1b7af" Grid.Column="0" >
+                                <Label  VerticalOptions="CenterAndExpand" TextColor="Black" HorizontalOptions="Center" Text="Choice" Font="Bold"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" BackgroundColor="#f1b7af" Grid.Column="1">
+                                <Label  Text="S/B" TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Font="Bold"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" BackgroundColor="#f1b7af" Grid.Column="2">
+                                <Label  Text="House" TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Font="Bold"></Label>
+                            </StackLayout>
+
+                            <StackLayout Grid.Row="0" BackgroundColor="#f1b7af" Grid.Column="3">
+                                <Label  Text="$" TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Font="Bold"></Label>
+                            </StackLayout>
+
+                            <ListView x:Name="jackpotGid" Grid.Row="1" Grid.ColumnSpan="4" ItemsSource="{Binding OrderGridListObservCollection}" HasUnevenRows="True"  SeparatorVisibility="None"     HorizontalOptions="CenterAndExpand"   >
+
+                                <ListView.ItemTemplate >
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="White">
+
+                                                <StackLayout  >
+
+                                                    <Grid RowSpacing="0">
+                                                        <Grid.RowDefinitions>
+
+                                                            <RowDefinition Height="1*"/>
+
+
+
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="1*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                            <ColumnDefinition Width="1*"/>
+
+                                                        </Grid.ColumnDefinitions>
+                                                        <StackLayout Orientation="Horizontal" Grid.Column="0">
+
+                                                            <Label  Text="{Binding Numbers}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                                                            </Label>
+
+                                                        </StackLayout>
+
+                                                        <StackLayout Orientation="Horizontal" Grid.Column="1">
+
+
+                                                            <Label  Text="{Binding House}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                                                            </Label>
+
+                                                        </StackLayout>
+
+                                                        <StackLayout Orientation="Horizontal" Grid.Column="2">
+
+
+
+                                                            <Label  Text="{Binding SB}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                                                            </Label>
+                                                        </StackLayout>
+
+                                                        <StackLayout Orientation="Horizontal" Grid.Column="3">
+
+
+
+                                                            <Label  Text="{Binding SB}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                                                            </Label>
+                                                        </StackLayout>
+
+
+
+
+                                                    </Grid>
+
+                                                </StackLayout>
+
+
+
+                                            </StackLayout>
+
+
+
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+
+                            </ListView>
+
+                        </Grid>
+
+
+                    </StackLayout>
+
+
+
+
+
+
+
+                    <StackLayout Grid.Row="4" VerticalOptions="Center">
+                        <Grid RowSpacing="0">
+                            <Grid.RowDefinitions>
+
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label  Text="Total :" Grid.Row="0"  Grid.Column="5" FontSize="16" Font="Bold"  VerticalOptions="Fill" HorizontalOptions="Fill" ></Label>
+                            <Label x:Name="Total" Text="{Binding TotalAmt}" Grid.Row="0" Grid.Column="5" FontSize="16" Font="Bold" VerticalOptions="Fill" HorizontalOptions="Fill"></Label>
+
+                        </Grid>
+                    </StackLayout>
+
+
+                    <StackLayout Grid.Row="5" Orientation="Horizontal">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+
+
+                            <Button Text="Previous TRX " CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Column="0"   BackgroundColor="#bb2b23" Command="{Binding btnPreviousTRX}"></Button>
+                            <Button Text="Purchase Ticket" CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Column="1"   BackgroundColor="#bb2b23" Command="{Binding btnPurchaseTicket }"></Button>
+                        </Grid>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+
+
+
+
+
+
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>
