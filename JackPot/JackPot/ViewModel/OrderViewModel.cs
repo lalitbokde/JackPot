@@ -26,11 +26,44 @@ namespace JackPot.ViewModel
         ICommand btn_PreviewLastTransaction;
         ICommand btn_ClosePreviewTicketView;
         ICommand btnpurchaseTicket;
+        ICommand btn_PreviousLoadLate;
         INavigation Navigation;
         ListOrder Model = new ListOrder();
 
         public ICommand btnPreviousTRX =>
    btn_PreviousTRX ?? (btn_PreviousTRX = new Command(async () => await GoToPreviousTRX()));
+
+        public ICommand btnPreviousLoadLate=>
+            btn_PreviousLoadLate ?? (btn_PreviousLoadLate = new Command(async () => await LoadDataByPreviousTicket()));
+
+        private async Task LoadDataByPreviousTicket()
+        {
+           
+            var PreviousTicketData = await new loginPageService().GetDetailByUrl(BetEntry.GetBetEntryByTicketNo + PreviousTicketNoPopup);
+            if (PreviousTicketData.Status == 1)
+            {
+                OrderGridListObservCollection.Clear();
+                var DeserializeGridData = JsonConvert.DeserializeObject<List<vw_TicketBetsView>>(PreviousTicketData.Response.ToString());
+                TotalAmt = 0;
+                PurchaseTicketEnabled = false;
+                foreach (var item in DeserializeGridData)
+                {
+                    var Val1 = new BetCollection();
+                    Val1.Amt =item.Amount;
+                    Val1.GameID = item.GameID;
+                    Val1.Numbers =Convert.ToInt32( item.Pick);
+                    Val1.SB = item.Form;
+                    Val1.House = item.House;
+                    OrderGridListObservCollection.Add(Val1);
+                    TotalAmt = TotalAmt + item.Amount;
+                }
+                
+            }
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Message", "Ticket No Not Found.", "Ok");
+            }
+        }
 
         public ICommand btnClosePreviewTicketView =>
             btn_ClosePreviewTicketView ?? (btn_ClosePreviewTicketView = new Command(async () => popupPriviewsTickietView = false));
@@ -39,7 +72,15 @@ namespace JackPot.ViewModel
 
         private async Task GetPreviewTenderAmount()
         {
-           
+            var TransactionNumberVal = await new loginPageService().GetDetailByUrl(BetEntry.GetTenderAmountbyTicketNo+PreviousTicketNoPopup);
+            if (TransactionNumberVal.Status == 1)
+            {
+                PreviousTenderAmt = TransactionNumberVal.Response.ToString();
+            }
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Message", "Ticket No Not Found.", "Ok");
+            }
         }
 
         public ICommand btnCloseAddProductView =>
@@ -74,8 +115,9 @@ namespace JackPot.ViewModel
         {
             try
             {
+                PreviousTicketNoPopup = LastTransactionNo;
                 popupPriviewsTickietView = true;
-                var TransactionNumberVal = await new loginPageService().GetDetailByUrl(BetEntry.GetTenderAmountbyTicketNo+LastTransactionNo);
+                var TransactionNumberVal = await new loginPageService().GetDetailByUrl(BetEntry.GetTenderAmountbyTicketNo+PreviousTicketNoPopup);
                 if (TransactionNumberVal.Status == 1)
                 {
                     PreviousTenderAmt = TransactionNumberVal.Response.ToString();
@@ -350,6 +392,21 @@ namespace JackPot.ViewModel
             }
         }
 
+        bool purchaseTicketEnabled;
+        public bool PurchaseTicketEnabled
+        {
+            get { return purchaseTicketEnabled; }
+            set
+            {
+                if (purchaseTicketEnabled != value)
+                {
+                    purchaseTicketEnabled = value;
+                    OnPropertyChanged(nameof(PurchaseTicketEnabled));
+
+                }
+            }
+        }
+
 
         bool PriviewsTickietView;
         public bool popupPriviewsTickietView
@@ -408,6 +465,21 @@ namespace JackPot.ViewModel
                 {
                     totalDue = value;
                     OnPropertyChanged(nameof(TotalDue));
+
+                }
+            }
+        }
+
+        string previousTicketNoPopup;
+        public string PreviousTicketNoPopup
+        {
+            get { return previousTicketNoPopup; }
+            set
+            {
+                if (previousTicketNoPopup != value)
+                {
+                    previousTicketNoPopup = value;
+                    OnPropertyChanged(nameof(PreviousTicketNoPopup));
 
                 }
             }
@@ -622,7 +694,7 @@ namespace JackPot.ViewModel
         public OrderViewModel(INavigation navigation)
         {
             GetLateHouse();
-
+            PurchaseTicketEnabled = true;
             Navigation = navigation;
         }
 

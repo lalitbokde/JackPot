@@ -38,104 +38,11 @@ namespace WareHouseManagement.PCL.Common
         public static string GetLottoGameDetailByHouseIdandBalls = "BetEntry/GetLottoGameDetailByHouseIdandBalls?HouseId=";
         public static string GetHouseDetail = "BetEntry/getHousesDetailsMode";
         public static string TrancatioSaveBetEntry = "BetEntry/InsertTender";
-        public static string GetTrancationNumber = "BetEntry/gettblLottoTicketData?PanlUserId=";
-        public static string GetBetEntryByTicketNo = "GetBetByPreviousTicket?TicketNo=";
-        public static string GetTenderAmountbyTicketNo = "BetEntry/GetTenderAmountByTicketId?TicketNo=";
+        public static string GetTrancationNumber = "BetEntry/gettblLottoTicketData/";
+        public static string GetBetEntryByTicketNo = "BetEntry/GetBetByPreviousTicket/";
+        public static string GetTenderAmountbyTicketNo = "BetEntry/GetTenderAmountByTicketId/";
+        public static string GetLateHouseByHouseID = "BetEntry/GetLateHouseByHouseID/";
     }
 
-   
-    public struct PickUpUrl
-    {
-        public static string getshippinglist = "pickup/GetShipping?ID=";
-        public static string Deletepickuplist = "Pickup/DeletePickUpList?pickListId=";
-        public static string getPickUpListById = "Pickup/GetPickUpListById?pickListId=";
-        public static string getshippingDetails = "pickup/GetShippingAdress?CustomerId=";
-        public static string getshipperTo = "pickup/GetShipperAddress";
-        public static string PostDetail = "pickup/CreatePickup";
-        public static string getProducts = "pickup/GetPickUpProduct?CustomerId=";
-        public static string deleteWrPickupproduct = "pickup/DeleteWrPickProductByWrPickupProductId?WrPickupProductId=";
-        public static string getBinDetailsByProductId = "pickup/GetBins";
-        public static string getPickUpList = "pickup/GetPickUpList";
-        public static string postPickUpEditBin = "pickup/AddEditeProductBin?pickuplistId=";
-        public static string postResetPickUpEditProductBin = "pickup/ResetEditeProductBin?pickuplistId=";
-        public static string getGetShippingProducts = "pickup/GetShippingProducts?Id=";
-        public static string getProcessPicupList = "Picking/PickingApiList?id=";
-        public static string postBinsDetails = "pickup/AddEditeProductBin?pickuplistId=";
-        public static string postgetProgressPicupListdetails = "Picking/CompleteApiPickingList";
-
-    }
-    public struct PrinterUrl
-    {
-        public static string PrinterNames = "Printer/GetPrinters";
-        public static string PrintOut = "Printer/PrintOut";
-    }
-
-    public struct ClearPalletTagUrl
-    {
-        public static string ClearPalletTag = "PalletClear";
-
-    }
-    public struct ProductUrl
-    {
-        public static string DeleteProduct = "Product/DeleteProduct?productid=";
-        public static string Creatingproduct = "Product/CreatingProduct";
-        public static string GetProductList = "Product/GetProductList";
-        public static string GetProduct = "BinDetailByProduct/GetProductList";
-        public static string GetProductDetails = "BinDetailByProduct/GetBinsDetail";
-        public static string postproducts = "WrReceivingLogProduct/AddProductWrRecLog";
-        public static string postEditproducts = "WrReceivingLogProduct/EditProductWrRecLog";
-        public static string postdeleteproducts = "WrReceivingLogProduct/DeleteWrReceivingLogProduct";
-  
-
-    }
-
-    public struct ClearBinTagUrl
-    {
-        public static string ClearBinTag = "BinClear";
-
-    }
-    public struct DashBoardURL
-    {
-        public static string GetCalender = "Dashboard/GetCalender";
-        public static string GetCalenderByDate = "Dashboard/GetCalenderByDate";
-
-    }
-
-    public struct GetPickUpListUrl
-    {
-        public static string GetPickUpList = "PickUpList";
-
-    }
-    public struct GetBintagsUrl
-    {
-        public static string GetBintagList = "BinsList";
-    }
-
-    public struct GetPalletListUrl
-    {
-        public static string getpalletlist = "Pallet/GetPalletList";
-        public static string getpalletTaglist = "Pallet/GetPalletTagList";
-    }
-    public struct WrReceivingLogProduct
-    {
-        public static string getcustomerlist = "WrReceivingLogProduct/UserCustomerList";
-        public static string getvenderlist = "WrReceivingLogProduct/GetVendorList";
-        public static string getproductlist = "WrReceivingLogProduct/GetProductNameList?keyword=";
-        public static string getmaxlotno = "WrReceivingLogProduct/GetMaxLotNo";
-        public static string GetPalletDetailByWrrecivingId = "WrReceivingLogProduct/GetPalletmaintenanceItemByWrReceivingId?WrReceivingId=";
-    }
-
-    public struct DamageStockUrl
-    {
-        public static string InsertDamageStock = "DamageStock";
-        public static string DamageStockList = "DamageStock/GetDamageStockList";
-        public static string damageproductByWRReceivingId = "DamageStock/GetDamageStockProductByWRReceivedProductIdList?wrreceivedproductId=";
-    }
-
-    public struct DeliveryListUrl
-    {
-        public static string DeliveryList = "WarehouseReceiveLog/GetDeleiveryList?Id=";
-    }
-
-
+ 
 }
