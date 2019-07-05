@@ -46,6 +46,8 @@ namespace WareHouseManagement.PCL.Common
     public struct VoidTicketApi
     {
         public static string GetNonVoidedTicketBets = "BetEntry/GetNonVoidedTicketBets/";
+        public static string GetLottoBets = "VoidTicket/GetLottoBets/";
+        public static string AdjustBetsPerBall = "VoidTicket/AdjustBetsPerBall";
     }
 
  
