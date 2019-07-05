@@ -28,6 +28,16 @@ namespace JackPot.Views
           
         }
 
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            try { NavigationPage.SetHasNavigationBar(this, false); } catch { }
+            
+
+        }
+
+
         //private async void GetUserLoginAsync()
         //{
         //    LogintModel _User = new LogintModel
@@ -38,17 +48,17 @@ namespace JackPot.Views
         //    var UserDetail = await new loginPageService().GetLogin(_User, GlobalConstant.GetUserLoginDetail);
         //    if (UserDetail.Status == 1)
         //    {
-          
+
 
 
         //        App.Current.MainPage = new NavigationPage(new MainPage());
 
 
-               
+
         //    }
         //    else
         //    {
-             
+
 
 
         //    }

@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace JackPot.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class CommingSoon : ContentPage
+	public partial class SetCustomerScreen : ContentPage
 	{
-		public CommingSoon ()
+		public SetCustomerScreen ()
 		{
 			InitializeComponent ();
 		}
