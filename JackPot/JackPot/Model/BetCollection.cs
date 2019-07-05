@@ -11,6 +11,7 @@ namespace JackPot.Model
         public string SB { get; set; }
         public decimal Amt { get; set; }
         public int GameID { get; set; }
+        public System.DateTime dtBetDate { get; set; }
         public string Ball1 { get; set; }
         public string Ball2 { get; set; }
         public string Ball3 { get; set; }
