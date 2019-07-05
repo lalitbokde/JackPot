@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JackPot.PCL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace JackPot.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : MasterDetailPage
     {
+        SharedPreference _objShared = new SharedPreference();
         public MainPage()
         {
             InitializeComponent();
@@ -23,14 +25,26 @@ namespace JackPot.Views
             var item = e.SelectedItem as MainPageMenuItem;
             if (item == null)
                 return;
+            if (item.TargetType != typeof(LogIn))
+            {
+                var page = (Page)Activator.CreateInstance(item.TargetType);
+                page.Title = item.Title;
 
-            var page = (Page)Activator.CreateInstance(item.TargetType);
-            page.Title = item.Title;
+                Detail = new NavigationPage(page);
+                IsPresented = false;
 
-            Detail = new NavigationPage(page);
-            IsPresented = false;
+                MasterPage.ListView.SelectedItem = null;
+            }
+            else
+            {
 
-            MasterPage.ListView.SelectedItem = null;
+                Navigation.PopModalAsync();
+                _objShared.SaveApplicationProperty("AccessToken", 0);
+                _objShared.SaveApplicationProperty("UserName", 0);
+                _objShared.SaveApplicationProperty("CustomerName", 0);
+                _objShared.SaveApplicationProperty("UserPassword", 0);
+
+            }
         }
     }
 }

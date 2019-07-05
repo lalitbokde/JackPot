@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="JackPot.Views.CommingSoon">
+             x:Class="JackPot.Views.CustomerWithdrawalScreen">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-            <Label Text="Comming Soon"
+        <StackLayout>
+            <Label Text="Design Not Available!"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" Font="Bold" FontSize="Large"/>
+                HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

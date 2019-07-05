@@ -76,13 +76,13 @@ namespace JackPot.Views
                         new MainPageMenuItem { Id = 2, Title = "Void Ticket" ,TargetType=typeof(VoidTicket) },
                           new MainPageMenuItem { Id = 7, Title = "Customer Deposit" ,TargetType=typeof(CustomerDetail)},
                           new MainPageMenuItem { Id = 3, Title = "Winner Number" ,TargetType=typeof(WiningScreen) },
-                            new MainPageMenuItem { Id = 4, Title = "Pay Winner" ,TargetType=typeof(CommingSoon) },
+                            new MainPageMenuItem { Id = 4, Title = "Pay Winner" ,TargetType=typeof(PayWinnerScreen) },
                               new MainPageMenuItem { Id = 5, Title = "Sales Info" ,TargetType=typeof(SalesInfo) },
-                                new MainPageMenuItem { Id = 6, Title = "Set Customer" ,TargetType=typeof(CommingSoon) },
+                                new MainPageMenuItem { Id = 6, Title = "Set Customer" ,TargetType=typeof(SetCustomerScreen) },
 
                                 
-                                  new MainPageMenuItem { Id = 8, Title = "Customer WithDraw" ,TargetType=typeof(CommingSoon)},
-                                   new MainPageMenuItem { Id = 9, Title = "Log Out" ,TargetType=typeof(LogIn) },
+                                  new MainPageMenuItem { Id = 8, Title = "Customer WithDraw" ,TargetType=typeof(CustomerWithdrawalScreen)},
+                                   new MainPageMenuItem { Id = 9, Title = "Log Out",TargetType=typeof(LogIn) },
 
 
                 });

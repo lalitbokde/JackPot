@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="JackPot.Views.PreviousTRX">
+             x:Class="JackPot.Views.SetCustomerScreen">
     <ContentPage.Content>
 
         <AbsoluteLayout  Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-        
+
 
             <ContentView x:Name="popupView" BackgroundColor="#C0808080" Padding="10, 0"  IsVisible="True" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
                 <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
@@ -35,9 +35,10 @@
                                             </Grid.ColumnDefinitions>
 
                                             <StackLayout  HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0">
-                                                <Label  Text="Last Receipt #"    HorizontalOptions="CenterAndExpand"  FontSize="20"/>
-                                                <Label  Text="1234567890"     HorizontalOptions="CenterAndExpand" FontSize="16"/>
-                                                <Label  Text="$ 1250"    HorizontalOptions="CenterAndExpand"  FontSize="16"/>
+                                                <Label  Text="Scan Customer Card"    HorizontalOptions="FillAndExpand"  FontSize="20"/>
+                                                <Entry  Placeholder="Enter Pin"     HorizontalOptions="FillAndExpand" FontSize="16"/>
+                                                <Label  Text="Customer Name"    HorizontalOptions="FillAndExpand"  FontSize="16"/>
+                                                <Label  Text="$ 1250"    HorizontalOptions="FillAndExpand"  FontSize="16"/>
 
                                             </StackLayout>
 
