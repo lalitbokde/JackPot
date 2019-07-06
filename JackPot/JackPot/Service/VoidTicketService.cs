@@ -36,5 +36,39 @@ namespace JackPot.Service
                 return _User;
             }
         }
+
+        public async Task<ResultModel> PosttblLottoTicket(tblPanelUserTransaction model, string Url)
+        {
+            ResultModel _User = new ResultModel();
+            try
+            {
+
+                _User = await _helper.Post<tblPanelUserTransaction>(model, Url);
+
+                return _User;
+            }
+            catch (Exception ex)
+            {
+                // Crashes.TrackError(ex);
+                return _User;
+            }
+        }
+
+        public async Task<ResultModel> UpdatetblLottoTicket(tblLottoTicket model, string Url)
+        {
+            ResultModel _User = new ResultModel();
+            try
+            {
+
+                _User = await _helper.Post<tblLottoTicket>(model, Url);
+
+                return _User;
+            }
+            catch (Exception ex)
+            {
+                // Crashes.TrackError(ex);
+                return _User;
+            }
+        }
     }
 }

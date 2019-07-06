@@ -18,6 +18,7 @@ namespace WareHouseManagement.PCL.Common
         public static string AccessToken { get; set; }
        
         public static long UserName { get; set; }
+        public static int LocationId { get; set; }
         public static int UserId { get; set; }
         public static string CustomerName { get; set; }
         public static decimal BalanceAmt { get; set; }
@@ -48,6 +49,9 @@ namespace WareHouseManagement.PCL.Common
         public static string GetNonVoidedTicketBets = "BetEntry/GetNonVoidedTicketBets/";
         public static string GetLottoBets = "VoidTicket/GetLottoBets/";
         public static string AdjustBetsPerBall = "VoidTicket/AdjustBetsPerBall";
+        public static string GetLottoTicketbyTicketId = "VoidTicket/GetLottoTicketbyTicketId/";
+        public static string InsertUserTransaction = "VoidTicket/InsertUserTransaction";
+        public static string UpdatetblLottoTicket = "VoidTicket/UpdatetblLottoTicket";
     }
 
  

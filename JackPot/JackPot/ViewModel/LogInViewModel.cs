@@ -51,7 +51,7 @@ namespace JackPot.ViewModel
                     GlobalConstant.UserPassword = wrShiipinglist.sPassword;
                     GlobalConstant.CustomerName = wrShiipinglist.sFirstName + " " + wrShiipinglist.sLastName;
                     GlobalConstant.BalanceAmt = wrShiipinglist.decBalance;
-
+                    GlobalConstant.LocationId = wrShiipinglist.iLocationID;
                     _objShared.SaveApplicationProperty("AccessToken", GlobalConstant.AccessToken);
                     _objShared.SaveApplicationProperty("UserName", GlobalConstant.UserName);
                     _objShared.SaveApplicationProperty("CustomerName", GlobalConstant.CustomerName);
