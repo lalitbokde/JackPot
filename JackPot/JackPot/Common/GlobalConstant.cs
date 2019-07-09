@@ -44,6 +44,10 @@ namespace WareHouseManagement.PCL.Common
         public static string GetTenderAmountbyTicketNo = "BetEntry/GetTenderAmountByTicketId/";
         public static string GetLateHouseByHouseID = "BetEntry/GetLateHouseByHouseID/";
     }
+    public struct Sales
+    {
+        public static string GetSalesReport = "Report/GetSalesReportByDate?LocationId=";
+    }
     public struct VoidTicketApi
     {
         public static string GetNonVoidedTicketBets = "BetEntry/GetNonVoidedTicketBets/";

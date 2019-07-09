@@ -9,10 +9,10 @@
                 <Grid RowSpacing="0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1.5*" />
-                        <RowDefinition Height="0.5*" />
+                        <RowDefinition Height="0.2*" />
                         <RowDefinition Height="0.5*" />
                         <RowDefinition Height="0.1*" />
-                        <RowDefinition Height="0.2*" />
+                        <RowDefinition Height="1*" />
                         <RowDefinition Height="0.2*" />
                     </Grid.RowDefinitions>
 
@@ -31,11 +31,11 @@
                              
 
                             </Grid.ColumnDefinitions>
-                            <Entry Placeholder="MM//dd//yyyy" Text="{Binding txtStartDate}"  TextColor="Black" FontSize="15"  Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" ></Entry>
-                            <ImageButton x:Name="txt_Balance"  Grid.Row="0" Grid.Column="1" Source="Calender.png" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Command="{Binding btnStartDate}" BackgroundColor="White" ></ImageButton>
-                            <Entry Placeholder="MM//dd//yyyy" Text="{Binding txtEndtDate}" TextColor="Black" FontSize="15" Grid.Row="1" Grid.Column="0"  HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" ></Entry>
-                            <ImageButton x:Name="txt_LastTransaction"  Grid.Row="1" Grid.Column="1"  Source="Calender.png" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Command="{Binding btnEndDate}" BackgroundColor="White"  ></ImageButton>
-                            <Button Text="show" Grid.Row="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"/>
+                            <DatePicker   TextColor="Black" Date="{Binding StartDate}" FontSize="15"  Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" ></DatePicker>
+                            <ImageButton x:Name="txt_Balance"  Grid.Row="0" Grid.Column="1" Source="Calender.png" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Command="{Binding StartDate}" BackgroundColor="White" ></ImageButton>
+                            <DatePicker  TextColor="Black" Date="{Binding EndDate}" FontSize="15" Grid.Row="1" Grid.Column="0"  HorizontalOptions="FillAndExpand" ></DatePicker>
+                            <ImageButton x:Name="txt_LastTransaction"  Grid.Row="1" Grid.Column="1"  Source="Calender.png" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Command="{Binding EndDate}" BackgroundColor="White"  ></ImageButton>
+                            <Button Text="show" Command="{Binding BtnShow}" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"/>
 
 
                         </Grid>
@@ -66,15 +66,15 @@
                             </Grid.ColumnDefinitions>
                             <StackLayout Grid.Row="1"  Grid.Column="0" Orientation="Horizontal">
                                 <Label  VerticalOptions="StartAndExpand" TextColor="Black" HorizontalOptions="StartAndExpand" Text="Location" Font="Bold"></Label>
-                                <Label  VerticalOptions="EndAndExpand" TextColor="Black" HorizontalOptions="StartAndExpand" Text="301 test" ></Label>
+                                <Label  VerticalOptions="EndAndExpand" TextColor="Black" HorizontalOptions="EndAndExpand" Text="{Binding Location}" ></Label>
                             </StackLayout>
                             <StackLayout Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
                                 <Label  VerticalOptions="StartAndExpand" TextColor="Black" HorizontalOptions="StartAndExpand" Text="From" Font="Bold"></Label>
-                                <Label  VerticalOptions="EndAndExpand" TextColor="Black" HorizontalOptions="StartAndExpand" Text="301 test" ></Label>
+                                <Label  VerticalOptions="EndAndExpand" TextColor="Black" HorizontalOptions="EndAndExpand" Text="{Binding StartDate,StringFormat='{0:MM/dd/yyyy}'}" ></Label>
                             </StackLayout>
                             <StackLayout Grid.Row="3" Grid.Column="0" Orientation="Horizontal">
                                 <Label  VerticalOptions="StartAndExpand" TextColor="Black" HorizontalOptions="StartAndExpand" Text="To" Font="Bold"></Label>
-                                <Label  VerticalOptions="EndAndExpand" TextColor="Black" HorizontalOptions="StartAndExpand" Text="301 test" ></Label>
+                                <Label  VerticalOptions="EndAndExpand" TextColor="Black" HorizontalOptions="EndAndExpand" Text="{Binding EndDate,StringFormat='{0:MM/dd/yyyy}'}" ></Label>
                             </StackLayout>
 
                          
@@ -92,14 +92,14 @@
 
                     <StackLayout Grid.Row="3" HorizontalOptions="StartAndExpand">
                        
-                            <Label x:Name="Total" Text="400 ken cashier"   FontSize="16" Font="Bold"  HorizontalOptions="StartAndExpand"></Label>
+                            <Label x:Name="Total" Text="{Binding Name}"   FontSize="16" Font="Bold"  HorizontalOptions="StartAndExpand"></Label>
 
                     </StackLayout>
 
 
                     <StackLayout Grid.Row="4" >
 
-                        <ListView x:Name="SalesInfo" Grid.Row="1"  ItemsSource="{Binding OrderGridListObservCollection}" HasUnevenRows="True"  SeparatorVisibility="None"     HorizontalOptions="CenterAndExpand"   >
+                        <ListView x:Name="SalesInfo" Grid.Row="1"  ItemsSource="{Binding SalesGridListObservCollection}" HasUnevenRows="True"  SeparatorVisibility="None"     HorizontalOptions="CenterAndExpand"   >
 
                             <ListView.ItemTemplate >
                                 <DataTemplate>
@@ -123,10 +123,10 @@
                                                     </Grid.ColumnDefinitions>
                                                     <StackLayout Orientation="Horizontal">
 
-                                                        <Label  Text="07/07/2019" Grid.Row="0" Grid.Column="0"  HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"/>
+                                                        <Label  Text="{Binding DateFor}" Grid.Row="0" Grid.Column="0"  HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"/>
 
 
-                                                        <Label  Text="40000"  Grid.Row="0" Grid.Column="1"  HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"/>
+                                                        <Label  Text="{Binding Sales}"  Grid.Row="0" Grid.Column="1"  HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"/>
 
 
 
@@ -168,11 +168,11 @@
                             </Grid.ColumnDefinitions>
                             <StackLayout Grid.Row="0"  Grid.Column="0" Orientation="Horizontal">
                                 <Label  VerticalOptions="StartAndExpand" TextColor="Black" HorizontalOptions="StartAndExpand" Text="Cashier Sales" Font="Bold"></Label>
-                                <Label  VerticalOptions="StartAndExpand" TextColor="Black" HorizontalOptions="StartAndExpand" Text="30000" ></Label>
+                                <Label  VerticalOptions="EndAndExpand" TextColor="Black" HorizontalOptions="EndAndExpand" Text="{Binding TotalSale}" ></Label>
                             </StackLayout>
                             <StackLayout Grid.Row="1"  Grid.Column="0" Orientation="Horizontal">
                                 <Label  VerticalOptions="StartAndExpand" TextColor="Black" HorizontalOptions="StartAndExpand" Text="Cashier Commission" Font="Bold"></Label>
-                                <Label  VerticalOptions="StartAndExpand" TextColor="Black" HorizontalOptions="StartAndExpand" Text="50000" ></Label>
+                                <Label  VerticalOptions="EndAndExpand" TextColor="Black" HorizontalOptions="EndAndExpand" Text="{Binding Commission}" ></Label>
                             </StackLayout>
                             
 
@@ -198,11 +198,11 @@
                             </Grid.ColumnDefinitions>
                             <StackLayout Grid.Row="0"  Grid.Column="0" Orientation="Horizontal">
                                 <Label  VerticalOptions="StartAndExpand" TextColor="Black" HorizontalOptions="StartAndExpand" Text="Total Sales" Font="Bold"></Label>
-                                <Label  VerticalOptions="StartAndExpand" TextColor="Black" HorizontalOptions="EndAndExpand" Text="900000" ></Label>
+                                <Label  VerticalOptions="EndAndExpand" TextColor="Black" HorizontalOptions="EndAndExpand" Text="{Binding TotalSale}" ></Label>
                             </StackLayout>
                             <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
                                 <Label  VerticalOptions="StartAndExpand" TextColor="Black" HorizontalOptions="StartAndExpand" Text="Commission" Font="Bold"></Label>
-                                <Label  VerticalOptions="StartAndExpand" TextColor="Black" HorizontalOptions="EndAndExpand" Text="11000000" ></Label>
+                                <Label  VerticalOptions="EndAndExpand" TextColor="Black" HorizontalOptions="EndAndExpand" Text="{Binding Commission}" ></Label>
                             </StackLayout>
 
 

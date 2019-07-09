@@ -91,6 +91,7 @@ namespace JackPot.ViewModel
                     GlobalConstant.UserPassword = wrShiipinglist.sPassword;
                     GlobalConstant.CustomerName = wrShiipinglist.sFirstName + " " + wrShiipinglist.sLastName;
                     GlobalConstant.BalanceAmt = wrShiipinglist.decBalance;
+                    GlobalConstant.LocationId = wrShiipinglist.iLocationID;
                     await Navigation.PushModalAsync(new MainPage());
                 }
                 else
