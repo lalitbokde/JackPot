@@ -31,8 +31,8 @@
                                 <ColumnDefinition Width="1*" />
                             </Grid.ColumnDefinitions>
                             <Label Text="Enter Receipts" x:Name="txt_Agent"  TextColor="Black" FontSize="12"  Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" ></Label>
-                            <Entry x:Name="txt_TicketNo" TextColor="Black" Text="{Binding TicketNo}" FontSize="15" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"  HorizontalOptions="FillAndExpand" Keyboard="Numeric"  ></Entry>
-                            <Button Text="Show Winner" Command="{Binding ShowData}" TextColor="Black" FontSize="15" Grid.Row="2" Grid.Column="3"  HorizontalOptions="EndAndExpand"  ></Button>
+                            <Entry x:Name="txt_TicketNo" TextColor="Black" Text="{Binding EnterReceipt}" FontSize="15" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"  HorizontalOptions="FillAndExpand" Keyboard="Numeric"  ></Entry>
+                            <Button Text="Show Winner" Command="{Binding btnShowData}" TextColor="Black" FontSize="15" Grid.Row="2" Grid.Column="3"  HorizontalOptions="EndAndExpand"  ></Button>
 
                         </Grid>
                     </StackLayout>
@@ -199,8 +199,8 @@
 
 
 
-                        <Button Text="Close" CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Row="0"  Grid.Column="0" HorizontalOptions="CenterAndExpand"  BackgroundColor="#bb2b23" Command="{Binding }"></Button>
-                        <Button Text="Pay Winner" CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand"  BackgroundColor="#bb2b23" Command="{Binding  }"></Button>
+                        <Button Text="Close" CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Row="0"  Grid.Column="0" HorizontalOptions="CenterAndExpand"  BackgroundColor="#bb2b23" Command="{Binding btnClose }"></Button>
+                        <Button Text="Pay Winner" CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand"  BackgroundColor="#bb2b23" Command="{Binding PayWinner }"></Button>
                         <!--</Grid>-->
                     </StackLayout>
                 </Grid>

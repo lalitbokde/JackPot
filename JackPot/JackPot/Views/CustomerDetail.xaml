@@ -21,7 +21,7 @@
                          AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Margin="7" Padding="1">
                                 <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
                                     <Label  Text="Customer # :" FontSize="9" Font="Bold" />
-                                    <Entry HorizontalOptions="FillAndExpand" />
+                                            <Entry HorizontalOptions="FillAndExpand" Text="{Binding Customer}" />
                                 </StackLayout>
 
                                 <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
@@ -31,17 +31,17 @@
 
                                 <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
                                             <Label  Text="Customer Name :" FontSize="9" Font="Bold" />
-                                    <Entry HorizontalOptions="FillAndExpand" />
+                                    <Entry HorizontalOptions="FillAndExpand" Text="{Binding CustomerName}" />
                                 </StackLayout>
 
                                 <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
                                             <Label  Text="Deposite $ :" FontSize="9" Font="Bold" />
-                                    <Entry HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="0.00"/>
+                                            <Entry HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="0.00" Text="{Binding Deposite}"/>
                                 </StackLayout>
 
                                 <StackLayout HorizontalOptions="CenterAndExpand" Spacing="20" Orientation="Horizontal">
 
-                                    <Button x:Name="btn_Close"  Text="Close"  TextColor="#ffffff"  BackgroundColor="#bb2b23"  BorderRadius="7" HeightRequest="40" HorizontalOptions="Center" Command="{Binding btnPopupClose}" />
+                                    <Button x:Name="btn_Close"  Text="Close"  TextColor="#ffffff"  BackgroundColor="#bb2b23"  BorderRadius="7" HeightRequest="40" HorizontalOptions="Center" Command="{Binding btnClose}" />
                                     <Button x:Name="btn_Deposite" Command="{Binding btnDeposite}" Text="Deposite" TextColor="#ffffff"  BackgroundColor="#bb2b23"     BorderRadius="7" HeightRequest="40" HorizontalOptions="End"  />
 
                                 </StackLayout>
