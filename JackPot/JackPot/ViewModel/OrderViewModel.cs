@@ -144,103 +144,109 @@ namespace JackPot.ViewModel
 
         private async Task ShowSuccessMsg()
         {
-            string lBall = Numbers;
-            string[] Val = new string[4];
-
-            string mstrBall1 = "";
-            string mstrBall2 = "";
-            string mstrBall3 = "";
-            string mstrBall4 = "";
-            int Length = lBall.Length;
-            switch (Length.ToString())
+            if (Convert.ToDecimal(Tender) >= Convert.ToDecimal(BetsTotal))
             {
-                case "2":
-                    lBall = lBall.Insert(1, "-");
+                string lBall = Numbers;
+                string[] Val = new string[4];
 
-                    Val = lBall.Split('-');
-                    Array.Sort(Val);
+                string mstrBall1 = "";
+                string mstrBall2 = "";
+                string mstrBall3 = "";
+                string mstrBall4 = "";
+                int Length = lBall.Length;
+                switch (Length.ToString())
+                {
+                    case "2":
+                        lBall = lBall.Insert(1, "-");
 
-                    mstrBall1 = Val[0].ToString();
-                    mstrBall2 = Val[1].ToString();
+                        Val = lBall.Split('-');
+                        Array.Sort(Val);
+
+                        mstrBall1 = Val[0].ToString();
+                        mstrBall2 = Val[1].ToString();
                         break;
-                case "3":
-                    lBall = lBall.Insert(1, "-");
-                    lBall = lBall.Insert(3, "-");
+                    case "3":
+                        lBall = lBall.Insert(1, "-");
+                        lBall = lBall.Insert(3, "-");
 
-                    Val = lBall.Split('-');
-                    Array.Sort(Val);
+                        Val = lBall.Split('-');
+                        Array.Sort(Val);
 
-                    mstrBall1 = Val[0];
-                    mstrBall2 = Val[1];
-                    mstrBall3 = Val[2];
-                    break;
-                case "4":
-                    lBall = lBall.Insert(1, "-");
-                    lBall = lBall.Insert(3, "-");
-                    lBall = lBall.Insert(5, "-");
+                        mstrBall1 = Val[0];
+                        mstrBall2 = Val[1];
+                        mstrBall3 = Val[2];
+                        break;
+                    case "4":
+                        lBall = lBall.Insert(1, "-");
+                        lBall = lBall.Insert(3, "-");
+                        lBall = lBall.Insert(5, "-");
 
-                    Val = lBall.Split('-');
-                    Array.Sort(Val);
+                        Val = lBall.Split('-');
+                        Array.Sort(Val);
 
-                    mstrBall1 = Val[0];
-                    mstrBall2 = Val[1];
-                    mstrBall3 = Val[2];
-                    mstrBall4 = Val[3];
-                    break;
-            }
-            var BetEntryModel = new RequestTenderModel();
-            int Count = 0;
-            BetEntryModel.TenderAmount = tender;
-            BetEntryModel.PanelUserID = GlobalConstant.UserName;
-            BetEntryModel.Totals = TotalAmt;
-            BetEntryModel.Change = Change;
-            BetEntryModel.CommissionRate = 0;
-            BetEntryModel.UsesFreeBet = false;
-            BetEntryModel.FreeBetAmount = Convert.ToDecimal(tender);
-            BetEntryModel.MintShiftID = 8;
-            BetEntryModel.mdecFreeBetTotal = Convert.ToInt32(TotalAmt);
+                        mstrBall1 = Val[0];
+                        mstrBall2 = Val[1];
+                        mstrBall3 = Val[2];
+                        mstrBall4 = Val[3];
+                        break;
+                }
+                var BetEntryModel = new RequestTenderModel();
+                int Count = 0;
+                BetEntryModel.TenderAmount = tender;
+                BetEntryModel.PanelUserID = GlobalConstant.UserName;
+                BetEntryModel.Totals = TotalAmt;
+                BetEntryModel.Change = Change;
+                BetEntryModel.CommissionRate = 0;
+                BetEntryModel.UsesFreeBet = false;
+                BetEntryModel.FreeBetAmount = Convert.ToDecimal(tender);
+                BetEntryModel.MintShiftID = 8;
+                BetEntryModel.mdecFreeBetTotal = Convert.ToInt32(TotalAmt);
 
-            foreach (var Item in OrderGridListObservCollection)
-            {
-                Count = Count + 1;
-                var ModelData = new BetCollection();
-                ModelData.Numbers = Item.Numbers;
-                ModelData.House = Item.House;
-                ModelData.SB = Item.SB;
-                ModelData.Amt = Item.Amt;
-                ModelData.GameID = Item.GameID;
-                ModelData.Ball1 = mstrBall1;
-                ModelData.Ball2 = mstrBall2;
-                ModelData.Ball3 = mstrBall3;
-                ModelData.Ball4 = mstrBall4;
-                ModelData.StraightBall = Numbers;
-                ModelData.BetAmount = Item.Amt;
-                ModelData.PayFactor =Convert.ToDouble(Item.Amt);
-                BetEntryModel.BetCollection.Add(ModelData);
-            }
-            BetEntryModel.NoOfBets = Count;
-            PopUpVisibility = false;
-            var TransactionNumberVal = await new BetEntrySevice().PostBetEntry(BetEntryModel, BetEntry.TrancatioSaveBetEntry);
-            if (TransactionNumberVal.Status == 1)
-            {
-                var ResponseSave= JsonConvert.DeserializeObject<LogInModel>(TransactionNumberVal.Response.ToString());
-                GlobalConstant.BalanceAmt = ResponseSave.decBalance;
-                OrderGridListObservCollection.Clear();
-                ListItemVal.Clear();
-                Amt = "0";
-                Numbers = "0";
-                TotalAmt = 0;
-                GetLateHouse();
-                GetLateHouse();
+                foreach (var Item in OrderGridListObservCollection)
+                {
+                    Count = Count + 1;
+                    var ModelData = new BetCollection();
+                    ModelData.Numbers = Item.Numbers;
+                    ModelData.House = Item.House;
+                    ModelData.SB = Item.SB;
+                    ModelData.Amt = Item.Amt;
+                    ModelData.GameID = Item.GameID;
+                    ModelData.Ball1 = mstrBall1;
+                    ModelData.Ball2 = mstrBall2;
+                    ModelData.Ball3 = mstrBall3;
+                    ModelData.Ball4 = mstrBall4;
+                    ModelData.StraightBall = Numbers;
+                    ModelData.BetAmount = Item.Amt;
+                    ModelData.PayFactor = Convert.ToDouble(Item.Amt);
+                    BetEntryModel.BetCollection.Add(ModelData);
+                }
+                BetEntryModel.NoOfBets = Count;
+                PopUpVisibility = false;
+                var TransactionNumberVal = await new BetEntrySevice().PostBetEntry(BetEntryModel, BetEntry.TrancatioSaveBetEntry);
+                if (TransactionNumberVal.Status == 1)
+                {
+                    var ResponseSave = JsonConvert.DeserializeObject<LogInModel>(TransactionNumberVal.Response.ToString());
+                    GlobalConstant.BalanceAmt = ResponseSave.decBalance;
+                    OrderGridListObservCollection.Clear();
+                    ListItemVal.Clear();
+                    Amt = "0";
+                    Numbers = "0";
+                    TotalAmt = 0;
+                    GetLateHouse();
+                    GetLateHouse();
 
-                Application.Current.MainPage.DisplayAlert("Message", "Success", "Ok");
+                    Application.Current.MainPage.DisplayAlert("Message", "Success", "Ok");
+                }
+                else
+                {
+                    Application.Current.MainPage.DisplayAlert("Message", "Error", "Ok");
+                }
+
             }
             else
             {
-                Application.Current.MainPage.DisplayAlert("Message", "Error", "Ok");
+                Application.Current.MainPage.DisplayAlert("Message", "Enter Proper Amount.", "Ok");
             }
-            
-
 
         }
 
