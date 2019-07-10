@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JackPot.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,12 @@ namespace JackPot.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class WiningScreen : ContentPage
 	{
-		public WiningScreen ()
+        WiningScreenViewModel ViewModel;
+        public WiningScreen ()
 		{
 			InitializeComponent ();
-		}
+            BindingContext = ViewModel = new WiningScreenViewModel(Navigation);
+        }
 
        
     }
