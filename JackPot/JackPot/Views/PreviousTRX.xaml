@@ -7,12 +7,12 @@
         <AbsoluteLayout  Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         
 
-            <ContentView x:Name="popupView" BackgroundColor="#C0808080" Padding="10, 0"  IsVisible="True" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+            <ContentView x:Name="popupView" BackgroundColor="#C0808080" Padding="10, 0"  IsVisible="{Binding popup}" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
                 <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
                     <StackLayout Orientation="Vertical" HeightRequest="250" WidthRequest="350" BackgroundColor="White"  >
                         <StackLayout Orientation="Horizontal" VerticalOptions="Center" BackgroundColor="#bb2b23" HorizontalOptions="FillAndExpand" >
                             <Label Text="Receipt info" FontSize="14" TextColor="White" HeightRequest="30" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand"/>
-                            <ImageButton   Source="Close_Grid_Popup.png"  Command="{Binding btnCloseAddProductView}" BackgroundColor="Transparent" HeightRequest="30" WidthRequest="30"  HorizontalOptions="End" VerticalOptions="Start"/>
+                            <ImageButton   Source="Close_Grid_Popup.png"  Command="{Binding btnCloseView}" BackgroundColor="Transparent" HeightRequest="30" WidthRequest="30"  HorizontalOptions="End" VerticalOptions="Start"/>
 
                         </StackLayout>
                         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="5">
@@ -36,8 +36,8 @@
 
                                             <StackLayout  HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0">
                                                 <Label  Text="Last Receipt #"    HorizontalOptions="CenterAndExpand"  FontSize="20"/>
-                                                <Label  Text="1234567890"     HorizontalOptions="CenterAndExpand" FontSize="16"/>
-                                                <Label  Text="$ 1250"    HorizontalOptions="CenterAndExpand"  FontSize="16"/>
+                                                <Label  Text="{Binding TicketNo}"     HorizontalOptions="CenterAndExpand" FontSize="16"/>
+                                                <Label  Text="{Binding BalAmount}"    HorizontalOptions="CenterAndExpand"  FontSize="16"/>
 
                                             </StackLayout>
 

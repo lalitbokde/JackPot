@@ -68,8 +68,8 @@
                             <StackLayout Grid.Row="0" BackgroundColor="#411f1f" Grid.Column="2">
                                 <Label  Text="$" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Font="Bold"></Label>
                             </StackLayout>
-                         
-                            <ListView x:Name="jackpotGid" Grid.Row="1" Grid.ColumnSpan="3" ItemsSource="{Binding OrderGridListObservCollection}" HasUnevenRows="True"  SeparatorVisibility="None"     HorizontalOptions="CenterAndExpand"   >
+
+                            <ListView x:Name="jackpotGid" Grid.Row="1" Grid.ColumnSpan="3" ItemsSource="{Binding ShiftGridListObservCollection}" HasUnevenRows="True"  SeparatorVisibility="None"     HorizontalOptions="CenterAndExpand"   >
 
                                 <ListView.ItemTemplate >
                                     <DataTemplate>
@@ -94,7 +94,7 @@
                                                         </Grid.ColumnDefinitions>
                                                         <StackLayout Orientation="Horizontal" Grid.Column="0">
 
-                                                            <Label  Text="{Binding Numbers}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                            <Label  Text="{Binding TrxType}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                                                             </Label>
 
@@ -103,7 +103,7 @@
                                                         <StackLayout Orientation="Horizontal" Grid.Column="1">
 
 
-                                                            <Label  Text="{Binding House}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                            <Label  Text="{Binding NoOfTrx}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                                                             </Label>
 
@@ -113,7 +113,7 @@
 
 
 
-                                                            <Label  Text="{Binding SB}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                            <Label  Text="{Binding Total}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                                                             </Label>
                                                         </StackLayout>

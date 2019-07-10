@@ -169,7 +169,7 @@
                     <StackLayout Grid.Row="5" Orientation="Horizontal">
                       
 
-                            <Button Text="Cancel" CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Row="0"  Grid.Column="0" HorizontalOptions="CenterAndExpand"  BackgroundColor="#bb2b23" Command="{Binding }"></Button>
+                            <Button Text="Cancel" CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Row="0"  Grid.Column="0" HorizontalOptions="CenterAndExpand"  BackgroundColor="#bb2b23" Command="{Binding btnCancel}"></Button>
                         <Button Text="Void Ticket" CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand"  BackgroundColor="#bb2b23" Command="{Binding btnVoided}"></Button>
                         <!--</Grid>-->
                     </StackLayout>

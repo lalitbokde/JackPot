@@ -19,15 +19,24 @@ namespace JackPot.ViewModel
     {
         INavigation Navigation;
         ICommand Show_Data;
-        ICommand btn_Voided;
+        ICommand btn_Voided; 
+        ICommand btn_Cancel;
 
-        tblPanelUserTransaction Transaction;
+         tblPanelUserTransaction Transaction;
         public ObservableRangeCollection<BetCollection> VoidTicketGridListObservCollection { get; set; } = new ObservableRangeCollection<BetCollection>();
         public ICommand ShowData =>
          Show_Data ?? (Show_Data = new Command(async () => await LoadData()));
 
+
         public ICommand btnVoided =>
-       btn_Voided ?? (btn_Voided = new Command(async () => await VoidData()));
+     btn_Voided ?? (btn_Voided = new Command(async () => await VoidData()));
+        public ICommand btnCancel =>
+       btn_Cancel ?? (btn_Cancel = new Command(async () => await GoToMain()));
+
+        private async Task GoToMain()
+        {
+            await Navigation.PushModalAsync(new MainPage());
+        }
 
         private async Task VoidData()
         {

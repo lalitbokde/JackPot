@@ -29,7 +29,7 @@ namespace JackPot.ViewModel
         ICommand btn_PreviousLoadLate;
         INavigation Navigation;
         ListOrder Model = new ListOrder();
-
+        public ObservableRangeCollection<BetCollection> OrderGridListObservCollection { get; set; } = new ObservableRangeCollection<BetCollection>();
         public ICommand btnPreviousTRX =>
    btn_PreviousTRX ?? (btn_PreviousTRX = new Command(async () => await GoToPreviousTRX()));
 
@@ -105,7 +105,7 @@ namespace JackPot.ViewModel
      btn_Add ?? (btn_Add = new Command(async () => await AddInGridAsync()));
 
         public List<ListOrder> ListItemVal { get; set; } = new List<ListOrder>();
-        public ObservableRangeCollection<BetCollection> OrderGridListObservCollection { get; set; } = new ObservableRangeCollection<BetCollection>();
+       
         //public List<OrderGridModel> OrderGridList { get; set; } = new List<OrderGridModel>();
 
         ICommand orderGridCommand;
@@ -232,7 +232,6 @@ namespace JackPot.ViewModel
                     Amt = "0";
                     Numbers = "0";
                     TotalAmt = 0;
-                    GetLateHouse();
                     GetLateHouse();
 
                     Application.Current.MainPage.DisplayAlert("Message", "Success", "Ok");
