@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JackPot.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,11 @@ namespace JackPot.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SetCustomerScreen : ContentPage
 	{
-		public SetCustomerScreen ()
+        SetCustomerViewModel ViewModel;
+        public SetCustomerScreen ()
 		{
 			InitializeComponent ();
-		}
+            BindingContext = ViewModel = new SetCustomerViewModel(Navigation);
+        }
 	}
 }
