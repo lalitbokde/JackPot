@@ -47,6 +47,9 @@ namespace WareHouseManagement.PCL.Common
     public struct Sales
     {
         public static string GetSalesReport = "Report/GetSalesReportByDate?LocationId=";
+        public static string GetCloseShiftGridDetai = "Report/GetCloseShiftGridDetai/";
+        public static string GetCurrentPanelUserShift = "Report/GetCurrentPanelUserShift?PanelUser=";
+
     }
     public struct VoidTicketApi
     {

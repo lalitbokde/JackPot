@@ -26,7 +26,7 @@ namespace JackPot.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
         private async Task SearchData()
         {
-            var TransactionNumberVal = await new loginPageService().GetDetailByUrl(Sales.GetSalesReport +GlobalConstant.LocationId + "&StartDate=" + StartDate+"&EndDate="+EndDate);
+            var TransactionNumberVal = await new loginPageService().GetDetailByUrl(Sales.GetSalesReport +GlobalConstant.LocationId + "&StartDate=" + StartDate.ToString("MM/dd/yyyy")+"&EndDate="+EndDate.ToString("MM/dd/yyyy"));
             if (TransactionNumberVal.Status == 1)
             {
                 var Val3 = JsonConvert.DeserializeObject<List<vw_rptLocationSalesReport>>(TransactionNumberVal.Response.ToString());
