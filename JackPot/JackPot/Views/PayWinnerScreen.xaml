@@ -9,8 +9,6 @@
                 <Grid RowSpacing="0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="2.3*" />
-                        <RowDefinition Height="2.5*" />
-                        <RowDefinition Height="1*" />
                         <RowDefinition Height="4*" />
                         <RowDefinition Height="1*" />
                         <RowDefinition Height="1*" />
@@ -32,7 +30,7 @@
                             </Grid.ColumnDefinitions>
                             <Label Text="Enter Receipts" x:Name="txt_Agent"  TextColor="Black" FontSize="12"  Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" ></Label>
                             <Entry x:Name="txt_TicketNo" TextColor="Black" Text="{Binding EnterReceipt}" FontSize="15" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"  HorizontalOptions="FillAndExpand" Keyboard="Numeric"  ></Entry>
-                            <Button Text="Show Winner" Command="{Binding btnShowData}" TextColor="Black" FontSize="15" Grid.Row="2" Grid.Column="3"  HorizontalOptions="EndAndExpand"  ></Button>
+                            <Button Text="Show" Command="{Binding btnShowData}" TextColor="Black" FontSize="15" Grid.Row="2" Grid.Column="3"  HorizontalOptions="EndAndExpand"  ></Button>
 
                         </Grid>
                     </StackLayout>
@@ -172,7 +170,7 @@
 
 
 
-                    <StackLayout Grid.Row="4" HorizontalOptions="EndAndExpand">
+                    <StackLayout Grid.Row="2" HorizontalOptions="EndAndExpand">
                         <Grid RowSpacing="0">
                             <Grid.RowDefinitions>
 
@@ -195,7 +193,7 @@
                     </StackLayout>
 
 
-                    <StackLayout Grid.Row="5" Orientation="Horizontal">
+                    <StackLayout Grid.Row="3" Orientation="Horizontal">
 
 
 

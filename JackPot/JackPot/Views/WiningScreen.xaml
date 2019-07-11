@@ -10,10 +10,7 @@
                 <Grid RowSpacing="0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1.5*" />
-                        <RowDefinition Height="2.5*" />
-                        <RowDefinition Height="1*" />
                         <RowDefinition Height="4*" />
-                        <RowDefinition Height="0.5*" />
                         <RowDefinition Height="1*" />
                     </Grid.RowDefinitions>
 
@@ -170,7 +167,7 @@
 
 
 
-                    <StackLayout Grid.Row="5" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                    <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="EndAndExpand">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*"/>
@@ -178,7 +175,7 @@
                             </Grid.ColumnDefinitions>
 
 
-                            <Button Text="Print Results " CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Column="0" HorizontalOptions="EndAndExpand"  BackgroundColor="#bb2b23" Command="{Binding btnPrintResult}"></Button>
+                            <Button Text="Print Results " CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Column="0" HorizontalOptions="EndAndExpand" HeightRequest="40"  BackgroundColor="#bb2b23" Command="{Binding btnPrintResult}"></Button>
                           
                         </Grid>
                     </StackLayout>
