@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace JackPot.Model
 {
@@ -18,6 +19,6 @@ namespace JackPot.Model
         public bool chkEarly4 { get; set; }
         public string Early4 { get; set; }
         public int Early4Id { get; set; }
-
+        public Color RowColor { get; set; }
     }
 }

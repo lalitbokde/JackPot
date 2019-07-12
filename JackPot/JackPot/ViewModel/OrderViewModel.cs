@@ -28,6 +28,11 @@ namespace JackPot.ViewModel
         ICommand btnpurchaseTicket;
         ICommand btn_PreviousLoadLate;
         INavigation Navigation;
+        ICommand checkedBarcodeCommand1;
+        ICommand checkedBarcodeCommand2;
+        ICommand checkedBarcodeCommand3;
+        ICommand checkedBarcodeCommand4;
+
         ListOrder Model = new ListOrder();
         public ObservableRangeCollection<BetCollection> OrderGridListObservCollection { get; set; } = new ObservableRangeCollection<BetCollection>();
         public ICommand btnPreviousTRX =>
@@ -35,6 +40,19 @@ namespace JackPot.ViewModel
 
         public ICommand btnPreviousLoadLate=>
             btn_PreviousLoadLate ?? (btn_PreviousLoadLate = new Command(async () => await LoadDataByPreviousTicket()));
+
+
+        //public ICommand CheckedBarcodeCommand =>
+        //checkedBarcodeCommand1 ?? (checkedBarcodeCommand1 = new Command<WRProductBarcodeModel>(async (s) => await CheckedBarcodeCammandAsync(s)));
+     
+        //public ICommand CheckedBarcodeCommand =>
+        //checkedBarcodeCommand1 ?? (checkedBarcodeCommand = new Command<WRProductBarcodeModel>(async (s) => await CheckedBarcodeCammandAsync(s)));
+       
+        //public ICommand CheckedBarcodeCommand =>
+        //checkedBarcodeCommand ?? (checkedBarcodeCommand = new Command<WRProductBarcodeModel>(async (s) => await CheckedBarcodeCammandAsync(s)));
+      
+        //public ICommand CheckedBarcodeCommand =>
+        //checkedBarcodeCommand ?? (checkedBarcodeCommand = new Command<WRProductBarcodeModel>(async (s) => await CheckedBarcodeCammandAsync(s)));
 
         private async Task LoadDataByPreviousTicket()
         {
