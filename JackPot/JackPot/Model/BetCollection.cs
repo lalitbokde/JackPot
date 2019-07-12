@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace JackPot.Model
 {
@@ -19,5 +20,7 @@ namespace JackPot.Model
         public string StraightBall { get; set; }
         public decimal BetAmount { get; set; }
         public double PayFactor { get; set; }
+        public Color RowColor { get; set; }
+
     }
 }
