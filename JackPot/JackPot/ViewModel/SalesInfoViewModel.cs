@@ -59,8 +59,8 @@ namespace JackPot.ViewModel
             var TransactionNumberVal = await new loginPageService().GetDetailByUrl(Sales.GetCurrentPanelUserShift + GlobalConstant.UserName + "&LocationId=" + GlobalConstant.LocationId);
             if (TransactionNumberVal.Status == 1)
             {
-                var Val3 = JsonConvert.DeserializeObject<long>(TransactionNumberVal.Response.ToString());
-                var GridData = await new loginPageService().GetDetailByUrl(Sales.GetCloseShiftGridDetai + Val3);
+                var ShiftId = JsonConvert.DeserializeObject<long>(TransactionNumberVal.Response.ToString());
+                var GridData = await new loginPageService().GetDetailByUrl(Sales.GetCloseShiftGridDetai + ShiftId);
                 if (GridData.Status == 1)
                 {
                     var GridResponse = JsonConvert.DeserializeObject<List<vw_PanelUserShiftTrxSummaryGridList>>(GridData.Response.ToString());

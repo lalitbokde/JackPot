@@ -13,11 +13,11 @@ namespace JackPot.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class WiningScreen : ContentPage
 	{
-        WiningScreenViewModel ViewModel;
+        
         public WiningScreen ()
 		{
 			InitializeComponent ();
-            BindingContext = ViewModel = new WiningScreenViewModel(Navigation);
+            BindingContext = new WinnerNumberViewModel(Navigation);
         }
 
        

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JackPot.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace JackPot.Views
         public CustomerDetail()
         {
             InitializeComponent();
+            BindingContext = new CustomerDepositeViewModel(Navigation);
         }
     }
 }

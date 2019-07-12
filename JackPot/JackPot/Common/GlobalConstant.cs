@@ -51,6 +51,16 @@ namespace WareHouseManagement.PCL.Common
         public static string GetCurrentPanelUserShift = "Report/GetCurrentPanelUserShift?PanelUser=";
 
     }
+    public struct Winning
+    {
+        public static string GetWinningNumber = "Report/GetWinningNumberByCurrentDate/";
+        public static string GetWinningNumberByTwoDate = "Report/GetWinningNumberByTwoDate?StartDate=";
+    }
+    public struct CustomerApi
+    {
+        public static string GetCustomerDetailByAccountno = "Customer/GetCustomerDetailByAccountno/";
+        public static string InsertCustomerTransaction = "Customer/InsertCustomerTransaction";
+    }
     public struct VoidTicketApi
     {
         public static string GetNonVoidedTicketBets = "BetEntry/GetNonVoidedTicketBets/";

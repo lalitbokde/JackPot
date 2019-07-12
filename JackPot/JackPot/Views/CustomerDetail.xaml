@@ -21,13 +21,16 @@
                          AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Margin="7" Padding="1">
                                 <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
                                     <Label  Text="Customer # :" FontSize="9" Font="Bold" />
-                                            <Entry HorizontalOptions="FillAndExpand" Text="{Binding Customer}" />
+                                            <Entry HorizontalOptions="FillAndExpand" Text="{Binding CustomerAcNo}" />
                                 </StackLayout>
+                                        <StackLayout HorizontalOptions="EndAndExpand" Spacing="20" Orientation="Horizontal ">
+                                            <Button x:Name="btn_Show" Command="{Binding btnSearch}"  Text="Search" TextColor="#ffffff"  BackgroundColor="#bb2b23"     BorderRadius="7" HeightRequest="40" HorizontalOptions="End"  />
+                                        </StackLayout>
 
-                                <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
-                                            <Label  Text="Customer :" FontSize="16" Font="Bold"/>
+                                        <StackLayout HorizontalOptions="CenterAndExpand" Spacing="3">
+                                            <!--<Label  Text="Customer " FontSize="Large" Font="Bold"/>-->
 
-                                </StackLayout>
+                                        </StackLayout>
 
                                 <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
                                             <Label  Text="Customer Name :" FontSize="9" Font="Bold" />
@@ -36,13 +39,13 @@
 
                                 <StackLayout HorizontalOptions="FillAndExpand" Spacing="0">
                                             <Label  Text="Deposite $ :" FontSize="9" Font="Bold" />
-                                            <Entry HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="0.00" Text="{Binding Deposite}"/>
+                                            <Entry HorizontalOptions="FillAndExpand" Keyboard="Numeric" Placeholder="0.00" Text="{Binding DepositeAmt}"/>
                                 </StackLayout>
 
                                 <StackLayout HorizontalOptions="CenterAndExpand" Spacing="20" Orientation="Horizontal">
 
                                     <Button x:Name="btn_Close"  Text="Close"  TextColor="#ffffff"  BackgroundColor="#bb2b23"  BorderRadius="7" HeightRequest="40" HorizontalOptions="Center" Command="{Binding btnClose}" />
-                                    <Button x:Name="btn_Deposite" Command="{Binding btnDeposite}" Text="Deposite" TextColor="#ffffff"  BackgroundColor="#bb2b23"     BorderRadius="7" HeightRequest="40" HorizontalOptions="End"  />
+                                            <Button x:Name="btn_Deposite" Command="{Binding btnDeposite}" Text="Deposite" TextColor="#ffffff"  BackgroundColor="#bb2b23" IsEnabled="{Binding Depositebool}"    BorderRadius="7" HeightRequest="40" HorizontalOptions="End"  />
 
                                 </StackLayout>
 
