@@ -36,7 +36,7 @@ namespace JackPot.ViewModel
      btn_Show ?? (btn_Show = new Command(async () => LoadData(TxtStartDate)));
 
 
-        DateTime txtstartDate;
+        DateTime txtstartDate=DateTime.UtcNow;
         public DateTime TxtStartDate
         {
             get { return txtstartDate; }
