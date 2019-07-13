@@ -56,7 +56,7 @@ namespace JackPot.ViewModel
 
         public async void loadData()
         {
-            var TransactionNumberVal = await new loginPageService().GetDetailByUrl(Sales.GetCurrentPanelUserShift + GlobalConstant.UserName + "&LocationId=" + GlobalConstant.LocationId);
+            var TransactionNumberVal = await new loginPageService().GetDetailByUrl(Sales.GetCurrentPanelUserShift + GlobalConstant.iPanelUserID + "&LocationId=" + GlobalConstant.LocationId);
             if (TransactionNumberVal.Status == 1)
             {
                 var ShiftId = JsonConvert.DeserializeObject<long>(TransactionNumberVal.Response.ToString());

@@ -14,15 +14,15 @@ using Xamarin.Forms;
 
 namespace JackPot.ViewModel
 {
-    public class CustomerDepositeViewModel: INotifyPropertyChanged
+    public class CustomerWithdrawViewModel: INotifyPropertyChanged
     {
         private static long ShiftId = 0;
         ICommand btn_Close;
-        ICommand btn_Deposite;
+        ICommand btn_Withdraw;
         ICommand btn_Search;
         INavigation Navigation;
         public ObservableRangeCollection<vw_CustomerDetails> CustomerGridListObservCollection { get; set; } = new ObservableRangeCollection<vw_CustomerDetails>();
-        public CustomerDepositeViewModel(INavigation navigation)
+        public CustomerWithdrawViewModel(INavigation navigation)
         {
             Navigation = navigation;
             GetShiftId();
@@ -35,15 +35,15 @@ namespace JackPot.ViewModel
                 ShiftId = JsonConvert.DeserializeObject<long>(TransactionNumberVal.Response.ToString());
             }
         }
-        public ICommand btnDeposite =>
-        btn_Deposite ?? (btn_Deposite = new Command(async () => DepositeAsync()));
+        public ICommand btnWithdraw =>
+        btn_Withdraw ?? (btn_Withdraw = new Command(async () => Withdraw()));
 
         public ICommand btnSearch =>
       btn_Search ?? (btn_Search = new Command(async () => SearchCustomer()));
         public void Clear()
         {
             CustomerGridListObservCollection.Clear();
-            DepositeAmt = 0;
+            WithdrawAmt = 0;
             CustomerName = "";
             CustomerAcNo = "";
         }
@@ -54,7 +54,7 @@ namespace JackPot.ViewModel
                 Clear();
                 Regex reg = new Regex("[*'\",_&#^@]");
                 string AccNo = reg.Replace(CustomerAcNo, string.Empty);
-                var CutomerData = await new loginPageService().GetDetailByUrl(CustomerApi.GetCustomerDetailByAccountno + AccNo);
+                var CutomerData = await new loginPageService().GetDetailByUrl(CustomerApi.GetCustomerDetailByUserNameAndPassword + AccNo+ "&Password="+WithdrawlPin);
                 if (CutomerData.Status == 1)
                 {
                     var CustomerDetail = JsonConvert.DeserializeObject<vw_CustomerDetails>(CutomerData.Response.ToString());
@@ -84,6 +84,21 @@ namespace JackPot.ViewModel
             }
         }
 
+        string withdrawlPin;
+        public string WithdrawlPin
+        {
+            get { return withdrawlPin; }
+            set
+            {
+                if (withdrawlPin != value)
+                {
+                    withdrawlPin = value;
+                    OnPropertyChanged(nameof(WithdrawlPin));
+
+                }
+            }
+        }
+
         string customerName;
         public string CustomerName
         {
@@ -99,16 +114,16 @@ namespace JackPot.ViewModel
             }
         }
 
-        decimal depositeAmt;
-        public decimal DepositeAmt
+        double withdrawAmt;
+        public double WithdrawAmt
         {
-            get { return depositeAmt; }
+            get { return withdrawAmt; }
             set
             {
-                if (depositeAmt != value)
+                if (withdrawAmt != value)
                 {
-                    depositeAmt = value;
-                    OnPropertyChanged(nameof(DepositeAmt));
+                    withdrawAmt = value;
+                    OnPropertyChanged(nameof(WithdrawAmt));
 
                 }
             }
@@ -135,54 +150,63 @@ namespace JackPot.ViewModel
         {
         }
 
-        public async void DepositeAsync()
+        public async void Withdraw()
         {
-            var Transaction = new tblPanelUserTransaction()
+            if (WithdrawAmt < 0.01)
+            {
+                Application.Current.MainPage.DisplayAlert("Message", "Insert Valid Amount.", "Ok");
+            }
+            else
             {
 
-                iTransactionTypeID = 8,
-                iTransactionRecordID = 0,
-                iMadeBy = GlobalConstant.iPanelUserID,
-                iLocationID = GlobalConstant.LocationId,
-                iShiftID =Convert.ToInt32( ShiftId),
-                iCustomerID = CustomerGridListObservCollection[0].CustomerID,
-                iManagerID = -9999,
-                sTransactionDetails = "Customer Account Deposit.",
-                decAmount = DepositeAmt,
-                decNewBalance = 0,
-                dtTransactionDate = DateTime.UtcNow,
-                sMachineName = "",
-                sTransactionGUID = Guid.NewGuid()
 
-            };
-            var CustomerTransaction = new tblCustomerTransaction()
-            {
-
-                iTransactionTypeID = 8,
-                iTransactionRecordID = 0,
-                iMadeBy = GlobalConstant.iPanelUserID,
-                sSessionID = "dghjskjdghd",
-                sIPAddress="192.158.12.45",
-                dtCreateDateTime=DateTime.UtcNow,
-                iCustomerID = CustomerGridListObservCollection[0].CustomerID,
-                iManagerID = -9999,
-                sTransactionDetails = "Customer Account Deposit.",
-                decAmount = DepositeAmt,
-                decNewBalance = 0,
-                dtTransactionDate = DateTime.UtcNow,
-              
-                sTransactionGUID = Guid.NewGuid()
-            };
-            var SaveCustomerTransaction = await new Service.CustomerService().PostCustomerTransaction(CustomerTransaction, CustomerApi.InsertCustomerTransaction);
-            if (SaveCustomerTransaction.Status == 1)
-            {
-                var SaveLottoTicket = await new VoidTicketService().PosttblLottoTicket(Transaction, VoidTicketApi.InsertUserTransaction);
-                if (SaveLottoTicket.Status == 1)
+                var Transaction = new tblPanelUserTransaction()
                 {
-                    Clear();
-                    Application.Current.MainPage.DisplayAlert("Message", "Success.", "Ok");
+
+                    iTransactionTypeID = 8,
+                    iTransactionRecordID = 0,
+                    iMadeBy = GlobalConstant.iPanelUserID,
+                    iLocationID = GlobalConstant.LocationId,
+                    iShiftID = Convert.ToInt32(ShiftId),
+                    iCustomerID = CustomerGridListObservCollection[0].CustomerID,
+                    iManagerID = -9999,
+                    sTransactionDetails = "Withdrawal made by customer.",
+                    decAmount =Convert.ToDecimal( WithdrawAmt),
+                    decNewBalance = 0,
+                    dtTransactionDate = DateTime.UtcNow,
+                    sMachineName = "",
+                    sTransactionGUID = Guid.NewGuid()
+
+                };
+                var CustomerTransaction = new tblCustomerTransaction()
+                {
+
+                    iTransactionTypeID = 8,
+                    iTransactionRecordID = 0,
+                    iMadeBy = GlobalConstant.iPanelUserID,
+                    sSessionID = "dghjskjdghd",
+                    sIPAddress = "192.158.12.45",
+                    dtCreateDateTime = DateTime.UtcNow,
+                    iCustomerID = CustomerGridListObservCollection[0].CustomerID,
+                    iManagerID = -9999,
+                    sTransactionDetails = "Customer Account Deposit.",
+                    decAmount =Convert.ToDecimal( WithdrawAmt),
+                    decNewBalance = 0,
+                    dtTransactionDate = DateTime.UtcNow,
+
+                    sTransactionGUID = Guid.NewGuid()
+                };
+                var SaveCustomerTransaction = await new Service.CustomerService().PostCustomerTransaction(CustomerTransaction, CustomerApi.InsertCustomerTransaction);
+                if (SaveCustomerTransaction.Status == 1)
+                {
+                    var SaveLottoTicket = await new VoidTicketService().PosttblLottoTicket(Transaction, VoidTicketApi.InsertUserTransaction);
+                    if (SaveLottoTicket.Status == 1)
+                    {
+                        Clear();
+                        Application.Current.MainPage.DisplayAlert("Message", "Success.", "Ok");
+                    }
+
                 }
-               
             }
         }
 
@@ -194,6 +218,5 @@ namespace JackPot.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
-
     }
 }

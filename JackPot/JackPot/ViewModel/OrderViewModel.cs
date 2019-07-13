@@ -211,7 +211,7 @@ namespace JackPot.ViewModel
                 var BetEntryModel = new RequestTenderModel();
                 int Count = 0;
                 BetEntryModel.TenderAmount = tender;
-                BetEntryModel.PanelUserID = GlobalConstant.UserName;
+                BetEntryModel.PanelUserID = GlobalConstant.iPanelUserID;
                 BetEntryModel.Totals = TotalAmt;
                 BetEntryModel.Change = Change;
                 BetEntryModel.CommissionRate = 0;
@@ -657,7 +657,7 @@ namespace JackPot.ViewModel
         public async void GetLateHouse()
         {
             popupPriviewsTickietView = false;
-            var TransactionNumberVal = await new loginPageService().GetDetailByUrl(BetEntry.GetTrancationNumber + GlobalConstant.UserName);
+            var TransactionNumberVal = await new loginPageService().GetDetailByUrl(BetEntry.GetTrancationNumber + GlobalConstant.iPanelUserID);
             if (TransactionNumberVal.Status == 1)
             {
 
