@@ -18,6 +18,8 @@ namespace WareHouseManagement.PCL.Common
         public static string AccessToken { get; set; }
        
         public static long UserName { get; set; }
+        public static long iPanelUserID { get; set; }
+        public static string sUserName { get; set; }
         public static int LocationId { get; set; }
         public static int UserId { get; set; }
         public static string CustomerName { get; set; }
@@ -56,10 +58,17 @@ namespace WareHouseManagement.PCL.Common
         public static string GetWinningNumber = "Report/GetWinningNumberByCurrentDate/";
         public static string GetWinningNumberByTwoDate = "Report/GetWinningNumberByTwoDate?StartDate=";
     }
+
+    public struct payout
+    {
+        public static string GetUnpaidTicket = "Payout/GetUnpaidTicket/";
+        public static string MarkWinnerAsPaid = "Payout/MarkWinnerAsPaid";
+    }
     public struct CustomerApi
     {
         public static string GetCustomerDetailByAccountno = "Customer/GetCustomerDetailByAccountno/";
         public static string InsertCustomerTransaction = "Customer/InsertCustomerTransaction";
+        public static string GetCustomerDetailByUserNameAndPassword = "Customer/GetCustomerDetailByUserNameAndPassword?CustomerNo=";
     }
     public struct VoidTicketApi
     {

@@ -47,13 +47,14 @@ namespace JackPot.ViewModel
                 if (UserDetail.Status == 1)
                 {
                   var  wrShiipinglist = JsonConvert.DeserializeObject<LogInModel>(UserDetail.Response.ToString());
-                    GlobalConstant.UserName = wrShiipinglist.iPanelUserID;
+                    GlobalConstant.iPanelUserID = wrShiipinglist.iPanelUserID;
+                    GlobalConstant.sUserName = wrShiipinglist.sUserName;
                     GlobalConstant.UserPassword = wrShiipinglist.sPassword;
                     GlobalConstant.CustomerName = wrShiipinglist.sFirstName + " " + wrShiipinglist.sLastName;
                     GlobalConstant.BalanceAmt = wrShiipinglist.decBalance;
                     GlobalConstant.LocationId = wrShiipinglist.iLocationID;
                     _objShared.SaveApplicationProperty("AccessToken", GlobalConstant.AccessToken);
-                    _objShared.SaveApplicationProperty("UserName", GlobalConstant.UserName);
+                    _objShared.SaveApplicationProperty("UserName", GlobalConstant.iPanelUserID);
                     _objShared.SaveApplicationProperty("CustomerName", GlobalConstant.CustomerName);
                     _objShared.SaveApplicationProperty("UserPassword", GlobalConstant.UserPassword);
                     IsBusy = false;
@@ -87,7 +88,8 @@ namespace JackPot.ViewModel
                 if (UserDetail.Status == 1)
                 {
                     var wrShiipinglist = JsonConvert.DeserializeObject<LogInModel>(UserDetail.Response.ToString());
-                    GlobalConstant.UserName = wrShiipinglist.iPanelUserID;
+                    GlobalConstant.iPanelUserID = wrShiipinglist.iPanelUserID;
+                    GlobalConstant.sUserName = wrShiipinglist.sUserName;
                     GlobalConstant.UserPassword = wrShiipinglist.sPassword;
                     GlobalConstant.CustomerName = wrShiipinglist.sFirstName + " " + wrShiipinglist.sLastName;
                     GlobalConstant.BalanceAmt = wrShiipinglist.decBalance;

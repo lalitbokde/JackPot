@@ -27,7 +27,7 @@ namespace JackPot.Views
         }
             public async void LoadDetail()
         {
-            var TransactionNumberVal = await new loginPageService().GetDetailByUrl(BetEntry.GetTrancationNumber + GlobalConstant.UserName);
+            var TransactionNumberVal = await new loginPageService().GetDetailByUrl(BetEntry.GetTrancationNumber + GlobalConstant.iPanelUserID);
             if (TransactionNumberVal.Status == 1)
             {
 

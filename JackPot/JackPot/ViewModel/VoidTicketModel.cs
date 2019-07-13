@@ -139,7 +139,7 @@ namespace JackPot.ViewModel
 
                                     iTransactionTypeID = 8,
                                     iTransactionRecordID = 0,
-                                    iMadeBy = GlobalConstant.UserName,
+                                    iMadeBy = GlobalConstant.iPanelUserID,
                                     iLocationID = GlobalConstant.LocationId,
                                     iShiftID = DeserializeLottoTicketData.iShiftID,
                                     iCustomerID = Convert.ToInt64(DeserializeLottoTicketData.iCustomerID),
