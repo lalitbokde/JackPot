@@ -22,7 +22,7 @@ namespace JackPot.ViewModel
         INavigation Navigation;
         public ICommand btnLogIn =>
          btn_LogIn ?? (btn_LogIn = new Command(async () => await LogInAsync()));
-
+      
         private async Task LogInAsync()
         {
            
@@ -42,7 +42,7 @@ namespace JackPot.ViewModel
             }
             else
             {
-              
+                IsBusy = true;
                 var UserDetail = await new loginPageService().GetLogin(_User, GlobalConstant.GetUserLoginDetail);
                 if (UserDetail.Status == 1)
                 {
@@ -56,14 +56,14 @@ namespace JackPot.ViewModel
                     _objShared.SaveApplicationProperty("UserName", GlobalConstant.UserName);
                     _objShared.SaveApplicationProperty("CustomerName", GlobalConstant.CustomerName);
                     _objShared.SaveApplicationProperty("UserPassword", GlobalConstant.UserPassword);
-
+                    IsBusy = false;
                     await Navigation.PushModalAsync(new MainPage());
                 }
                 else
                 {
 
                     Application.Current.MainPage.DisplayAlert("Message", "UserName Or Password Is Incorrect.", "Ok");
-
+                    IsBusy = false;
                 }
             }
         }
@@ -81,7 +81,7 @@ namespace JackPot.ViewModel
                     Password =password
                 };
 
-              
+                IsBusy = true;
 
                 var UserDetail = await new loginPageService().GetLogin(_User, GlobalConstant.GetUserLoginDetail);
                 if (UserDetail.Status == 1)
@@ -92,13 +92,16 @@ namespace JackPot.ViewModel
                     GlobalConstant.CustomerName = wrShiipinglist.sFirstName + " " + wrShiipinglist.sLastName;
                     GlobalConstant.BalanceAmt = wrShiipinglist.decBalance;
                     GlobalConstant.LocationId = wrShiipinglist.iLocationID;
+                    IsBusy = false;
                     await Navigation.PushModalAsync(new MainPage());
+                  
+
                 }
                 else
                 {
 
                     Application.Current.MainPage.DisplayAlert("Message", "UserName Or Password Is Incorrect.", "Ok");
-
+                    IsBusy = false;
                 }
             }
             catch(Exception ex)
@@ -124,7 +127,8 @@ namespace JackPot.ViewModel
             {
                 AutoLogin(UserNameAuto, UserPasswordAuto);
             }
-           
+
+         
         }
 
         private string _UserName;
@@ -139,8 +143,17 @@ namespace JackPot.ViewModel
             }
         }
 
-      
+        bool isBusy;
+        public bool IsBusy
+        {
+            get { return isBusy; }
+            set
+            {
+                isBusy = value;
+                OnPropertyChanged(nameof(IsBusy));
 
+            }
+        }
 
 
         private string _PassWord;

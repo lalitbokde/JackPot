@@ -141,9 +141,9 @@
                                 <ColumnDefinition Width="0.3*" />
                             </Grid.ColumnDefinitions>
 
-                                <custom:CustomEntry x:Name="Numbers" Text="{Binding Numbers}" BackgroundColor="#efefef" Placeholder="Number" Keyboard="Numeric" Grid.Row="0" VerticalOptions="FillAndExpand" FontSize="10" HorizontalOptions="FillAndExpand" Grid.Column="0"></custom:CustomEntry>
-                                <custom:CustomEntry x:Name="SB" Text="{Binding SB}" Grid.Row="0" Grid.Column="1" BackgroundColor="#efefef" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontSize="10" Placeholder="S/B" IsEnabled="False"></custom:CustomEntry>
-                                <custom:CustomEntry x:Name="Amt" Text="{Binding Amt}" Keyboard="Numeric" BackgroundColor="#efefef" Placeholder="$Amount" Grid.Row="0" VerticalOptions="FillAndExpand" FontSize="10" HorizontalOptions="FillAndExpand" Grid.Column="2"></custom:CustomEntry>
+                                <custom:CustomEntry x:Name="Numbers" Text="{Binding Numbers}" BackgroundColor="#efefef" Placeholder="Number" Keyboard="Numeric" Grid.Row="0" VerticalOptions="FillAndExpand" FontFamily="Bold" FontSize="10" HorizontalOptions="FillAndExpand" Grid.Column="0"></custom:CustomEntry>
+                                <custom:CustomEntry x:Name="SB" Text="{Binding SB}" Grid.Row="0" Grid.Column="1" BackgroundColor="#efefef" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontFamily="Bold" FontSize="10" Placeholder="S/B" IsEnabled="False"></custom:CustomEntry>
+                                <custom:CustomEntry x:Name="Amt" Text="{Binding Amt}" Keyboard="Numeric" BackgroundColor="#efefef" Placeholder="$Amount" Grid.Row="0" VerticalOptions="FillAndExpand" FontFamily="Bold" FontSize="10" HorizontalOptions="FillAndExpand" Grid.Column="2"></custom:CustomEntry>
 
                                 <Button  HeightRequest="1" CornerRadius="10" Command="{Binding btnAdd}"  Grid.Row="0" Grid.Column="3" BackgroundColor="White"  HorizontalOptions="EndAndExpand" Image="plusIcon.png"></Button>
                            
