@@ -40,6 +40,8 @@ namespace WareHouseManagement.PCL.Common
     {
         public static string GetLottoGameDetailByHouseIdandBalls = "BetEntry/GetLottoGameDetailByHouseIdandBalls?HouseId=";
         public static string GetHouseDetail = "BetEntry/getHousesDetailsMode";
+        public static string GetEarlyHouseForTab = "BetEntry/GetEarlyHouse";
+        public static string GetLateHouseForTab = "BetEntry/GetLateHouse";
         public static string TrancatioSaveBetEntry = "BetEntry/InsertTender";
         public static string GetTrancationNumber = "BetEntry/gettblLottoTicketData/";
         public static string GetBetEntryByTicketNo = "BetEntry/GetBetByPreviousTicket/";

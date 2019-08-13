@@ -13,12 +13,16 @@ namespace JackPot.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Order : ContentPage
 	{
-		public Order ()
+
+        OrderViewModel viewmodel;
+        public Order ()
 		{
 			InitializeComponent ();
-            BindingContext = new OrderViewModel(Navigation);
+            BindingContext = viewmodel = new OrderViewModel(Navigation);
             txt_Agent.Text = "Agent : "+GlobalConstant.CustomerName;
             txt_Balance.Text ="Balance: $"+ GlobalConstant.BalanceAmt.ToString();
+
+            //jackpotListLate.ItemsSource = viewmodel.ListItemValLate;
 
         }
 	}

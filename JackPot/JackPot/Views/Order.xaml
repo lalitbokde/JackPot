@@ -5,80 +5,131 @@
              xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
              xmlns:custom="clr-namespace:JackPot.CustomControls"
              BackgroundColor="#ffffff">
+
     <ContentPage.Content >
         <AbsoluteLayout  Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
             <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                          AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="White">
                 <Grid RowSpacing="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1.5*" />
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1.5*" />
                         <RowDefinition Height="2.5*" />
                         <RowDefinition Height="1*" />
                         <RowDefinition Height="4*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1.5*" />
-                </Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1.5*" />
+                    </Grid.RowDefinitions>
 
                     <StackLayout Grid.Row="0"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="5" BackgroundColor="#efefef">
-                    <Grid  HorizontalOptions="StartAndExpand">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="1*" />
-                            <RowDefinition Height="1*" />
-                          
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*" />
-                            <ColumnDefinition Width="1*" />
-                           
-                        </Grid.ColumnDefinitions>
-                        <Label x:Name="txt_Agent"  TextColor="Black"   Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" ></Label>
-                        <Label x:Name="txt_Balance" TextColor="Black"  Grid.Row="0" Grid.Column="1"  HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" ></Label>
-                         <Label Text="Last Trx # :" TextColor="Black"  Grid.Row="1" Grid.Column="0"  HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" ></Label>
-                        <Label x:Name="txt_LastTransaction" Text="{Binding LastTransactionNo}" TextColor="Black"  Grid.Row="1" Grid.Column="1"  HorizontalOptions="StartAndExpand"  ></Label>
+                        <Grid  HorizontalOptions="StartAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
 
-                       
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
 
-
-                    </Grid>
-                </StackLayout>
-
-                    <StackLayout Grid.Row="1"  HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand" Padding="5" >
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="txt_Agent"  TextColor="Black"   Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" ></Label>
+                            <Label x:Name="txt_Balance" TextColor="Black"  Grid.Row="0" Grid.Column="1"  HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" ></Label>
+                            <Label Text="Last Trx # :" TextColor="Black"  Grid.Row="1" Grid.Column="0"  HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" ></Label>
+                            <Label x:Name="txt_LastTransaction" Text="{Binding LastTransactionNo}" TextColor="Black"  Grid.Row="1" Grid.Column="1"  HorizontalOptions="StartAndExpand"  ></Label>
 
 
 
 
-                        <ListView x:Name="jackpotList" ItemsSource="{Binding ListItemVal}" HasUnevenRows="True"  SeparatorVisibility="None" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                            
-                                <ListView.ItemTemplate  >
-                                    <DataTemplate>
-                                        <ViewCell>
-                                        <StackLayout  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="White">
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand"   Padding="5" IsVisible="True">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.3*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
 
-                                               
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <StackLayout  Grid.Row="0">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Grid.Row="0" BackgroundColor="{Binding EarlyhouseTabColor}" Grid.Column="0">
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding TabCommandEarly}">
+
+                                            </TapGestureRecognizer>
+                                        </StackLayout.GestureRecognizers>
+                                        <Label Text="Early House" VerticalOptions="Center" TextColor="White" HorizontalOptions="CenterAndExpand">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding TabCommandEarly}">
+
+                                                </TapGestureRecognizer>
+                                            </Label.GestureRecognizers>
+
+                                        </Label>
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="0" BackgroundColor="{Binding LatehouseTabColor}"  Grid.Column="1">
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding TabCommandLate}">
+
+                                            </TapGestureRecognizer>
+                                        </StackLayout.GestureRecognizers>
+                                        <Label Text="Late House" VerticalOptions="Center" TextColor="White" HorizontalOptions="CenterAndExpand">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding TabCommandLate}">
+
+                                                </TapGestureRecognizer>
+                                            </Label.GestureRecognizers>
+
+                                        </Label>
+                                    </StackLayout>
+
+                                </Grid>
+                            </StackLayout>
+                            <StackLayout  Grid.Row="1"  HorizontalOptions="FillAndExpand"   Padding="5"  >
+                                <StackLayout IsVisible="{Binding EarlyTabVisibility}">
+                                <ListView x:Name="jackpotListEarly" ItemsSource="{Binding ListItemValLate}" HasUnevenRows="True"   SeparatorVisibility="None" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
+
+                                    <ListView.ItemTemplate  >
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="White">
+
+
 
                                                     <Grid RowSpacing="0">
-                                                       
+
                                                         <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="1*"/>
-                                                        <ColumnDefinition Width="1*"/>
-                                                        <ColumnDefinition Width="1*"/>
-                                                        <ColumnDefinition Width="1*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                            <ColumnDefinition Width="1*"/>
                                                         </Grid.ColumnDefinitions>
 
-                                              
-                                                <StackLayout Orientation="Horizontal" Grid.Column="0" >
-                                                    <input:CheckBox  x:Name="checkboxEarly1" IsChecked="{Binding chkEarly1}"  BorderColor="#bb2b23" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"   Type="Check" Spacing="1" />
-                                                        <Label  x:Name="Early1" Text="{Binding Early1}" FontSize="15" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+
+                                                        <StackLayout Orientation="Horizontal" Grid.Column="0" >
+                                                            <input:CheckBox  x:Name="checkboxEarly1" IsChecked="{Binding chkLate1}"  BorderColor="#bb2b23" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"   Type="Check" Spacing="1" />
+                                                            <Label  x:Name="Early1" Text="{Binding Late1}" FontSize="15" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
 
                                                             </Label>
 
 
-                                                </StackLayout>
+                                                        </StackLayout>
 
                                                         <StackLayout Orientation="Horizontal" Grid.Column="1">
 
-                                                    <input:CheckBox  x:Name="checkboxEarly2" IsChecked="{Binding chkEarly2}"   BorderColor="#bb2b23"   VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"   Type="Check" Spacing="1" />
-                                                    <Label  x:Name="Early2" Text="{Binding Early2}" FontSize="15" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                                            <input:CheckBox  x:Name="checkboxEarly2" IsChecked="{Binding chkLate2}"   BorderColor="#bb2b23"   VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"   Type="Check" Spacing="1" />
+                                                            <Label  x:Name="Early2" Text="{Binding Late2}" FontSize="15" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
 
                                                             </Label>
 
@@ -87,8 +138,8 @@
                                                         <StackLayout Orientation="Horizontal"  Grid.Column="2">
 
 
-                                                    <input:CheckBox  x:Name="checkboxEarly3" IsChecked="{Binding chkEarly3}"  BorderColor="#bb2b23"  VerticalOptions="Start" HorizontalOptions="Start"  Type="Check" Spacing="1" />
-                                                    <Label x:Name="Early3" Text="{Binding Early3}" FontSize="15" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                                            <input:CheckBox  x:Name="checkboxEarly3" IsChecked="{Binding chkLate3}"  BorderColor="#bb2b23"  VerticalOptions="Start" HorizontalOptions="Start"  Type="Check" Spacing="1" />
+                                                            <Label x:Name="Early3" Text="{Binding Late3}" FontSize="15" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
 
                                                             </Label>
                                                         </StackLayout>
@@ -96,17 +147,242 @@
                                                         <StackLayout Orientation="Horizontal" Grid.Column="3">
 
 
-                                                    <input:CheckBox  x:Name="checkboxEarly4"   IsChecked="{Binding chkEarly4}"  BorderColor="#bb2b23"   VerticalOptions="Start" HorizontalOptions="Start"  Type="Check" Spacing="1" />
-                                                    <Label x:Name="Early4" Text="{Binding Early4}" FontSize="15" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+                                                            <input:CheckBox  x:Name="checkboxEarly4"   IsChecked="{Binding chkLate4}"  BorderColor="#bb2b23"   VerticalOptions="Start" HorizontalOptions="Start"  Type="Check" Spacing="1" />
+                                                            <Label x:Name="Early4" Text="{Binding Late4}" FontSize="15" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
 
                                                             </Label>
                                                         </StackLayout>
 
-                                                      
 
-                                                </Grid>
 
-                                                
+                                                    </Grid>
+
+
+
+
+
+                                                </StackLayout>
+
+
+
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+
+                                </ListView>
+                                </StackLayout>
+                                <StackLayout IsVisible="{Binding LateTabVisibility}">
+                                <ListView x:Name="jackpotListLate" ItemsSource="{Binding ListItemValLate}" HasUnevenRows="True"  SeparatorVisibility="None" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
+
+                                    <ListView.ItemTemplate  >
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="White">
+
+
+
+                                                    <Grid RowSpacing="0">
+
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="1*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                        </Grid.ColumnDefinitions>
+
+
+                                                        <StackLayout Orientation="Horizontal" Grid.Column="0" >
+                                                            <input:CheckBox  x:Name="checkboxLate1" IsChecked="{Binding chkLate1}"  BorderColor="#bb2b23" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"   Type="Check" Spacing="1" />
+                                                            <Label  x:Name="Late1" Text="{Binding Late1}" FontSize="15" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+
+                                                            </Label>
+
+
+                                                        </StackLayout>
+
+                                                        <StackLayout Orientation="Horizontal" Grid.Column="1">
+
+                                                            <input:CheckBox  x:Name="checkboxLate2" IsChecked="{Binding chkLate2}"   BorderColor="#bb2b23"   VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand"   Type="Check" Spacing="1" />
+                                                            <Label  x:Name="Late2" Text="{Binding Late2}" FontSize="15" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+
+                                                            </Label>
+
+                                                        </StackLayout>
+
+                                                        <StackLayout Orientation="Horizontal"  Grid.Column="2">
+
+
+                                                            <input:CheckBox  x:Name="checkboxLate3" IsChecked="{Binding chkLate3}"  BorderColor="#bb2b23"  VerticalOptions="Start" HorizontalOptions="Start"  Type="Check" Spacing="1" />
+                                                            <Label x:Name="Late3" Text="{Binding Late3}" FontSize="15" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+
+                                                            </Label>
+                                                        </StackLayout>
+
+                                                        <StackLayout Orientation="Horizontal" Grid.Column="3">
+
+
+                                                            <input:CheckBox  x:Name="checkboxLate4"   IsChecked="{Binding chkLate4}"  BorderColor="#bb2b23"   VerticalOptions="Start" HorizontalOptions="Start"  Type="Check" Spacing="1" />
+                                                            <Label x:Name="Late4" Text="{Binding Late4}" FontSize="15" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand">
+
+                                                            </Label>
+                                                        </StackLayout>
+
+
+
+                                                    </Grid>
+
+
+
+
+
+                                                </StackLayout>
+
+
+
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+
+                                </ListView>
+
+                                </StackLayout>
+                            </StackLayout>
+
+                        </Grid>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="2"   HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="3" >
+                        <StackLayout>
+                            <Grid  HorizontalOptions="CenterAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0.7*" />
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="0.3*" />
+                                </Grid.ColumnDefinitions>
+
+                                <custom:CustomEntry x:Name="Numbers" Text="{Binding Numbers}" BackgroundColor="#efefef" Placeholder="Number" Keyboard="Numeric" Grid.Row="0" VerticalOptions="FillAndExpand" FontFamily="Bold" FontSize="10" HorizontalOptions="FillAndExpand" Grid.Column="0"></custom:CustomEntry>
+                                <custom:CustomEntry x:Name="SB" Text="{Binding SB}" Grid.Row="0" Grid.Column="1" BackgroundColor="#efefef" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontFamily="Bold" FontSize="10" Placeholder="S/B" IsEnabled="False"></custom:CustomEntry>
+                                <custom:CustomEntry x:Name="Amt" Text="{Binding Amt}" Keyboard="Numeric" BackgroundColor="#efefef" Placeholder="$Amount" Grid.Row="0" VerticalOptions="FillAndExpand" FontFamily="Bold" FontSize="10" HorizontalOptions="FillAndExpand" Grid.Column="2"></custom:CustomEntry>
+
+                                <Button  HeightRequest="1" CornerRadius="10" Command="{Binding btnAdd}"  Grid.Row="0" Grid.Column="3" BackgroundColor="White"  HorizontalOptions="EndAndExpand" Image="plusIcon.png"></Button>
+
+                            </Grid>
+                        </StackLayout>
+
+                    </StackLayout>
+
+                    <StackLayout  Grid.Row="3" >
+                        <Grid RowSpacing="0" ColumnSpacing="0"  Padding="0">
+                            <Grid.RowDefinitions>
+
+                                <RowDefinition Height="40"/>
+                                <RowDefinition Height="1*"/>
+
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions >
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Row="0" BackgroundColor="#1A2224" Grid.Column="0" >
+                                <Label  VerticalOptions="CenterAndExpand" TextColor="White" HorizontalOptions="Center" Text="No" Font="Bold"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" BackgroundColor="#1A2224" Grid.Column="1">
+                                <Label  Text="House" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Font="Bold"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" BackgroundColor="#1A2224" Grid.Column="2">
+                                <Label  Text="SB" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Font="Bold"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" BackgroundColor="#1A2224" Grid.Column="3">
+                                <Label  Text="$" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Font="Bold"></Label>
+                            </StackLayout>
+                            <StackLayout Grid.Row="0" BackgroundColor="#1A2224" Grid.Column="4">
+                                <Label  Text="del" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Font="Bold"></Label>
+                            </StackLayout>
+
+                            <ListView x:Name="jackpotGid" Grid.Row="1" Grid.ColumnSpan="5" ItemsSource="{Binding OrderGridListObservCollection}" HasUnevenRows="True"  SeparatorVisibility="None"     HorizontalOptions="CenterAndExpand"   >
+
+                                <ListView.ItemTemplate >
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="{Binding RowColor}">
+
+                                                <StackLayout  >
+
+                                                    <Grid RowSpacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                                        <Grid.RowDefinitions>
+
+                                                            <RowDefinition Height="1*"/>
+
+
+
+                                                        </Grid.RowDefinitions>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="1*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                            <ColumnDefinition Width="1*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <StackLayout Orientation="Horizontal" Grid.Column="0">
+
+                                                            <Label  Text="{Binding Numbers}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                                                            </Label>
+
+                                                        </StackLayout>
+
+                                                        <StackLayout Orientation="Horizontal" Grid.Column="1">
+
+
+                                                            <Label  Text="{Binding House}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                                                            </Label>
+
+                                                        </StackLayout>
+
+                                                        <StackLayout Orientation="Horizontal" Grid.Column="2">
+
+
+
+                                                            <Label  Text="{Binding SB}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                                                            </Label>
+                                                        </StackLayout>
+
+                                                        <StackLayout Orientation="Horizontal" Grid.Column="3">
+
+
+
+                                                            <Label  Text="{Binding Amt}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                                                            </Label>
+                                                        </StackLayout>
+                                                        <StackLayout Grid.Column="4">
+                                                            <StackLayout Orientation="Horizontal"  HeightRequest="40" WidthRequest="40"  >
+
+
+                                                                <ImageButton Source="Delbtn.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Command="{Binding Path=BindingContext.OrderGridCommand, Source={x:Reference jackpotGid}}"  CommandParameter="{Binding .}" BackgroundColor="White" ></ImageButton>
+
+
+                                                            </StackLayout>
+                                                        </StackLayout>
+
+
+
+
+
+                                                    </Grid>
+
+                                                </StackLayout>
 
 
 
@@ -117,165 +393,13 @@
                                         </ViewCell>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
-                            
-                        </ListView>
-                       
-                 
-                    
 
+                            </ListView>
 
-
-                </StackLayout>
-
-                    <StackLayout Grid.Row="2"   HorizontalOptions="FillAndExpand" BackgroundColor="White" Padding="3" >
-                    <StackLayout>
-                        <Grid  HorizontalOptions="CenterAndExpand">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="0.7*" />
-                                
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*" />
-                                <ColumnDefinition Width="1*" />
-                                <ColumnDefinition Width="1*" />
-                                <ColumnDefinition Width="0.3*" />
-                            </Grid.ColumnDefinitions>
-
-                                <custom:CustomEntry x:Name="Numbers" Text="{Binding Numbers}" BackgroundColor="#efefef" Placeholder="Number" Keyboard="Numeric" Grid.Row="0" VerticalOptions="FillAndExpand" FontFamily="Bold" FontSize="10" HorizontalOptions="FillAndExpand" Grid.Column="0"></custom:CustomEntry>
-                                <custom:CustomEntry x:Name="SB" Text="{Binding SB}" Grid.Row="0" Grid.Column="1" BackgroundColor="#efefef" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" FontFamily="Bold" FontSize="10" Placeholder="S/B" IsEnabled="False"></custom:CustomEntry>
-                                <custom:CustomEntry x:Name="Amt" Text="{Binding Amt}" Keyboard="Numeric" BackgroundColor="#efefef" Placeholder="$Amount" Grid.Row="0" VerticalOptions="FillAndExpand" FontFamily="Bold" FontSize="10" HorizontalOptions="FillAndExpand" Grid.Column="2"></custom:CustomEntry>
-
-                                <Button  HeightRequest="1" CornerRadius="10" Command="{Binding btnAdd}"  Grid.Row="0" Grid.Column="3" BackgroundColor="White"  HorizontalOptions="EndAndExpand" Image="plusIcon.png"></Button>
-                           
                         </Grid>
+
+
                     </StackLayout>
-
-                </StackLayout>
-
-                <StackLayout  Grid.Row="3" >
-                    <Grid RowSpacing="0" ColumnSpacing="0"  Padding="0">
-                        <Grid.RowDefinitions>
-
-                            <RowDefinition Height="40"/>
-                            <RowDefinition Height="1*"/>
-
-
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions >
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                        </Grid.ColumnDefinitions>
-                            <StackLayout Grid.Row="0" BackgroundColor="#1A2224" Grid.Column="0" >
-                                <Label  VerticalOptions="CenterAndExpand" TextColor="White" HorizontalOptions="Center" Text="No" Font="Bold"></Label>
-                        </StackLayout>
-                            <StackLayout Grid.Row="0" BackgroundColor="#1A2224" Grid.Column="1">
-                                <Label  Text="House" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Font="Bold"></Label>
-                        </StackLayout>
-                            <StackLayout Grid.Row="0" BackgroundColor="#1A2224" Grid.Column="2">
-                                <Label  Text="SB" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Font="Bold"></Label>
-                        </StackLayout>
-                            <StackLayout Grid.Row="0" BackgroundColor="#1A2224" Grid.Column="3">
-                                <Label  Text="$" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Font="Bold"></Label>
-                        </StackLayout>
-                            <StackLayout Grid.Row="0" BackgroundColor="#1A2224" Grid.Column="4">
-                                <Label  Text="del" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Font="Bold"></Label>
-                        </StackLayout>
-
-                            <ListView x:Name="jackpotGid" Grid.Row="1" Grid.ColumnSpan="5" ItemsSource="{Binding OrderGridListObservCollection}" HasUnevenRows="True"  SeparatorVisibility="None"     HorizontalOptions="CenterAndExpand"   >
-
-                            <ListView.ItemTemplate >
-                                <DataTemplate>
-                                    <ViewCell>
-                                            <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="{Binding RowColor}">
-
-                                            <StackLayout  >
-
-                                                <Grid RowSpacing="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                                    <Grid.RowDefinitions>
-
-                                                        <RowDefinition Height="1*"/>
-
-
-
-                                                    </Grid.RowDefinitions>
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="1*"/>
-                                                        <ColumnDefinition Width="1*"/>
-                                                        <ColumnDefinition Width="1*"/>
-                                                        <ColumnDefinition Width="1*"/>
-                                                        <ColumnDefinition Width="1*"/>
-                                                    </Grid.ColumnDefinitions>
-                                                    <StackLayout Orientation="Horizontal" Grid.Column="0">
-
-                                                        <Label  Text="{Binding Numbers}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-
-                                                        </Label>
-
-                                                    </StackLayout>
-
-                                                    <StackLayout Orientation="Horizontal" Grid.Column="1">
-
-
-                                                        <Label  Text="{Binding House}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-
-                                                        </Label>
-
-                                                    </StackLayout>
-
-                                                    <StackLayout Orientation="Horizontal" Grid.Column="2">
-
-
-
-                                                        <Label  Text="{Binding SB}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-
-                                                        </Label>
-                                                    </StackLayout>
-
-                                                    <StackLayout Orientation="Horizontal" Grid.Column="3">
-
-
-
-                                                        <Label  Text="{Binding Amt}"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-
-                                                        </Label>
-                                                    </StackLayout>
-                                                    <StackLayout Grid.Column="4">
-                                                    <StackLayout Orientation="Horizontal"  HeightRequest="40" WidthRequest="40"  >
-
-
-                                                            <ImageButton Source="Delbtn.png" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Command="{Binding Path=BindingContext.OrderGridCommand, Source={x:Reference jackpotGid}}"  CommandParameter="{Binding .}" BackgroundColor="White" ></ImageButton>
-
-
-                                                    </StackLayout>
-                                                    </StackLayout>
-
-
-
-
-
-                                                </Grid>
-
-                                            </StackLayout>
-
-
-
-                                        </StackLayout>
-
-
-
-                                    </ViewCell>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-
-                        </ListView>
-
-                    </Grid>
-
-
-                </StackLayout>
 
 
 
@@ -292,40 +416,40 @@
 
 
 
-                </StackLayout>
+                    </StackLayout>
 
 
 
-                <StackLayout Grid.Row="5" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="5">
-                    <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1*"/>
-                        </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Row="5" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="5">
+                        <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
 
 
                             <Button Text="Previous TRX " CornerRadius="10"  Font="Bold" TextColor="#ffffff" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  BackgroundColor="#FFB900"  Command="{Binding btnPreviousTRX}"></Button>
                             <Button  Text="Purchase Tkt" IsEnabled="{Binding PurchaseTicketEnabled}" CornerRadius="10"  Font="Bold" TextColor="#ffffff" Grid.Column="1" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"  BackgroundColor="#0586C8" Command="{Binding btnPurchaseTicket }"></Button>
                         </Grid>
-                </StackLayout>
-            </Grid>
-        </StackLayout>
-
-
-        <ContentView x:Name="popupEditProductView" BackgroundColor="#C0808080" Padding="10, 0"  IsVisible="{Binding PopUpVisibility}" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
-            <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-                <StackLayout Orientation="Vertical" HeightRequest="400" WidthRequest="350" BackgroundColor="White"  >
-                    <StackLayout Orientation="Horizontal" VerticalOptions="Center" BackgroundColor="#bb2b23" HorizontalOptions="FillAndExpand" >
-                        <Label Text="Tender" FontSize="14" TextColor="White" HeightRequest="30" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand"/>
-                        <ImageButton   Source="Close_Grid_Popup.png"  Command="{Binding btnCloseAddProductView}" BackgroundColor="Transparent" HeightRequest="30" WidthRequest="30"  HorizontalOptions="End" VerticalOptions="Start"/>
-
                     </StackLayout>
-                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="5">
-                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                </Grid>
+            </StackLayout>
 
-                            <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" >
 
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
+            <ContentView x:Name="popupEditProductView" BackgroundColor="#C0808080" Padding="10, 0"  IsVisible="{Binding PopUpVisibility}" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical" HeightRequest="400" WidthRequest="350" BackgroundColor="White"  >
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" BackgroundColor="#bb2b23" HorizontalOptions="FillAndExpand" >
+                            <Label Text="Tender" FontSize="14" TextColor="White" HeightRequest="30" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand"  VerticalOptions="CenterAndExpand"/>
+                            <ImageButton   Source="Close_Grid_Popup.png"  Command="{Binding btnCloseAddProductView}" BackgroundColor="Transparent" HeightRequest="30" WidthRequest="30"  HorizontalOptions="End" VerticalOptions="Start"/>
+
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="5">
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                                <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand" >
+
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
 
                                         <Grid RowSpacing="0">
                                             <Grid.RowDefinitions>
@@ -383,14 +507,14 @@
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" >
                                     <Label Text="Change:" FontSize="20" TextColor="Black"  FontAttributes="Bold" VerticalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
                                     <Label Text="{Binding Change}" FontSize="20" TextColor="Black"  FontAttributes="Bold" VerticalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>-->
+                                    </StackLayout>
                                 </StackLayout>
+
                             </StackLayout>
 
-                        </StackLayout>
-                        
-                        
-                        
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" >
+
+
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" >
 
 
                                 <Button x:Name="btn_ClearProduct"  Text="Cancel"  TextColor="#ffffff"  BackgroundColor="#bb2b23"  BorderRadius="7" HeightRequest="40" HorizontalOptions="CenterAndExpand" Command="{Binding btnPopupCancel}" />
@@ -398,14 +522,14 @@
                                 <Button x:Name="btn_Viewaddproduct" Command="{Binding btnPrintReceipt}" Text="Print Receipt" TextColor="#ffffff"  BackgroundColor="#bb2b23"     BorderRadius="7" HeightRequest="40" HorizontalOptions="EndAndExpand"  />
 
 
+                            </StackLayout>
+
                         </StackLayout>
 
+
                     </StackLayout>
-
-
                 </StackLayout>
-            </StackLayout>
-        </ContentView>
+            </ContentView>
 
             <ContentView x:Name="popPriviewsTickietView" BackgroundColor="#C0808080" Padding="10, 0"  IsVisible="{Binding popupPriviewsTickietView}" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
                 <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
@@ -455,7 +579,7 @@
 
                                 <Button x:Name="btn_Cancel" Command="{Binding btnHidePreviewPopup}" Text="Cancel" TextColor="#ffffff"  BackgroundColor="#bb2b23"     BorderRadius="7" HeightRequest="40" HorizontalOptions="End"  />
 
-                                
+
                             </StackLayout>
 
                         </StackLayout>

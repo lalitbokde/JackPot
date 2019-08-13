@@ -45,7 +45,7 @@
                                 <StackLayout HorizontalOptions="CenterAndExpand" Spacing="20" Orientation="Horizontal">
 
                                     <Button x:Name="btn_Close"  Text="Close"  TextColor="#ffffff"  BackgroundColor="#bb2b23"  BorderRadius="7" HeightRequest="40" HorizontalOptions="Center" Command="{Binding btnClose}" />
-                                            <Button x:Name="btn_Deposite" Command="{Binding btnDeposite}" Text="Deposite" TextColor="#ffffff"  BackgroundColor="#bb2b23" IsEnabled="{Binding Depositebool}"    BorderRadius="7" HeightRequest="40" HorizontalOptions="End"  />
+                                            <Button x:Name="btn_Deposite" Command="{Binding btnDeposite}" Text="Deposit" TextColor="#ffffff"  BackgroundColor="#bb2b23" IsEnabled="{Binding Depositebool}"    BorderRadius="7" HeightRequest="40" HorizontalOptions="End"  />
 
                                 </StackLayout>
 
