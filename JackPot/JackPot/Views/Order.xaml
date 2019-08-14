@@ -33,7 +33,7 @@
 
                             </Grid.ColumnDefinitions>
                             <Label x:Name="txt_Agent"  TextColor="Black"   Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" ></Label>
-                            <Label x:Name="txt_Balance" TextColor="Black"  Grid.Row="0" Grid.Column="1"  HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" ></Label>
+                            <Label x:Name="txt_Balance" Text="{Binding BalAmt}" TextColor="Black"  Grid.Row="0" Grid.Column="1"  HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" ></Label>
                             <Label Text="Last Trx # :" TextColor="Black"  Grid.Row="1" Grid.Column="0"  HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" ></Label>
                             <Label x:Name="txt_LastTransaction" Text="{Binding LastTransactionNo}" TextColor="Black"  Grid.Row="1" Grid.Column="1"  HorizontalOptions="StartAndExpand"  ></Label>
 
@@ -574,10 +574,11 @@
 
 
                             <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" >
-                                <Button x:Name="btn_LoadPreviousTransaction" Command="{Binding btnPreviewLastTransaction}" Text="Refresh" TextColor="#ffffff"  BackgroundColor="#bb2b23"     BorderRadius="7" HeightRequest="40" HorizontalOptions="End"  />
+                                <Button x:Name="btn_EarlyPrevious" Command="{Binding btnPreviousLoadEarly}" Text="Early" TextColor="#ffffff"  BackgroundColor="#bb2b23"     BorderRadius="7" HeightRequest="40" HorizontalOptions="End"  />
+                                <Button x:Name="btn_LoadPreviousTransaction" Command="{Binding btnPreviewLastTransaction}" Text="Load Exact" TextColor="#ffffff"  BackgroundColor="#bb2b23"     BorderRadius="7" HeightRequest="40" HorizontalOptions="End"  />
                                 <Button x:Name="btn_LoadLate" Command="{Binding btnPreviousLoadLate}" Text="Load Late" TextColor="#ffffff"  BackgroundColor="#bb2b23"     BorderRadius="7" HeightRequest="40" HorizontalOptions="End"  />
 
-                                <Button x:Name="btn_Cancel" Command="{Binding btnHidePreviewPopup}" Text="Cancel" TextColor="#ffffff"  BackgroundColor="#bb2b23"     BorderRadius="7" HeightRequest="40" HorizontalOptions="End"  />
+                             
 
 
                             </StackLayout>

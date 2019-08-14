@@ -20,8 +20,7 @@ namespace JackPot.Views
 			InitializeComponent ();
             BindingContext = viewmodel = new OrderViewModel(Navigation);
             txt_Agent.Text = "Agent : "+GlobalConstant.CustomerName;
-            txt_Balance.Text ="Balance: $"+ GlobalConstant.BalanceAmt.ToString();
-
+            
             //jackpotListLate.ItemsSource = viewmodel.ListItemValLate;
 
         }

@@ -51,7 +51,7 @@ namespace JackPot.ViewModel
         {
             if (CustomerAcNo.Length > 2)
             {
-                Clear();
+              
                 Regex reg = new Regex("[*'\",_&#^@]");
                 string AccNo = reg.Replace(CustomerAcNo, string.Empty);
                 var CutomerData = await new loginPageService().GetDetailByUrl(CustomerApi.GetCustomerDetailByAccountno + AccNo);

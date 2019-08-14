@@ -23,10 +23,11 @@ namespace JackPot.ViewModel
         ICommand btn_PopupCancel;
         ICommand btn_Exact;
         ICommand btn_Add;
-        ICommand btn_PreviewLastTransaction;
+        ICommand btn_PreviewLoadExactTransaction;
         ICommand btn_ClosePreviewTicketView;
         ICommand btnpurchaseTicket;
         ICommand btn_PreviousLoadLate;
+        ICommand btn_PreviousLoadEarly;
         INavigation Navigation;
         ICommand checkedBarcodeCommand1;
         ICommand checkedBarcodeCommand2;
@@ -39,7 +40,8 @@ namespace JackPot.ViewModel
         public ObservableRangeCollection<BetCollection> OrderGridListObservCollection { get; set; } = new ObservableRangeCollection<BetCollection>();
         public ICommand btnPreviousTRX =>
    btn_PreviousTRX ?? (btn_PreviousTRX = new Command(async () => await GoToPreviousTRX()));
-
+        public ICommand btnPreviousLoadEarly =>
+            btn_PreviousLoadEarly ?? (btn_PreviousLoadEarly = new Command(async () => await GetLoadEarlyPrevious()));
         public ICommand TabCommandEarly =>
   Tab_CommandEarly ?? (Tab_CommandEarly = new Command(async () => await EnableDisableTab("Early")));
         public ICommand TabCommandLate =>
@@ -80,6 +82,78 @@ namespace JackPot.ViewModel
         //public ICommand CheckedBarcodeCommand =>
         //checkedBarcodeCommand ?? (checkedBarcodeCommand = new Command<WRProductBarcodeModel>(async (s) => await CheckedBarcodeCammandAsync(s)));
 
+      
+        public ICommand btnClosePreviewTicketView =>
+            btn_ClosePreviewTicketView ?? (btn_ClosePreviewTicketView = new Command(async () => popupPriviewsTickietView = false));
+        public ICommand btnPreviewLoadExactTransaction =>
+       btn_PreviewLoadExactTransaction ?? (btn_PreviewLoadExactTransaction = new Command(async () => await GetLoadExactPrevious()));
+
+        private async Task GetLoadEarlyPrevious()
+        {
+            var PreviousTicketData = await new loginPageService().GetDetailByUrl(BetEntry.GetBetEntryByTicketNo + PreviousTicketNoPopup);
+            if (PreviousTicketData.Status == 1)
+            {
+                OrderGridListObservCollection.Clear();
+                var DeserializeGridData = JsonConvert.DeserializeObject<List<vw_TicketBetsView>>(PreviousTicketData.Response.ToString());
+                TotalAmt = 0;
+
+                PurchaseTicketEnabled = false;
+                foreach (var item in DeserializeGridData)
+                {
+                    if (item.Pick.Length > 3 && item.HouseID==5) { }
+                    else
+                    {
+                        var Val1 = new BetCollection();
+                        Val1.Amt = item.Amount;
+                        Val1.GameID = item.GameID;
+                        Val1.Numbers = Convert.ToInt32(item.Pick);
+                        Val1.SB = item.Form;
+                        Val1.House = item.House;
+                        OrderGridListObservCollection.Add(Val1);
+                        TotalAmt = TotalAmt + item.Amount;
+                    }
+
+                }
+                popupPriviewsTickietView = false;
+            }
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Message", "Ticket No Not Found.", "Ok");
+            }
+        }
+        private async Task GetLoadExactPrevious()
+        {
+            var PreviousTicketData = await new loginPageService().GetDetailByUrl(BetEntry.GetBetEntryByTicketNo + PreviousTicketNoPopup);
+            if (PreviousTicketData.Status == 1)
+            {
+                OrderGridListObservCollection.Clear();
+                var DeserializeGridData = JsonConvert.DeserializeObject<List<vw_TicketBetsView>>(PreviousTicketData.Response.ToString());
+                TotalAmt = 0;
+                
+                PurchaseTicketEnabled = false;
+                foreach (var item in DeserializeGridData)
+                {
+                    if (item.Pick.Length > 3 && item.HouseID == 5) { }
+                    else
+                    {
+                        var Val1 = new BetCollection();
+                        Val1.Amt = item.Amount;
+                        Val1.GameID = item.GameID;
+                        Val1.Numbers = Convert.ToInt32(item.Pick);
+                        Val1.SB = item.Form;
+                        Val1.House = item.House;
+                        OrderGridListObservCollection.Add(Val1);
+                        TotalAmt = TotalAmt + item.Amount;
+                    }
+                   
+                }
+                popupPriviewsTickietView = false;
+            }
+            else
+            {
+                Application.Current.MainPage.DisplayAlert("Message", "Ticket No Not Found.", "Ok");
+            }
+        }
         private async Task LoadDataByPreviousTicket()
         {
 
@@ -92,6 +166,7 @@ namespace JackPot.ViewModel
                 PurchaseTicketEnabled = false;
                 foreach (var item in DeserializeGridData)
                 {
+
                     var Val1 = new BetCollection();
                     Val1.Amt = item.Amount;
                     Val1.GameID = item.GameID;
@@ -101,7 +176,7 @@ namespace JackPot.ViewModel
                     OrderGridListObservCollection.Add(Val1);
                     TotalAmt = TotalAmt + item.Amount;
                 }
-
+                popupPriviewsTickietView = false;
             }
             else
             {
@@ -109,23 +184,19 @@ namespace JackPot.ViewModel
             }
         }
 
-        public ICommand btnClosePreviewTicketView =>
-            btn_ClosePreviewTicketView ?? (btn_ClosePreviewTicketView = new Command(async () => popupPriviewsTickietView = false));
-        public ICommand btnPreviewLastTransaction =>
-       btn_PreviewLastTransaction ?? (btn_PreviewLastTransaction = new Command(async () => await GetPreviewTenderAmount()));
 
-        private async Task GetPreviewTenderAmount()
-        {
-            var TransactionNumberVal = await new loginPageService().GetDetailByUrl(BetEntry.GetTenderAmountbyTicketNo + PreviousTicketNoPopup);
-            if (TransactionNumberVal.Status == 1)
-            {
-                PreviousTenderAmt = TransactionNumberVal.Response.ToString();
-            }
-            else
-            {
-                Application.Current.MainPage.DisplayAlert("Message", "Ticket No Not Found.", "Ok");
-            }
-        }
+        //private async Task GetPreviewTenderAmount()
+        //{
+        //    var TransactionNumberVal = await new loginPageService().GetDetailByUrl(BetEntry.GetTenderAmountbyTicketNo + PreviousTicketNoPopup);
+        //    if (TransactionNumberVal.Status == 1)
+        //    {
+        //        PreviousTenderAmt = TransactionNumberVal.Response.ToString();
+        //    }
+        //    else
+        //    {
+        //        Application.Current.MainPage.DisplayAlert("Message", "Ticket No Not Found.", "Ok");
+        //    }
+        //}
 
         public ICommand btnCloseAddProductView =>
            btn_CloseAddProductView ?? (btn_CloseAddProductView = new Command(async () => await CancelPopUpTenderAsync()));
@@ -284,6 +355,7 @@ namespace JackPot.ViewModel
                 {
                     var ResponseSave = JsonConvert.DeserializeObject<LogInModel>(TransactionNumberVal.Response.ToString());
                     GlobalConstant.BalanceAmt = ResponseSave.decBalance;
+                    BalAmt = "Balance: $" + GlobalConstant.BalanceAmt.ToString();
                     OrderGridListObservCollection.Clear();
                     ListItemValLate.Clear();
                     Amt = "0";
@@ -558,6 +630,21 @@ namespace JackPot.ViewModel
             }
         }
 
+        string balAmt;
+        public string BalAmt
+        {
+            get { return balAmt; }
+            set
+            {
+                if (balAmt != value)
+                {
+                    balAmt = value;
+                    OnPropertyChanged(nameof(BalAmt));
+
+                }
+            }
+        }
+
 
         string tender;
         public string Tender
@@ -822,6 +909,7 @@ namespace JackPot.ViewModel
             LateTabVisibility = false;
             PurchaseTicketEnabled = true;
             Navigation = navigation;
+            BalAmt = "Balance: $" + GlobalConstant.BalanceAmt.ToString();
         }
 
 
