@@ -67,7 +67,7 @@ namespace JackPot.Views
                 }
             }
 
-            public MainPageMasterViewModel()
+            public  MainPageMasterViewModel()
             {
                 MenuItems = new ObservableCollection<MainPageMenuItem>(new[]
                 {
@@ -88,9 +88,10 @@ namespace JackPot.Views
                 });
 
                 AgentName = GlobalConstant.CustomerName;
+               
             }
 
-
+            
             
             #region INotifyPropertyChanged Implementation
             public event PropertyChangedEventHandler PropertyChanged;

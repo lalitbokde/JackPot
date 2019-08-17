@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{93C9E8CF-D736-4908-8B3E-DDBB3FFA7A54}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="JackPot/JackPot/Views/SalesInfo.xaml">
+    <Files>
+      <File FileName="JackPot/JackPot/Views/Order.xaml" Line="576" Column="43" />
+      <File FileName="JackPot/JackPot/Views/WiningScreen.xaml" Line="22" Column="4" />
+      <File FileName="JackPot/JackPot/Views/PayWinnerScreen.xaml" Line="1" Column="1" />
+      <File FileName="JackPot/JackPot/Views/VoidTicket.xaml" Line="163" Column="1" />
+      <File FileName="JackPot/JackPot/Views/SalesInfo.xaml" Line="11" Column="42" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="JackPot" expanded="True">
+            <Node name="JackPot" expanded="True">
+              <Node name="Views" expanded="True">
+                <Node name="SalesInfo.xaml" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.JackPot.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.Light.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.VKQCOJUOVK5P9DQC" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/ViewModel/LogInViewModel.cs" relfile="JackPot/JackPot/ViewModel/LogInViewModel.cs" line="61" column="1" />
+      <Breakpoint file="/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/ViewModel/LogInViewModel.cs" relfile="JackPot/JackPot/ViewModel/LogInViewModel.cs" line="27" column="1" />
+      <Breakpoint file="/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/ViewModel/LogInViewModel.cs" relfile="JackPot/JackPot/ViewModel/LogInViewModel.cs" line="73" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <AuthorInfo Name="Ketubh" Email="kartikthakre69@gmail.com" Copyright="" Company="" Trademark="" />
+</Properties>

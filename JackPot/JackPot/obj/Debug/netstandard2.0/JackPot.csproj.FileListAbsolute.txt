@@ -1,30 +1,56 @@
-F:\Project\JackPot\JackPot\JackPot\bin\Debug\netstandard2.0\JackPot.deps.json
-F:\Project\JackPot\JackPot\JackPot\bin\Debug\netstandard2.0\JackPot.dll
-F:\Project\JackPot\JackPot\JackPot\bin\Debug\netstandard2.0\JackPot.pdb
-F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\JackPot.csprojAssemblyReference.cache
-F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\App.xaml.g.cs
-F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
-F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\Views\MainPageDetail.xaml.g.cs
-F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\Views\MainPageMaster.xaml.g.cs
-F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\JackPot.csproj.CoreCompileInputs.cache
-F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\JackPot.AssemblyInfoInputs.cache
-F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\JackPot.AssemblyInfo.cs
-F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\XamlC.stamp
-F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\JackPot.dll
-F:\Project\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\JackPot.pdb
-E:\GitHub Projects\JackPot\JackPot\JackPot\bin\Debug\netstandard2.0\JackPot.deps.json
-E:\GitHub Projects\JackPot\JackPot\JackPot\bin\Debug\netstandard2.0\JackPot.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot\bin\Debug\netstandard2.0\JackPot.pdb
-E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\App.xaml.g.cs
-E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\Views\LogIn.xaml.g.cs
-E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
-E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\Views\MainPageDetail.xaml.g.cs
-E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\Views\MainPageMaster.xaml.g.cs
-E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\JackPot.csproj.CoreCompileInputs.cache
-E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\JackPot.AssemblyInfoInputs.cache
-E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\JackPot.AssemblyInfo.cs
-E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\JackPot.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\JackPot.pdb
-E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\JackPot.csprojAssemblyReference.cache
-E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\Views\Order.xaml.g.cs
-E:\GitHub Projects\JackPot\JackPot\JackPot\obj\Debug\netstandard2.0\XamlC.stamp
+F:/Project/JackPot/JackPot/JackPot/bin/Debug/netstandard2.0/JackPot.deps.json
+F:/Project/JackPot/JackPot/JackPot/bin/Debug/netstandard2.0/JackPot.dll
+F:/Project/JackPot/JackPot/JackPot/bin/Debug/netstandard2.0/JackPot.pdb
+F:/Project/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/JackPot.csprojAssemblyReference.cache
+F:/Project/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/App.xaml.g.cs
+F:/Project/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/MainPage.xaml.g.cs
+F:/Project/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/MainPageDetail.xaml.g.cs
+F:/Project/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/MainPageMaster.xaml.g.cs
+F:/Project/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/JackPot.csproj.CoreCompileInputs.cache
+F:/Project/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/JackPot.AssemblyInfoInputs.cache
+F:/Project/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/JackPot.AssemblyInfo.cs
+F:/Project/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/XamlC.stamp
+F:/Project/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/JackPot.dll
+F:/Project/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/JackPot.pdb
+E:/GitHub Projects/JackPot/JackPot/JackPot/bin/Debug/netstandard2.0/JackPot.deps.json
+E:/GitHub Projects/JackPot/JackPot/JackPot/bin/Debug/netstandard2.0/JackPot.dll
+E:/GitHub Projects/JackPot/JackPot/JackPot/bin/Debug/netstandard2.0/JackPot.pdb
+E:/GitHub Projects/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/App.xaml.g.cs
+E:/GitHub Projects/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/LogIn.xaml.g.cs
+E:/GitHub Projects/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/MainPage.xaml.g.cs
+E:/GitHub Projects/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/MainPageDetail.xaml.g.cs
+E:/GitHub Projects/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/MainPageMaster.xaml.g.cs
+E:/GitHub Projects/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/JackPot.csproj.CoreCompileInputs.cache
+E:/GitHub Projects/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/JackPot.AssemblyInfoInputs.cache
+E:/GitHub Projects/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/JackPot.AssemblyInfo.cs
+E:/GitHub Projects/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/JackPot.dll
+E:/GitHub Projects/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/JackPot.pdb
+E:/GitHub Projects/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/JackPot.csprojAssemblyReference.cache
+E:/GitHub Projects/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/Order.xaml.g.cs
+E:/GitHub Projects/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/bin/Debug/netstandard2.0/JackPot.deps.json
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/bin/Debug/netstandard2.0/JackPot.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/bin/Debug/netstandard2.0/JackPot.pdb
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/CustomerDetail.xaml.g.cs
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/CustomerWithdrawalScreen.xaml.g.cs
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/LogIn.xaml.g.cs
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/MainPage.xaml.g.cs
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/MainPageDetail.xaml.g.cs
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/MainPageMaster.xaml.g.cs
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/Order.xaml.g.cs
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/PayWinnerScreen.xaml.g.cs
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/PreviousTRX.xaml.g.cs
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/SalesAndShiftInfo.xaml.g.cs
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/SalesInfo.xaml.g.cs
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/SearchReceipt.xaml.g.cs
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/SetCustomerScreen.xaml.g.cs
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/VoidTicket.xaml.g.cs
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/Views/WiningScreen.xaml.g.cs
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/JackPot.csproj.CoreCompileInputs.cache
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/JackPot.AssemblyInfoInputs.cache
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/JackPot.AssemblyInfo.cs
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/JackPot.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/JackPot.pdb
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot/obj/Debug/netstandard2.0/JackPot.csprojAssemblyReference.cache

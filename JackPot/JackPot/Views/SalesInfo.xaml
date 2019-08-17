@@ -4,12 +4,12 @@
               xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
              x:Class="JackPot.Views.SalesInfo">
     <ContentPage.Content>
-        <AbsoluteLayout  Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <AbsoluteLayout  Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                          AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
                 <Grid RowSpacing="0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="2.3*" />
+                        <RowDefinition Height="1.5*" />
                         <RowDefinition Height="5*" />
                         <RowDefinition Height="1*" />
                         <RowDefinition Height="2*" />

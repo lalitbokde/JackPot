@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JackPot.Views.VoidTicket">
     <ContentPage.Content>
-        <AbsoluteLayout  Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <AbsoluteLayout  Padding="5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                          AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
                 <Grid RowSpacing="0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="2.3*" />
+                        <RowDefinition Height="2*" />
                         <RowDefinition Height="5*" />
                         <RowDefinition Height="1*" />
                         <RowDefinition Height="1.3*" />
@@ -30,7 +30,7 @@
                             </Grid.ColumnDefinitions>
                             <Label Text="Ticket No." x:Name="txt_Agent"  TextColor="Black" FontSize="12"  Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" ></Label>
                             <Entry x:Name="txt_TicketNo" TextColor="Black" Text="{Binding TicketNo}" FontSize="15" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"  HorizontalOptions="FillAndExpand" Keyboard="Numeric"  ></Entry>
-                            <Button Text="Show" Command="{Binding ShowData}"  TextColor="#ffffff" BackgroundColor="#bb2b23" HeightRequest="40" CornerRadius="10" FontSize="15" Grid.Row="2" Grid.Column="3"  HorizontalOptions="EndAndExpand"  ></Button>
+                            <Button Text="Show" Command="{Binding ShowData}"  Margin="0,0,10,0" TextColor="#ffffff" BackgroundColor="#bb2b23" HeightRequest="40" CornerRadius="10" FontSize="15" Grid.Row="2" Grid.Column="3"  HorizontalOptions="EndAndExpand"  ></Button>
 
                         </Grid>
                     </StackLayout>
@@ -167,8 +167,8 @@
                     <StackLayout Grid.Row="3" Orientation="Horizontal">
                       
 
-                            <Button Text="Cancel" CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Row="0"  Grid.Column="0" HorizontalOptions="CenterAndExpand" HeightRequest="10"  BackgroundColor="#bb2b23" Command="{Binding btnCancel}"></Button>
-                        <Button Text="Void Ticket" CornerRadius="10" Margin="15,0,0,15" Font="Bold" TextColor="#ffffff" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" HeightRequest="10" BackgroundColor="#bb2b23" Command="{Binding btnVoided}"></Button>
+                            <Button Text="Cancel" CornerRadius="10"  Margin="0,25,0,25" Font="Bold" TextColor="#ffffff"   HorizontalOptions="CenterAndExpand" HeightRequest="10"  BackgroundColor="#bb2b23" Command="{Binding btnCancel}"></Button>
+                        <Button Text="Void Ticket" CornerRadius="10" Margin="0,25,0,25" Font="Bold" TextColor="#ffffff"  HorizontalOptions="CenterAndExpand" HeightRequest="10" BackgroundColor="#bb2b23" Command="{Binding btnVoided}"></Button>
                         <!--</Grid>-->
                     </StackLayout>
                 </Grid>

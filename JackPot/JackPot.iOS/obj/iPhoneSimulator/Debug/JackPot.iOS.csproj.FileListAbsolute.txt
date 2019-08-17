@@ -1,119 +1,64 @@
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\JackPot.iOS.exe
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\JackPot.iOS.pdb
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Core.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Core.pdb
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Platform.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Platform.iOS.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Platform.iOS.pdb
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Xaml.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Xaml.pdb
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\ar\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\ca\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\cs\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\da\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\de\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\el\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\es\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\fi\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\fr\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\he\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\hi\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\hr\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\hu\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\id\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\it\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\ja\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\ko\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\ms\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\nb\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\nl\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\pl\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\pt-BR\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\pt\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\ro\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\ru\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\sk\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\sv\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\th\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\tr\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\uk\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\vi\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\zh-HK\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\zh-Hans\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\zh-Hant\Xamarin.Forms.Platform.iOS.resources.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\JackPot.dll
-F:\Project\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\JackPot.pdb
-F:\Project\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
-F:\Project\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
-F:\Project\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
-F:\Project\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
-F:\Project\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
-F:\Project\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\optimized\
-F:\Project\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\JackPot.iOS.csprojAssemblyReference.cache
-F:\Project\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\JackPot.iOS.csproj.CoreCompileInputs.cache
-F:\Project\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\XamlC.stamp
-F:\Project\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\JackPot.iOS.csproj.CopyComplete
-F:\Project\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\JackPot.iOS.exe
-F:\Project\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\JackPot.iOS.pdb
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\JackPot.iOS.exe
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\JackPot.iOS.pdb
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\ModernHttpClient.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\ModernHttpClient.pdb
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Core.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Core.pdb
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Platform.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Platform.iOS.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Platform.iOS.pdb
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Xaml.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Xaml.pdb
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\ar\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\ca\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\cs\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\da\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\de\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\el\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\es\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\fi\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\fr\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\he\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\hi\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\hr\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\hu\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\id\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\it\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\ja\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\ko\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\ms\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\nb\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\nl\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\pl\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\pt-BR\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\pt\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\ro\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\ru\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\sk\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\sv\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\th\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\tr\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\uk\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\vi\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\zh-HK\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\zh-Hans\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\zh-Hant\Xamarin.Forms.Platform.iOS.resources.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\JackPot.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\JackPot.pdb
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\optimized\
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\JackPot.iOS.csprojAssemblyReference.cache
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\JackPot.iOS.csproj.CoreCompileInputs.cache
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\XamlC.stamp
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\JackPot.iOS.csproj.CopyComplete
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\JackPot.iOS.exe
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\obj\iPhoneSimulator\Debug\JackPot.iOS.pdb
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\MvvmHelpers.dll
-E:\GitHub Projects\JackPot\JackPot\JackPot.iOS\bin\iPhoneSimulator\Debug\MvvmHelpers.pdb
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/JackPot.iOS.exe
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/JackPot.iOS.pdb
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/ModernHttpClient.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/ModernHttpClient.pdb
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/MvvmHelpers.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/MvvmHelpers.pdb
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Core.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Core.pdb
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.iOS.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.iOS.pdb
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Xaml.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Xaml.pdb
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/ar/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/ca/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/cs/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/da/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/de/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/el/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/es/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/fi/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/fr/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/he/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/hi/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/hr/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/hu/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/id/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/it/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/ja/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/ko/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/ms/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/nb/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/nl/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/pl/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/pt-BR/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/pt/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/ro/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/ru/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/sk/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/sv/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/th/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/tr/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/uk/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/vi/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/zh-HK/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/zh-Hans/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/Plugin.InputKit.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/JackPot.dll
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/JackPot.pdb
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/bin/iPhoneSimulator/Debug/JackPot.dll.mdb
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/obj/iPhoneSimulator/Debug/ibtool/_BundleResourceWithLogicalName.items
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/obj/iPhoneSimulator/Debug/actool/_PartialAppManifest.items
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/obj/iPhoneSimulator/Debug/actool/_BundleResourceWithLogicalName.items
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/obj/iPhoneSimulator/Debug/coremlc/_PartialAppManifest.items
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/obj/iPhoneSimulator/Debug/coremlc/_BundleResourceWithLogicalName.items
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/obj/iPhoneSimulator/Debug/optimized/
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/obj/iPhoneSimulator/Debug/JackPot.iOS.csprojAssemblyReference.cache
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/obj/iPhoneSimulator/Debug/JackPot.iOS.csproj.CoreCompileInputs.cache
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/obj/iPhoneSimulator/Debug/XamlC.stamp
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/obj/iPhoneSimulator/Debug/JackPot.iOS.csproj.CopyComplete
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/obj/iPhoneSimulator/Debug/JackPot.iOS.exe
+/Users/apurvaraut/Projects/JACKPOT/JackPot/JackPot/JackPot.iOS/obj/iPhoneSimulator/Debug/JackPot.iOS.pdb

@@ -96,8 +96,8 @@ namespace JackPot.ViewModel
                     GlobalConstant.LocationId = wrShiipinglist.iLocationID;
                     IsBusy = false;
                     await Navigation.PushModalAsync(new MainPage());
-                  
 
+                    
                 }
                 else
                 {
