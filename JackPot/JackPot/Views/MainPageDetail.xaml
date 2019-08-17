@@ -4,6 +4,5 @@
              x:Class="JackPot.Views.MainPageDetail"
              Title="Detail">
   <StackLayout Padding="10">
-    
   </StackLayout>
 </ContentPage>

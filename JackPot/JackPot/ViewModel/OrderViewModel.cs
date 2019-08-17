@@ -53,16 +53,16 @@ namespace JackPot.ViewModel
                 EarlyTabVisibility = true;
                 LateTabVisibility = false;
                 GetLateHouse(false);
-                EarlyhouseTabColor =Color.LightBlue;
-                LatehouseTabColor = Color.LightGray;
+                EarlyhouseTabColor =Color.Black;
+                LatehouseTabColor = Color.Red;
             }
             else
             {
                 GetLateHouse(true);
                 EarlyTabVisibility = false;
                 LateTabVisibility = true;
-                EarlyhouseTabColor = Color.LightGray;
-                LatehouseTabColor = Color.LightBlue;
+                EarlyhouseTabColor = Color.Red;
+                LatehouseTabColor = Color.Black;
             }
         }
 
@@ -903,8 +903,8 @@ namespace JackPot.ViewModel
         public OrderViewModel(INavigation navigation)
         {
             GetLateHouse(false);
-            EarlyhouseTabColor = Color.LightBlue;
-            LatehouseTabColor = Color.LightGray;
+            EarlyhouseTabColor = Color.Black;
+            LatehouseTabColor = Color.Red;
             EarlyTabVisibility = true;
             LateTabVisibility = false;
             PurchaseTicketEnabled = true;

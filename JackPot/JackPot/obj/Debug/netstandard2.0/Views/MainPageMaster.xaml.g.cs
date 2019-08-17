@@ -13,7 +13,7 @@
 namespace JackPot.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\MainPageMaster.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views/MainPageMaster.xaml")]
     public partial class MainPageMaster : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
